@@ -19,7 +19,7 @@ export default function BlogIndexPage({
 
   const [selectedCat, setSelectedCat] = React.useState('all');
 
-  const categories = ['all', 'Couples Advice', 'Party Tips', 'Game Strategy'];
+  const categories = ['all', ...Array.from(new Set(BLOG_POSTS.map((p) => p.category)))];
 
   const filteredPosts = BLOG_POSTS.filter((post) => {
     return selectedCat === 'all' || post.category === selectedCat;
