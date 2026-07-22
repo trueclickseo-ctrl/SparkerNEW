@@ -18,9 +18,9 @@ export interface TabsProps {
 
 export function Tabs({ tabs, activeTab, onChange, variant = 'default' }: TabsProps) {
   const activeStyles = {
-    default: 'bg-emerald-600 text-white shadow-sm',
-    play: 'bg-indigo-600 text-white shadow-sm',
-    couples: 'bg-rose-600 text-white shadow-sm',
+    default: 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-500/25 font-bold',
+    play: 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-500/25 font-bold',
+    couples: 'bg-gradient-to-r from-pink-500 to-rose-600 text-white shadow-md shadow-rose-500/25 font-bold',
   };
 
   return (

@@ -47,7 +47,7 @@ export default function DesignSystemPage() {
 
       <div className="max-w-6xl mx-auto space-y-12">
         <section className="space-y-4">
-          <h2 className="text-xl font-bold font-heading">Theme Switcher</h2>
+          <h2 className="text-xl font-bold font-heading">Theme Switcher (Live Interactive Preview)</h2>
           <Tabs
             tabs={[
               { id: 'sparkers', label: 'Shared Sparkers Theme', badge: 'Default' },
@@ -58,6 +58,60 @@ export default function DesignSystemPage() {
             onChange={setActiveTab}
             variant={activeTab === 'play' ? 'play' : activeTab === 'couples' ? 'couples' : 'default'}
           />
+
+          {/* Dynamic Theme Preview Card */}
+          <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-purple-200 dark:border-slate-800 shadow-xl transition-all duration-300">
+            {activeTab === 'sparkers' && (
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <Badge variant="default">Shared Sparkers Theme Active</Badge>
+                  <span className="text-xs text-purple-700 dark:text-purple-300 font-bold">Vivid Purple &amp; Amber Accent</span>
+                </div>
+                <h3 className="font-heading font-extrabold text-lg">Universal Brand Design Tokens</h3>
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  This shared theme powers all primary landing pages, homepage features, search components, and main navigation headers across 27 locales.
+                </p>
+                <div className="flex gap-3 pt-2">
+                  <Button variant="default" size="sm"><Sparkles className="w-4 h-4" /> Primary Action</Button>
+                  <Button variant="outline" size="sm">Secondary Action</Button>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'play' && (
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <Badge variant="play">Play Theme Active (/play)</Badge>
+                  <span className="text-xs text-indigo-700 dark:text-indigo-300 font-bold">Electric Indigo &amp; Violet</span>
+                </div>
+                <h3 className="font-heading font-extrabold text-lg text-indigo-950 dark:text-indigo-200">Party Games &amp; Group Multiplayer Mode</h3>
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Optimized for Truth or Dare, Never Have I Ever, Would You Rather, and fast-paced group icebreakers.
+                </p>
+                <div className="flex gap-3 pt-2">
+                  <Button variant="play" size="sm"><Gamepad2 className="w-4 h-4" /> Launch Party Deck</Button>
+                  <Button variant="outline" size="sm">View Game Rules</Button>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'couples' && (
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <Badge variant="couples">Couples Theme Active (/couples)</Badge>
+                  <span className="text-xs text-rose-700 dark:text-rose-300 font-bold">Candy Pink &amp; Passion Red</span>
+                </div>
+                <h3 className="font-heading font-extrabold text-lg text-rose-950 dark:text-rose-200">Couples Intimacy &amp; Deep Relationship Decks</h3>
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Tailored for romantic date nights, Gen Z situationship talks, long-distance video calls, and 89 Intimacy Framework decks.
+                </p>
+                <div className="flex gap-3 pt-2">
+                  <Button variant="couples" size="sm"><Heart className="w-4 h-4" /> Open Intimacy Deck</Button>
+                  <Button variant="outline" size="sm">Explore 89 Prompts</Button>
+                </div>
+              </div>
+            )}
+          </div>
         </section>
 
         <section className="space-y-4">
