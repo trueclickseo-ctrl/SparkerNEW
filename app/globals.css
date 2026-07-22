@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 145 30% 98%;
+    --foreground: 160 30% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 160 30% 12%;
+    --primary: 158 64% 32%;
+    --primary-foreground: 145 30% 98%;
+    --secondary: 35 90% 95%;
+    --secondary-foreground: 35 70% 25%;
+    --accent: 158 45% 93%;
+    --accent-foreground: 158 64% 20%;
+    --muted: 145 15% 93%;
+    --muted-foreground: 160 10% 40%;
+    --border: 145 20% 88%;
+    --radius: 0.75rem;
+
+    /* Play Theme Variables */
+    --play-primary: 250 84% 54%;
+    --play-secondary: 260 90% 95%;
+    --play-accent: 250 84% 96%;
+
+    /* Couples Theme Variables */
+    --couples-primary: 345 82% 52%;
+    --couples-secondary: 350 90% 96%;
+    --couples-accent: 345 85% 97%;
+  }
+
+  .dark {
+    --background: 220 25% 10%;
+    --foreground: 210 20% 98%;
+    --card: 220 25% 14%;
+    --card-foreground: 210 20% 98%;
+    --primary: 158 55% 45%;
+    --primary-foreground: 220 25% 10%;
+    --secondary: 35 50% 18%;
+    --secondary-foreground: 35 80% 85%;
+    --accent: 220 20% 20%;
+    --accent-foreground: 158 55% 75%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 215 15% 65%;
+    --border: 220 20% 22%;
+
+    /* Dark Play Theme */
+    --play-primary: 250 75% 65%;
+    --play-secondary: 260 40% 20%;
+    --play-accent: 250 40% 18%;
+
+    /* Dark Couples Theme */
+    --couples-primary: 345 75% 62%;
+    --couples-secondary: 350 40% 20%;
+    --couples-accent: 345 40% 18%;
+  }
+}
+
+/* Custom Micro-animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.92; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
