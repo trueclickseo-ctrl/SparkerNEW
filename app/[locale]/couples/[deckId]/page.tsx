@@ -19,7 +19,10 @@ export default async function CouplesDeckDetailPage({
   params: Promise<{ locale: string; deckId: string }>;
 }) {
   const resolvedParams = await params;
-  const deck = COUPLES_DECKS.find((d) => d.id === resolvedParams.deckId);
+  const targetId = resolvedParams.deckId;
+  const deck =
+    COUPLES_DECKS.find((d) => d.id === targetId) ||
+    COUPLES_DECKS.find((d) => d.category === targetId);
 
   if (!deck) notFound();
 

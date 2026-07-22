@@ -50,9 +50,9 @@ export function Footer({ locale }: { locale: Locale }) {
           </h4>
           <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
             <li><Link href={`/${locale}/couples/romantic`} className="hover:text-rose-600">Romantic Decks</Link></li>
-            <li><Link href={`/${locale}/couples/flirty`} className="hover:text-rose-600">Flirty Questions</Link></li>
-            <li><Link href={`/${locale}/couples/long-distance`} className="hover:text-rose-600">Long Distance Mode</Link></li>
-            <li><Link href={`/${locale}/couples/date-night`} className="hover:text-rose-600">Date Night Starters</Link></li>
+            <li><Link href={`/${locale}/couples/flirty-sparks`} className="hover:text-rose-600">Flirty Questions</Link></li>
+            <li><Link href={`/${locale}/couples/long-distance-connect`} className="hover:text-rose-600">Long Distance Mode</Link></li>
+            <li><Link href={`/${locale}/couples/date-night-sparks`} className="hover:text-rose-600">Date Night Starters</Link></li>
             <li><Link href={`/${locale}/quizzes/love-language`} className="hover:text-rose-600">Love Language Quiz</Link></li>
           </ul>
         </div>
