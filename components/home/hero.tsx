@@ -18,9 +18,6 @@ export function Hero({
             <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
               {dict.aeoTitle || 'Direct Answer / Quick Summary'}
             </span>
-            <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 font-medium">
-              AEO & GEO Verified
-            </span>
           </div>
           <p className="text-slate-700 dark:text-slate-300 text-base leading-relaxed">
             {dict.aeoDescription ||
