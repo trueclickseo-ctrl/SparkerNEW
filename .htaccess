@@ -1,0 +1,60 @@
+# Sparkers Games — Apache Configuration for Hostinger Static Hosting
+# Static files are at the repo root (copied from out/ by deploy.js)
+
+DirectoryIndex index.html en/index.html
+
+Options -Indexes +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Serve _next/ static assets directly (CSS, JS, fonts, images)
+  RewriteRule ^_next/ - [L]
+
+  # 2. Serve existing static files directly (favicon, svg, xml, txt, ico, etc.)
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # 3. Serve existing directories with their index.html
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.*)/?$ $1/index.html [L]
+
+  # 4. Redirect bare root to /en/
+  RewriteRule ^$ /en/ [R=301,L]
+
+  # 5. Route clean URL paths to their pre-built index.html
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.+)/?$ /$1/index.html [L]
+
+  # 6. Fallback: serve en/ homepage
+  RewriteRule ^ /en/index.html [L]
+</IfModule>
+
+# Performance: cache static assets aggressively
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Gzip compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# Custom error page
+ErrorDocument 404 /404.html

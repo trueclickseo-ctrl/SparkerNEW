@@ -1,0 +1,20 @@
+# llms.txt — Sparkers Games System Summary for AI Assistants
+
+# Title
+Sparkers Games Platform
+
+# Summary
+Sparkers Games is a multi-lingual digital card game engine, couples relationship hub, and party game library featuring 89+ games, interactive quizzes, and custom party generators across 27 global languages.
+
+# Core Topics
+- Party Games (/play)
+- Couples & Relationship Games (/couples)
+- Quizzes & Personality Indicators (/quizzes)
+- Rules & Encyclopedia (/encyclopedia)
+- Article & Relationship Guides (/blog)
+
+# Entities & Canonical Data
+- Brand: Sparkers Games
+- Primary Website: https://sparkers.games
+- Target Audience: Adults, Couples, Teens, Office/Classroom Groups, Party Hosts
+- Supported Languages: en, zh, es, ar, pt, fr, ja, ru, de, ko, id, tr, it, vi, pl, nl, th, uk, cs, ro, el, hu, sv, da, fi, nb, hr
