@@ -49,6 +49,9 @@ export function Header({ locale }: { locale: Locale }) {
           <Link href={`/${locale}/couples`} className="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">
             Couples Hub
           </Link>
+          <Link href={`/${locale}/truth-or-dare-questions`} className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors font-extrabold text-amber-600 dark:text-amber-400">
+            🔥 555+ Truth or Dare
+          </Link>
           <Link href={`/${locale}/cards`} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-bold text-purple-700 dark:text-purple-300">
             📦 Physical Cards
           </Link>
