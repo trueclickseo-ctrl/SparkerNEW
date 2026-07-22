@@ -29,13 +29,21 @@ export default function ContactPage({
     setErrorMsg('');
 
     try {
-      const res = await fetch('/api/contact', {
+      // Send directly from client via FormSubmit HTML endpoint
+      const formPayload = new FormData();
+      formPayload.append('name', formData.name);
+      formPayload.append('email', formData.email);
+      formPayload.append('subject', `Message from Sparkers Games: ${formData.subject || 'New Message'}`);
+      formPayload.append('message', formData.message);
+      formPayload.append('_captcha', 'false');
+
+      const response = await fetch('https://formsubmit.co/ajax/trueclickseo@gmail.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        headers: { Accept: 'application/json' },
+        body: formPayload,
       });
 
-      if (res.ok) {
+      if (response.ok) {
         setSubmitted(true);
       } else {
         setErrorMsg('Failed to send message. Please try again.');
@@ -100,7 +108,7 @@ export default function ContactPage({
             </div>
           </div>
 
-          {/* Interactive Clean Form */}
+          {/* Interactive Form */}
           <div className="md:col-span-2 p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-6">
             <div className="space-y-1">
               <h2 className="text-xl font-heading font-bold text-slate-900 dark:text-white">Send Us a Message</h2>
@@ -116,7 +124,7 @@ export default function ContactPage({
                   Message Sent Successfully!
                 </h3>
                 <p className="text-xs text-emerald-800 dark:text-emerald-300 max-w-md mx-auto leading-relaxed">
-                  Thank you for reaching out! Your message has been received by our core team.
+                  Thank you for reaching out! Your message has been sent directly to our team.
                 </p>
                 <button
                   onClick={() => {
