@@ -1,35 +1,23 @@
-# Apache Server Configuration for Hostinger Static & SPA Hosting
+# Apache Server Configuration for Hostinger Static Site Hosting
+DirectoryIndex index.html
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Redirect HTTP to HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-  # Serve index.html if request directory or root
-  DirectoryIndex index.html
-
-  # If html file exists (e.g. /en.html or /en/truth-or-dare-questions.html), serve it
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.*)$ $1.html [L]
-
-  # Serve existing static files directly
+  # Serve existing static files or directories directly
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Fallback to index.html for clean routing
-  RewriteRule ^ index.html [L]
+  # Route directory paths with trailing slashes to their index.html
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.*)$ $1/index.html [L]
 </IfModule>
 
-# Set correct MIME Types and UTF-8 Charset
-<IfModule mod_mime.c>
-  AddType application/xml .xml
-  AddType text/xml .xml
-  AddType application/javascript .js
-  AddType text/css .css
+# Security Headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "origin-when-cross-origin"
 </IfModule>
-
-# Prevent 403 Access Denied by allowing directory browsing indexing override
-Options -Indexes +FollowSymLinks
