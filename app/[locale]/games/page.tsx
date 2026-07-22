@@ -65,6 +65,9 @@ const EXTRA_GAMES = [
   { id: 'party-dares', title: 'Party Dares Pro', category: 'Adults Party', icon: <PartyPopper className="w-7 h-7" />, color: 'from-violet-500 to-fuchsia-600', badge: 'Wild', href: '/play/truth-or-dare', players: '4-20', type: 'play' },
   { id: 'safe-zone', title: 'Safe Zone Icebreakers', category: 'Family Safe', icon: <Shield className="w-7 h-7" />, color: 'from-green-400 to-emerald-500', badge: 'All Ages', href: '/play/would-you-rather', players: '2-20', type: 'play' },
   { id: 'trending-topics', title: 'Trending Topics Debate', category: 'Debate Game', icon: <TrendingUp className="w-7 h-7" />, color: 'from-blue-400 to-violet-500', badge: 'Debate', href: '/play/would-you-rather', players: '4-16', type: 'play' },
+  // Adult 18+ and 2-Way Meaning Extras
+  { id: 'double-entendres-deck', title: 'Double Entendres (2-Way Meaning)', category: 'Cheeky Fun', icon: <Sparkles className="w-7 h-7" />, color: 'from-fuchsia-500 to-pink-600', badge: '2-Way Meaning 🔞', href: '/play/truth-or-dare', players: '2-12', type: 'play' },
+  { id: 'after-dark-spicy-18', title: 'After Dark Adult 18+ Truths', category: 'Adults Only', icon: <Flame className="w-7 h-7" />, color: 'from-red-600 to-rose-700', badge: 'Spicy 18+ 🔥', href: '/play/truth-or-dare', players: '2-8', type: 'couples' },
   // Couples extras
   { id: 'love-letters', title: 'Love Letters Exchange', category: 'Romantic', icon: <Heart className="w-7 h-7" />, color: 'from-rose-400 to-pink-500', badge: 'Sweet', href: '/couples/deep-intimacy', players: '2', type: 'couples' },
   { id: 'bucket-list', title: 'Couple Bucket List', category: 'Goals & Dreams', icon: <Star className="w-7 h-7" />, color: 'from-amber-400 to-orange-500', badge: 'Dreams', href: '/couples/marriage-milestones', players: '2', type: 'couples' },
@@ -118,10 +121,10 @@ export default function GamesDirectoryPage({ params }: { params: Promise<{ local
             <span className="text-4xl animate-bounce" style={{ animationDelay: '0.3s' }}>✨</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-gradient-funky">
-            89+ Games Directory
+            107+ Categories &amp; Games Directory
           </h1>
           <p className="text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Every game, party deck, intimacy card, and quiz in the Sparkers universe — pick one and play instantly.
+            Every game, party deck, adult 18+ topic, 2-way double entendre, Gen Z vibe check, and intimacy card in the Sparkers universe — pick one and play instantly.
           </p>
 
           {/* Stats Bar — clickable filters */}

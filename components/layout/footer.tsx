@@ -24,7 +24,7 @@ export function Footer({ locale }: { locale: Locale }) {
               href={`/${locale}/games`}
               className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-violet-100 dark:bg-violet-950/40 text-violet-700 dark:text-violet-300 hover:bg-violet-200 dark:hover:bg-violet-900/60 font-semibold transition-colors"
             >
-              <Gamepad2 className="w-3.5 h-3.5" /> 89+ Games
+              <Gamepad2 className="w-3.5 h-3.5" /> 107+ Categories &amp; Decks
             </Link>
             <span>•</span>
             <span className="flex items-center gap-1"><Heart className="w-3.5 h-3.5 text-rose-500" /> 27 Locales</span>
