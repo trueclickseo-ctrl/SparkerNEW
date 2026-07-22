@@ -113,13 +113,8 @@ export function Footer({ locale }: { locale: Locale }) {
       </div>
 
       {/* Footer Bottom Line */}
-      <div className="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+      <div className="max-w-7xl mx-auto pt-8 flex justify-center items-center text-xs text-slate-500">
         <p>© {new Date().getFullYear()} Sparkers Games. All rights reserved.</p>
-        <div className="flex items-center gap-6">
-          <Link href={`/${locale}/privacy`} className="hover:text-slate-400 transition-colors">Privacy</Link>
-          <Link href={`/${locale}/terms`} className="hover:text-slate-400 transition-colors">Terms</Link>
-          <Link href={`/${locale}/contact`} className="hover:text-slate-400 transition-colors">Contact</Link>
-        </div>
       </div>
     </footer>
   );
