@@ -5,25 +5,30 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, subject, message } = body;
 
-    // Use Web3Forms free API service for zero-config email forwarding
-    const response = await fetch('https://api.web3forms.com/submit', {
+    // Send form submission using FormSubmit endpoint (routes to trueclickseo@gmail.com without API keys)
+    const response = await fetch('https://formsubmit.co/ajax/trueclickseo@gmail.com', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
       body: JSON.stringify({
-        access_key: '00000000-0000-0000-0000-000000000000', // fallback key or FormSubmit
+        _subject: `Message from Sparkers Games: ${subject || 'New Feedback'}`,
+        _replyto: email,
+        _template: 'table',
         name,
         email,
-        subject: `Message from Sparkers Games - ${subject || 'New Contact Form Submission'}`,
-        message: `Sender Name: ${name}\nSender Email: ${email}\n\nMessage:\n${message}`,
-        to_email: 'trueclickseo@gmail.com',
+        subject,
+        message,
       }),
     });
 
-    return NextResponse.json({ success: true });
+    if (response.ok) {
+      return NextResponse.json({ success: true });
+    } else {
+      return NextResponse.json({ success: false, error: 'Failed to send' }, { status: 400 });
+    }
   } catch (err) {
-    return NextResponse.json({ success: false, error: 'Failed to send message' }, { status: 500 });
+    return NextResponse.json({ success: false, error: 'Server error' }, { status: 500 });
   }
 }
