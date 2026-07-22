@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { BLOG_POSTS } from '@/lib/data/blog-posts';
 
+export const dynamic = 'force-static';
+
 export async function GET() {
   const siteUrl = 'https://sparkersgames.com';
 

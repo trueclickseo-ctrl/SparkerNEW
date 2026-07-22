@@ -9,23 +9,13 @@ import { COUPLES_DECKS } from '@/lib/data/couples-games';
 
 export default function CouplesHubPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ locale: string }>;
-  searchParams?: Promise<{ cat?: string }>;
 }) {
   const resolvedParams = React.use(params);
-  const resolvedSearchParams = searchParams ? React.use(searchParams) : {};
   const locale = resolvedParams.locale;
-  const initialCategory = resolvedSearchParams?.cat || 'all';
 
-  const [activeCategory, setActiveCategory] = React.useState(initialCategory);
-
-  React.useEffect(() => {
-    if (resolvedSearchParams?.cat) {
-      setActiveCategory(resolvedSearchParams.cat);
-    }
-  }, [resolvedSearchParams?.cat]);
+  const [activeCategory, setActiveCategory] = React.useState('all');
 
   const filteredDecks = COUPLES_DECKS.filter((deck) => {
     return activeCategory === 'all' || deck.category === activeCategory;
