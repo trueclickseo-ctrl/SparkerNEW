@@ -25,7 +25,7 @@ export function Header({ locale }: { locale: Locale }) {
     <header className="sticky top-0 z-40 backdrop-blur-lg bg-white/90 dark:bg-slate-900/90 border-b-2 border-purple-200/80 dark:border-purple-900/50 transition-colors shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href={`/${locale}`} className="flex items-center space-x-3 rtl:space-x-reverse group">
+        <Link href={`/${locale}`} className="flex items-center space-x-3 rtl:space-x-reverse group shrink-0 mr-4 lg:mr-8">
           <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-purple-600 via-pink-500 to-amber-400 text-white flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
             <Sparkles className="w-5 h-5 animate-pulse-subtle" />
           </div>
@@ -96,7 +96,15 @@ export function Header({ locale }: { locale: Locale }) {
       </div>
 
       {/* Mega Menu Overlay */}
-      {isMegaOpen && <MegaMenu locale={locale} onClose={() => setIsMegaOpen(false)} />}
+      {isMegaOpen && (
+        <>
+          <div
+            className="fixed inset-0 top-16 bg-slate-950/20 backdrop-blur-[2px] z-40"
+            onClick={() => setIsMegaOpen(false)}
+          />
+          <MegaMenu locale={locale} onClose={() => setIsMegaOpen(false)} />
+        </>
+      )}
 
       {/* Mobile Nav Drawer */}
       <MobileNav
