@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { BLOG_POSTS } from '@/lib/data/blog-posts';
 
 export async function GET() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://sparkers.games';
+  const siteUrl = 'https://sparkersgames.com';
 
   const itemsXml = BLOG_POSTS.map(
     (post) => `
@@ -18,7 +18,7 @@ export async function GET() {
   const rssXml = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sparkers Games Blog & Party Guides</title>
+    <title>Sparkers Games Blog and Party Guides</title>
     <link>${siteUrl}</link>
     <description>Latest relationship advice, party icebreakers, and card game strategies from Sparkers Games.</description>
     <language>en-us</language>
@@ -26,9 +26,10 @@ export async function GET() {
   </channel>
 </rss>`;
 
-  return new NextResponse(rssXml, {
+  return new NextResponse(rssXml.trim(), {
     headers: {
-      'Content-Type': 'application/xml',
+      'Content-Type': 'application/xml; charset=utf-8',
+      'Cache-Control': 's-maxage=3600, stale-while-revalidate',
     },
   });
 }
