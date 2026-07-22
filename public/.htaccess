@@ -1,26 +1,19 @@
-# Universal Hostinger Apache Configuration for Static & Single Page Application (SPA)
-Options -Indexes
-DirectoryIndex index.html
+# Apache Server Configuration for Hostinger Static Site Hosting
+DirectoryIndex index.html en/index.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # 1. Allow existing files and directories to be served directly
+  # Redirect root domain to /en/
+  RewriteRule ^$ /en/ [R=301,L]
+
+  # Allow existing static files or directories to be served directly
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # 2. Map clean directory requests to internal index.html files
-  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  # Route directory paths to their index.html
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
   RewriteRule ^(.*)$ $1/index.html [L]
-
-  # 3. Map extensionless routes (e.g., /en/about) to .html files (e.g., /en/about.html)
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.*)$ $1.html [L]
-
-  # 4. Fallback root index.html if route not found
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
 </IfModule>
