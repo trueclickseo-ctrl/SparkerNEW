@@ -5,13 +5,15 @@ import { LOCALES, DEFAULT_LOCALE } from '@/lib/i18n/config';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Skip static assets, API routes, and public files
+  // Skip static assets, API routes, Next internals, and public files
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
-    pathname.includes('.') ||
+    pathname === '/sitemap.xml' ||
+    pathname === '/rss.xml' ||
     pathname === '/robots.txt' ||
-    pathname === '/llms.txt'
+    pathname === '/llms.txt' ||
+    pathname.includes('.')
   ) {
     return NextResponse.next();
   }

@@ -43,7 +43,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
-      <body className="min-h-screen bg-emerald-50/40 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased selection:bg-emerald-200 selection:text-emerald-950">
+      <body suppressHydrationWarning className="min-h-screen flex flex-col text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased selection:bg-violet-200 selection:text-violet-950">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           {children}
         </ThemeProvider>

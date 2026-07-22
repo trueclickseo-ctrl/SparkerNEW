@@ -20,7 +20,12 @@ export function Footer({ locale }: { locale: Locale }) {
             Sparkers Games is an interactive multi-lingual game platform engineered for couples, party hosts, friends, and teams to build deep connections.
           </p>
           <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 pt-2">
-            <span className="flex items-center gap-1"><Gamepad2 className="w-3.5 h-3.5 text-indigo-500" /> 89+ Games</span>
+            <Link
+              href={`/${locale}/games`}
+              className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-violet-100 dark:bg-violet-950/40 text-violet-700 dark:text-violet-300 hover:bg-violet-200 dark:hover:bg-violet-900/60 font-semibold transition-colors"
+            >
+              <Gamepad2 className="w-3.5 h-3.5" /> 89+ Games
+            </Link>
             <span>•</span>
             <span className="flex items-center gap-1"><Heart className="w-3.5 h-3.5 text-rose-500" /> 27 Locales</span>
           </div>

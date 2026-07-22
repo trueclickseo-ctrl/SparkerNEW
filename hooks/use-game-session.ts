@@ -2,25 +2,34 @@
 
 import * as React from 'react';
 
+function getStoredFavorites(gameId: string): string[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const item = localStorage.getItem(`sparkers-favs-${gameId}`);
+    return item ? JSON.parse(item) : [];
+  } catch {
+    return [];
+  }
+}
+
 export function useGameSession(gameId: string, initialPrompts: string[]) {
   const [prompts, setPrompts] = React.useState<string[]>(initialPrompts);
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [isFlipped, setIsFlipped] = React.useState(false);
 
-  // Sync favorites with localStorage cleanly
-  const favorites = React.useSyncExternalStore(
-    () => () => {},
-    () => {
-      if (typeof window === 'undefined') return [];
-      try {
-        const item = localStorage.getItem(`sparkers-favs-${gameId}`);
-        return item ? JSON.parse(item) : [];
-      } catch {
-        return [];
-      }
-    },
-    () => []
+  // Stable favorites state — avoids useSyncExternalStore snapshot instability
+  const [favorites, setFavorites] = React.useState<string[]>(() =>
+    getStoredFavorites(gameId)
   );
+
+  // Sync from storage events (cross-tab and same-tab updates)
+  React.useEffect(() => {
+    const onStorage = () => {
+      setFavorites(getStoredFavorites(gameId));
+    };
+    window.addEventListener('storage', onStorage);
+    return () => window.removeEventListener('storage', onStorage);
+  }, [gameId]);
 
   // Fisher-Yates Shuffle
   const shuffle = () => {
@@ -54,6 +63,7 @@ export function useGameSession(gameId: string, initialPrompts: string[]) {
       : [...favorites, prompt];
     if (typeof window !== 'undefined') {
       localStorage.setItem(`sparkers-favs-${gameId}`, JSON.stringify(updated));
+      setFavorites(updated);
       window.dispatchEvent(new Event('storage'));
     }
   };
