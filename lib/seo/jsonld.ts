@@ -111,7 +111,7 @@ export function getHowToSchema({
       position: idx + 1,
       name: s.name,
       text: s.text,
-      ...(s.url && { url: `${SITE_URL}${s.url}` }),
+      ...(s.url && { url: `${SITE_URL}${s.url.startsWith('/') ? s.url : `/${s.url}`}` }),
       ...(s.image && { image: s.image }),
     })),
   };

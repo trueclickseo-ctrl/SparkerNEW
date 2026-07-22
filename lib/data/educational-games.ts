@@ -136,7 +136,7 @@ export const EDUCATIONAL_DECKS: EducationalDeck[] = [
     cardCount: 25,
     badge: 'Mental Agility 🧠',
     prompts: [
-      'Rethink a everyday object (e.g., a paperclip): brainstorm 5 unconventional uses in 60 seconds!',
+      'Rethink an everyday object (e.g., a paperclip): brainstorm 5 unconventional uses in 60 seconds!',
       'If you had to explain the concept of internet search to a 15th-century philosopher using only analogies, how would you state it?',
       'Combine two completely unrelated products (e.g., umbrella + coffee mug) to pitch a new invention.',
       'Reverse thinking: how would you intentionally design the WORST imaginable study session, and how do we flip it?',
@@ -145,7 +145,7 @@ export const EDUCATIONAL_DECKS: EducationalDeck[] = [
       'Pitch a startup idea in 3 sentences using only words that start with the letter S.',
       'What is one rule in society that everyone follows blindly, but could be redesigned for 2x efficiency?',
       'Imagine you have a $10 budget and 2 hours to create the most value possible on campus — what is your plan?',
-      'Design a 60-second elevator pitch for a app that matches students based on study habits.',
+      'Design a 60-second elevator pitch for an app that matches students based on study habits.',
       'If you had to solve urban traffic congestion without using cars or public buses, what is your idea?',
       'What is a product from 20 years ago that could be resurrected with a modern Gen Z twist?',
       'How would you teach basic physics or economics using only a deck of playing cards?',

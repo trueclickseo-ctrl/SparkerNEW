@@ -36,6 +36,94 @@ const QUIZ_QUESTIONS: Question[] = [
       { text: 'Physical distance, coldness, or lack of physical contact.', language: 'touch' },
     ],
   },
+  {
+    id: 3,
+    text: 'How do you most like to show your partner that you care?',
+    options: [
+      { text: 'Write them a heartfelt note or tell them exactly why they mean the world to me.', language: 'words' },
+      { text: 'Plan a special activity or outing just for the two of us.', language: 'time' },
+      { text: 'Surprise them with something they mentioned wanting weeks ago.', language: 'gifts' },
+      { text: 'Handle something difficult on their to-do list without being asked.', language: 'service' },
+      { text: 'Hold their hand, give them a massage, or just sit close to them.', language: 'touch' },
+    ],
+  },
+  {
+    id: 4,
+    text: 'What does a perfect weekend with your partner look like to you?',
+    options: [
+      { text: 'Sharing stories, deep conversations, and lots of compliments.', language: 'words' },
+      { text: 'A whole day with zero distractions — just us exploring somewhere new.', language: 'time' },
+      { text: 'Exchanging small meaningful gifts or finding something special for each other.', language: 'gifts' },
+      { text: 'Cooking together, fixing things around the house, taking care of each other.', language: 'service' },
+      { text: 'Lazy mornings cuddling in bed or evening walks hand-in-hand.', language: 'touch' },
+    ],
+  },
+  {
+    id: 5,
+    text: 'When you are feeling down, what do you crave most from your partner?',
+    options: [
+      { text: 'Reassuring words that remind me I am loved and capable.', language: 'words' },
+      { text: 'Them sitting with me, fully present, listening without distractions.', language: 'time' },
+      { text: 'A small comfort gift — even something tiny like my favorite snack.', language: 'gifts' },
+      { text: 'Them stepping in to handle my tasks or responsibilities to ease my load.', language: 'service' },
+      { text: 'Physical comfort — a hug, a gentle touch on the shoulder, or holding my hand.', language: 'touch' },
+    ],
+  },
+  {
+    id: 6,
+    text: 'Which of these means the most to you in a relationship?',
+    options: [
+      { text: 'Hearing "I love you" often and receiving sincere compliments.', language: 'words' },
+      { text: 'My partner making time for me even when life is busy.', language: 'time' },
+      { text: 'Thoughtful tokens that show they remember what I love.', language: 'gifts' },
+      { text: 'Acts of kindness that make my day easier without me asking.', language: 'service' },
+      { text: 'Frequent physical closeness and affectionate touch.', language: 'touch' },
+    ],
+  },
+  {
+    id: 7,
+    text: 'When celebrating an achievement, what kind of recognition means the most?',
+    options: [
+      { text: 'A genuine, enthusiastic "I am so proud of you — you did amazing!"', language: 'words' },
+      { text: 'A dedicated celebration dinner where it is just the two of us.', language: 'time' },
+      { text: 'A meaningful gift or keepsake to commemorate the milestone.', language: 'gifts' },
+      { text: 'My partner helping wrap up remaining tasks so I can fully relax.', language: 'service' },
+      { text: 'A big, warm hug and celebratory kiss.', language: 'touch' },
+    ],
+  },
+  {
+    id: 8,
+    text: 'What is your favorite kind of everyday gesture from your partner?',
+    options: [
+      { text: 'Leaving encouraging sticky notes or sending sweet texts throughout the day.', language: 'words' },
+      { text: 'Having a daily check-in conversation where we truly talk and listen.', language: 'time' },
+      { text: 'Bringing home something small they picked up thinking of me.', language: 'gifts' },
+      { text: 'Making coffee without being asked or handling a chore I hate.', language: 'service' },
+      { text: 'A random hug from behind or gentle squeeze of my hand while passing.', language: 'touch' },
+    ],
+  },
+  {
+    id: 9,
+    text: 'What would make your partner\'s apology feel the most sincere?',
+    options: [
+      { text: 'A heartfelt verbal acknowledgment of what went wrong and how they will change.', language: 'words' },
+      { text: 'Setting aside quality time to talk it through without distractions.', language: 'time' },
+      { text: 'A thoughtful gesture or small gift that shows they put effort into making it right.', language: 'gifts' },
+      { text: 'Taking on extra responsibilities to make my life easier during a tough time.', language: 'service' },
+      { text: 'A sincere, comforting embrace that shows they truly mean it.', language: 'touch' },
+    ],
+  },
+  {
+    id: 10,
+    text: 'Imagine your ideal Valentine\'s Day — what would matter most to you?',
+    options: [
+      { text: 'A handwritten love letter expressing exactly how they feel about me.', language: 'words' },
+      { text: 'A full day dedicated entirely to spending time together with no phone interruptions.', language: 'time' },
+      { text: 'A carefully chosen gift that perfectly reflects my personality and interests.', language: 'gifts' },
+      { text: 'Having all the household chores done so we can enjoy the day stress-free.', language: 'service' },
+      { text: 'Lots of physical closeness — dancing, cuddling, and hand-holding all day.', language: 'touch' },
+    ],
+  },
 ];
 
 export default function LoveLanguageQuizPage({

@@ -19,7 +19,7 @@ export default function CoupleNameGeneratorPage({
   const [copiedIndex, setCopiedIndex] = React.useState<number | null>(null);
 
   const generateNames = () => {
-    if (!name1 || !name2) return [];
+    if (!name1.trim() || !name2.trim()) return [];
     const n1 = name1.trim();
     const n2 = name2.trim();
 
@@ -40,7 +40,15 @@ export default function CoupleNameGeneratorPage({
   const blendedNames = generateNames();
 
   const handleCopy = (text: string, idx: number) => {
-    navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText(text).catch(() => {
+      // Fallback for browsers without clipboard API
+      const el = document.createElement('textarea');
+      el.value = text;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    });
     setCopiedIndex(idx);
     setTimeout(() => setCopiedIndex(null), 2000);
   };

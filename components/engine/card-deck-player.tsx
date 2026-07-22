@@ -31,7 +31,15 @@ export function CardDeckPlayer({
   } = useGameSession(gameId, prompts);
 
   const isFav = favorites.includes(currentPrompt);
-  const progressPercent = Math.round(((currentIndex + 1) / totalCards) * 100);
+  const progressPercent = totalCards > 0 ? Math.round(((currentIndex + 1) / totalCards) * 100) : 0;
+
+  if (!prompts || prompts.length === 0) {
+    return (
+      <div className="w-full max-w-xl mx-auto p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center text-slate-500">
+        No prompts available for this game.
+      </div>
+    );
+  }
 
   return (
     <div className="w-full max-w-xl mx-auto space-y-6">
@@ -54,12 +62,12 @@ export function CardDeckPlayer({
       {/* 3D Flippable Digital Card */}
       <div
         onClick={() => setIsFlipped(!isFlipped)}
-        className="group relative w-full h-80 sm:h-96 rounded-3xl cursor-pointer perspective-1000"
+        className="group relative w-full h-80 sm:h-96 rounded-3xl cursor-pointer [perspective:1000px]"
       >
         <div
           className={cn(
-            'relative w-full h-full rounded-3xl transition-transform duration-500 transform-style-3d shadow-2xl border p-8 flex flex-col justify-between select-none',
-            isFlipped ? 'rotate-y-180' : '',
+            'relative w-full h-full rounded-3xl transition-transform duration-500 [transform-style:preserve-3d] shadow-2xl border p-8 flex flex-col justify-between select-none',
+            isFlipped ? '[transform:rotateY(180deg)]' : '',
             variant === 'couples'
               ? 'bg-gradient-to-br from-white via-rose-50/50 to-rose-100/40 dark:from-slate-900 dark:to-rose-950/40 border-rose-200/80 dark:border-rose-900/60'
               : 'bg-gradient-to-br from-white via-indigo-50/50 to-indigo-100/40 dark:from-slate-900 dark:to-indigo-950/40 border-indigo-200/80 dark:border-indigo-900/60'

@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Link from 'next/link';
 import { Search, X, Gamepad2, Heart, Sparkles, BookOpen } from 'lucide-react';
 
 export function SearchModal({
@@ -60,9 +61,9 @@ export function SearchModal({
 
         <div className="p-4 max-h-80 overflow-y-auto space-y-2">
           {mockResults.length > 0 ? (
-            mockResults.map((res, idx) => (
-              <a
-                key={idx}
+            mockResults.map((res) => (
+              <Link
+                key={res.href}
                 href={res.href}
                 onClick={onClose}
                 className="flex items-center justify-between p-3 rounded-xl hover:bg-emerald-50/60 dark:hover:bg-slate-800/60 transition-colors group"
@@ -76,7 +77,7 @@ export function SearchModal({
                     <span className="text-[11px] text-slate-500 dark:text-slate-400">{res.category}</span>
                   </div>
                 </div>
-              </a>
+              </Link>
             ))
           ) : (
             <p className="text-center py-6 text-xs text-slate-500 dark:text-slate-400">

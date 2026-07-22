@@ -345,7 +345,7 @@ export const COUPLES_DECKS: CouplesDeck[] = [
       'What is your favorite weekend activity — outdoor adventure or cozy indoor stay?',
       'What is the funniest thing that has ever happened to you on a trip?',
       'What is a talent or hobby of yours that most people don’t know about?',
-      'If you could dinner with any 3 people in the world, who are they?',
+      'If you could have dinner with any 3 people in the world, who are they?',
       'What is your go-to coffee or boba order?',
       'What is a movie you can watch over and over without getting bored?',
       'What is your favorite concert or music festival experience?',

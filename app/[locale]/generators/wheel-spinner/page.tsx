@@ -17,6 +17,14 @@ export default function WheelSpinnerPage({
 
   const [selectedWinner, setSelectedWinner] = React.useState<string | null>(null);
   const [spinning, setSpinning] = React.useState(false);
+  const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Cleanup timer on unmount to prevent memory leak
+  React.useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
 
   const options = ['Truth Challenge', 'Wild Dare', 'Sing a Song', 'Tell a Secret', 'Skip Turn', 'Double Dare'];
 
@@ -25,7 +33,7 @@ export default function WheelSpinnerPage({
     setSpinning(true);
     setSelectedWinner(null);
 
-    setTimeout(() => {
+    timerRef.current = setTimeout(() => {
       const winner = options[Math.floor(Math.random() * options.length)];
       setSelectedWinner(winner);
       setSpinning(false);

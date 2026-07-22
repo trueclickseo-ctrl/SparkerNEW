@@ -3,7 +3,6 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { Sparkles, Search, Menu, ChevronDown } from 'lucide-react';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { MegaMenu } from './mega-menu';
 import { MobileNav } from './mobile-nav';
 import { SearchModal } from './search-modal';

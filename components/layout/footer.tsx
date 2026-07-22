@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Sparkles, Heart, Gamepad2, Shield, Rss, Mail, Building, Scale, Lock, Users } from 'lucide-react';
+import { Sparkles, Gamepad2, Shield, Rss, Mail, Building, Scale, Lock, Users } from 'lucide-react';
 import { Locale } from '@/lib/i18n/config';
 
 export function Footer({ locale }: { locale: Locale }) {

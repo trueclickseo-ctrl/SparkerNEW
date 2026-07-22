@@ -11,13 +11,15 @@ export function LocaleSwitcher({ currentLocale }: { currentLocale: Locale }) {
 
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const nextLocale = e.target.value;
-    const segments = pathname.split('/');
+    // Guard against null pathname during static rendering / transitions
+    const safePath = pathname || '/';
+    const segments = safePath.split('/').filter((_, i) => i > 0 || safePath !== '/');
     if ((LOCALES as readonly string[]).includes(segments[1])) {
       segments[1] = nextLocale;
     } else {
       segments.splice(1, 0, nextLocale);
     }
-    const nextPath = segments.join('/') || '/';
+    const nextPath = segments.join('/') || `/${nextLocale}`;
     router.push(nextPath);
   };
 
@@ -28,7 +30,7 @@ export function LocaleSwitcher({ currentLocale }: { currentLocale: Locale }) {
         value={currentLocale}
         onChange={handleSelect}
         aria-label="Select Language"
-        className="appearance-none pl-8 pr-7 py-1.5 text-xs font-medium rounded-lg bg-emerald-50/80 text-emerald-950 border border-emerald-200 hover:bg-emerald-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-750 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
+        className="appearance-none pl-8 pr-7 py-1.5 text-xs font-medium rounded-lg bg-emerald-50/80 text-emerald-950 border border-emerald-200 hover:bg-emerald-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer"
       >
         {LOCALES.map((loc) => {
           const info = LOCALE_NAMES[loc];

@@ -86,11 +86,10 @@ export const QUESTION_DATABASE: LibraryGame[] = [
     description: 'Sequential rapid-fire questions to get to know anyone deeply.',
     prompts: [
       'Question #1: What is your favorite memory from childhood?',
-      'Question #2: If you could dinner with any historical figure, who would it be?',
+      'Question #2: If you could have dinner with any historical figure, who would it be?',
       'Question #3: What quality do you admire most in a best friend?',
     ],
   },
-  // NEW ADULT & TWO-WAY MEANING CATEGORIES
   {
     id: 'double-entendres',
     name: 'Double Entendres & 2-Way Meanings',
@@ -122,7 +121,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
   {
     id: 'genz-unfiltered-icks',
     name: 'Gen Z Red Flags & Icks',
-    slug: 'never-have-i-ever',
+    slug: 'genz-unfiltered-icks',
     category: 'Gen Z Red Flags & Icks',
     cardCount: 195,
     description: 'Unfiltered Gen Z prompts on dating icks, main character syndrome, and situationships.',
@@ -149,7 +148,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
   {
     id: 'conversation-starters',
     name: 'Conversation Starters',
-    slug: 'conversation-starters',
+    slug: 'office-icebreakers',
     category: 'Group Bonding',
     cardCount: 320,
     description: 'Engaging starters for dinner parties, road trips, and coffee chats.',
@@ -161,7 +160,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
   {
     id: 'ice-breakers',
     name: 'Team Ice Breakers',
-    slug: 'ice-breakers',
+    slug: 'office-icebreakers',
     category: 'Office & School',
     cardCount: 250,
     description: 'Workplace-safe and classroom-friendly icebreaker warmups.',
