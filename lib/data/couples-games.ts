@@ -97,4 +97,19 @@ export const COUPLES_DECKS: CouplesDeck[] = [
       'If our relationship was a movie title, what would it be called?',
     ],
   },
+  {
+    id: 'romantic',
+    title: 'Romantic Decks & Love Connection',
+    shortDescription: 'Sweet, passionate, and heartwarming prompts to celebrate love.',
+    fullDescription: 'Deepen your romantic connection with questions designed to bring out tenderness, gratitude, and romance.',
+    category: 'romantic',
+    intimacyLevel: 'Medium',
+    promptCount: 85,
+    badge: 'Romantic',
+    samplePrompts: [
+      'What is one small romantic gesture I do that always makes your heart flutter?',
+      'If we could replay one memory from our relationship forever, which one would you pick?',
+      'What is your favorite picture of us together and why?',
+    ],
+  },
 ];
