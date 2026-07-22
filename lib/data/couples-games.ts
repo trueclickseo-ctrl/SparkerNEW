@@ -31,7 +31,7 @@ export const COUPLES_DECKS: CouplesDeck[] = [
     fullDescription: 'The core pillar of the 89 Games Framework. Explores emotional vulnerability, shared dreams, and relationship reflection.',
     category: 'deep',
     intimacyLevel: 'Deep',
-    promptCount: 89,
+    promptCount: 25,
     badge: 'Pillar Deck',
     samplePrompts: [
       'What was the exact moment you realized we had something special?',
@@ -69,7 +69,7 @@ export const COUPLES_DECKS: CouplesDeck[] = [
     fullDescription: 'Spark playful banter and romantic friction with fun, lighthearted prompts.',
     category: 'flirty',
     intimacyLevel: 'Spicy',
-    promptCount: 75,
+    promptCount: 20,
     badge: 'Popular',
     samplePrompts: [
       'What is my most irresistible habit when we are out in public?',
@@ -102,7 +102,7 @@ export const COUPLES_DECKS: CouplesDeck[] = [
     fullDescription: 'Deepen your romantic connection with questions designed to bring out tenderness, gratitude, and romance.',
     category: 'romantic',
     intimacyLevel: 'Medium',
-    promptCount: 85,
+    promptCount: 20,
     badge: 'Romantic',
     samplePrompts: [
       'What is one small romantic gesture I do that always makes your heart flutter?',
@@ -135,7 +135,7 @@ export const COUPLES_DECKS: CouplesDeck[] = [
     fullDescription: 'Built specifically for Gen Z couples and dating! Real talk on icks, roster dating, main character energy, and defining the relationship.',
     category: 'gen-z',
     intimacyLevel: 'Medium',
-    promptCount: 95,
+    promptCount: 20,
     badge: 'Gen Z Pick 🔥',
     samplePrompts: [
       'What was your biggest initial green flag or instant ick about me?',
@@ -168,7 +168,7 @@ export const COUPLES_DECKS: CouplesDeck[] = [
     fullDescription: 'For late-night FaceTime calls or pillow talk. Weird hypothetical dilemmas, aesthetic vibes, and vulnerability.',
     category: 'gen-z',
     intimacyLevel: 'Deep',
-    promptCount: 80,
+    promptCount: 20,
     badge: 'Night Owl 🌙',
     samplePrompts: [
       'If we survived an apocalypse together, what role would each of us play?',
@@ -201,7 +201,7 @@ export const COUPLES_DECKS: CouplesDeck[] = [
     fullDescription: 'Take turns storytelling the chapters of your love story! Revisit how you met, your favorite date, and funniest couple lore.',
     category: 'romantic-stories',
     intimacyLevel: 'Medium',
-    promptCount: 90,
+    promptCount: 20,
     badge: 'Love Lore 📖',
     samplePrompts: [
       'Describe our very first kiss from your perspective in vivid detail.',
@@ -234,7 +234,7 @@ export const COUPLES_DECKS: CouplesDeck[] = [
     fullDescription: 'Uncover the romantic thoughts your partner had before you were official. Heartwarming and tender bonding prompts.',
     category: 'romantic-stories',
     intimacyLevel: 'Deep',
-    promptCount: 85,
+    promptCount: 20,
     badge: 'Heartfelt 💕',
     samplePrompts: [
       'What was a secret thought you had about me before we started dating?',
@@ -267,7 +267,7 @@ export const COUPLES_DECKS: CouplesDeck[] = [
     fullDescription: 'Stay connected across timezones with synchronized room draws and shared prompts.',
     category: 'long-distance',
     intimacyLevel: 'Medium',
-    promptCount: 65,
+    promptCount: 20,
     badge: 'Remote Sync',
     samplePrompts: [
       'What is the first thing we are doing when we reunite at the airport?',
@@ -300,7 +300,7 @@ export const COUPLES_DECKS: CouplesDeck[] = [
     fullDescription: 'Reflect on shared achievements, parenting goals, and marital partnership.',
     category: 'marriage',
     intimacyLevel: 'Deep',
-    promptCount: 80,
+    promptCount: 20,
     badge: 'Marriage',
     samplePrompts: [
       'What is our proudest shared milestone from the past 5 years?',
@@ -333,7 +333,7 @@ export const COUPLES_DECKS: CouplesDeck[] = [
     fullDescription: 'Get to know your new partner comfortably without awkward pressure.',
     category: 'new-couples',
     intimacyLevel: 'Mild',
-    promptCount: 60,
+    promptCount: 20,
     badge: 'Early Dating',
     samplePrompts: [
       'What is your ultimate guilty pleasure TV show or movie?',
@@ -366,7 +366,7 @@ export const COUPLES_DECKS: CouplesDeck[] = [
     fullDescription: 'Keep conversation flowing effortlessly over dinner, drinks, or coffee.',
     category: 'date-night',
     intimacyLevel: 'Medium',
-    promptCount: 70,
+    promptCount: 20,
     badge: 'Dinner Safe',
     samplePrompts: [
       'What is the best meal we have ever cooked or ordered together?',
@@ -399,7 +399,7 @@ export const COUPLES_DECKS: CouplesDeck[] = [
     fullDescription: 'Designed for couples looking to explore physical intimacy, fantasies, and playful bedroom banter.',
     category: 'spicy-teasers',
     intimacyLevel: 'Spicy',
-    promptCount: 100,
+    promptCount: 20,
     badge: 'Spicy 18+ 🔥',
     samplePrompts: [
       'Where is your favorite place on your body to be kissed or touched gently?',
@@ -432,7 +432,7 @@ export const COUPLES_DECKS: CouplesDeck[] = [
     fullDescription: 'Assess how compatible your long-term goals are in a fun, non-judgmental card game format.',
     category: 'compatibility',
     intimacyLevel: 'Deep',
-    promptCount: 75,
+    promptCount: 20,
     badge: 'Life Goals 🎯',
     samplePrompts: [
       'What does our ideal dream home look like 10 years from now?',
