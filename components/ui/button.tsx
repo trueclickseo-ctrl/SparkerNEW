@@ -13,17 +13,17 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variants = {
       default:
-        'bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-500 shadow-md shadow-emerald-600/20 dark:bg-emerald-600 dark:hover:bg-emerald-500',
+        'bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-700 hover:to-indigo-700 focus:ring-purple-500 shadow-md shadow-purple-500/25 border border-purple-400/30',
       play:
-        'bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-500 shadow-md shadow-indigo-600/20 dark:bg-indigo-600 dark:hover:bg-indigo-500',
+        'bg-gradient-to-r from-indigo-600 to-violet-600 text-white hover:from-indigo-700 hover:to-violet-700 focus:ring-indigo-500 shadow-md shadow-indigo-500/25 border border-indigo-400/30',
       couples:
-        'bg-rose-600 text-white hover:bg-rose-700 focus:ring-rose-500 shadow-md shadow-rose-600/20 dark:bg-rose-600 dark:hover:bg-rose-500',
+        'bg-gradient-to-r from-pink-500 to-rose-600 text-white hover:from-pink-600 hover:to-rose-700 focus:ring-rose-500 shadow-md shadow-rose-500/25 border border-pink-400/30',
       outline:
-        'border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 focus:ring-emerald-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800',
+        'border-2 border-purple-200 bg-white/90 text-purple-950 hover:bg-purple-50 hover:border-purple-300 focus:ring-purple-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800 shadow-xs',
       ghost:
-        'text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 focus:ring-emerald-500',
+        'text-purple-900 hover:bg-purple-100/60 dark:text-slate-300 dark:hover:bg-slate-800 focus:ring-purple-500 font-bold',
       link:
-        'text-emerald-700 dark:text-emerald-400 underline-offset-4 hover:underline p-0 focus:ring-0',
+        'text-purple-700 dark:text-purple-400 underline-offset-4 hover:underline p-0 focus:ring-0 font-bold',
     };
 
     const sizes = {

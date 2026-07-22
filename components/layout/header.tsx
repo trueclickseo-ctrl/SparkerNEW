@@ -22,15 +22,15 @@ export function Header({ locale }: { locale: Locale }) {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-md bg-white/85 dark:bg-slate-900/85 border-b border-emerald-100 dark:border-slate-800 transition-colors">
+    <header className="sticky top-0 z-40 backdrop-blur-lg bg-white/90 dark:bg-slate-900/90 border-b-2 border-purple-200/80 dark:border-purple-900/50 transition-colors shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href={`/${locale}`} className="flex items-center space-x-3 rtl:space-x-reverse group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
-            <Sparkles className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-purple-600 via-pink-500 to-amber-400 text-white flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+            <Sparkles className="w-5 h-5 animate-pulse-subtle" />
           </div>
-          <span className="font-heading font-bold text-xl tracking-tight text-emerald-950 dark:text-emerald-400">
-            Sparkers<span className="text-amber-500">.games</span>
+          <span className="font-heading font-extrabold text-xl tracking-tight text-purple-950 dark:text-purple-300">
+            Sparkers<span className="text-amber-500 font-black">.games</span>
           </span>
         </Link>
 

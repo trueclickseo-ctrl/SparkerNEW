@@ -2,60 +2,60 @@
 
 @layer base {
   :root {
-    /* ========================================
-       FUNKY GAME THEME — Vivid, Energetic, Fun
-       ======================================== */
-    --background: 265 40% 97%;        /* Very light lavender-white */
-    --foreground: 265 50% 10%;        /* Deep violet-black text */
+    /* ========================================================
+       FUNKY LIGHT GAME THEME — Vivid Pastel Pop, High Energy & Fun
+       ======================================================== */
+    --background: 260 80% 96%;         /* Soft lavender-violet light background */
+    --foreground: 260 60% 15%;         /* Rich deep purple text for crisp contrast */
     --card: 0 0% 100%;
-    --card-foreground: 265 50% 10%;
-    --primary: 265 84% 54%;           /* Vibrant violet-purple */
+    --card-foreground: 260 60% 15%;
+    --primary: 270 95% 60%;            /* Vibrant Pop Purple */
     --primary-foreground: 0 0% 100%;
-    --secondary: 330 90% 95%;         /* Hot pink tint */
-    --secondary-foreground: 330 70% 30%;
-    --accent: 35 100% 55%;            /* Punchy orange-amber */
-    --accent-foreground: 35 100% 15%;
-    --muted: 265 20% 93%;
-    --muted-foreground: 265 15% 45%;
-    --border: 265 25% 85%;
-    --radius: 1rem;
+    --secondary: 330 100% 94%;         /* Playful Candy Pink */
+    --secondary-foreground: 330 80% 35%;
+    --accent: 38 100% 55%;             /* Bright Sunburst Amber/Orange */
+    --accent-foreground: 38 100% 15%;
+    --muted: 260 40% 92%;
+    --muted-foreground: 260 20% 45%;
+    --border: 260 50% 86%;
+    --radius: 1.25rem;
 
-    /* Funky gradient background overlay */
-    --bg-gradient: linear-gradient(135deg, #f5f3ff 0%, #fdf2f8 40%, #fff7ed 100%);
+    /* Funky Light Gradient Background — Lavender to Soft Pink to Warm Sunshine */
+    --bg-gradient: linear-gradient(135deg, #f3e8ff 0%, #fce7f3 35%, #fff7ed 70%, #ecfeff 100%);
 
-    /* Play Theme — Electric Indigo/Violet */
-    --play-primary: 250 84% 54%;
-    --play-secondary: 260 90% 95%;
-    --play-accent: 250 84% 96%;
+    /* Play Theme — Electric Indigo & Violet */
+    --play-primary: 245 90% 62%;
+    --play-secondary: 245 100% 95%;
+    --play-accent: 245 100% 90%;
 
-    /* Couples Theme — Hot Rose/Fuchsia */
-    --couples-primary: 330 82% 52%;
-    --couples-secondary: 330 90% 96%;
-    --couples-accent: 330 85% 97%;
+    /* Couples Theme — Vibrant Hot Pink & Coral */
+    --couples-primary: 335 90% 58%;
+    --couples-secondary: 335 100% 94%;
+    --couples-accent: 335 100% 88%;
   }
 
   .dark {
-    --background: 265 30% 8%;
-    --foreground: 265 20% 96%;
-    --card: 265 30% 12%;
-    --card-foreground: 265 20% 96%;
-    --primary: 265 75% 65%;
-    --primary-foreground: 265 30% 8%;
-    --secondary: 330 40% 18%;
-    --secondary-foreground: 330 80% 85%;
-    --accent: 35 90% 55%;
-    --accent-foreground: 35 100% 10%;
-    --muted: 265 20% 18%;
-    --muted-foreground: 265 15% 65%;
-    --border: 265 20% 22%;
+    --background: 260 40% 8%;
+    --foreground: 260 20% 96%;
+    --card: 260 35% 12%;
+    --card-foreground: 260 20% 96%;
+    --primary: 270 85% 68%;
+    --primary-foreground: 260 40% 8%;
+    --secondary: 330 50% 20%;
+    --secondary-foreground: 330 90% 88%;
+    --accent: 38 95% 60%;
+    --accent-foreground: 38 100% 10%;
+    --muted: 260 30% 18%;
+    --muted-foreground: 260 20% 65%;
+    --border: 260 30% 24%;
 
-    --play-primary: 250 75% 65%;
-    --play-secondary: 260 40% 20%;
-    --play-accent: 250 40% 18%;
+    --play-primary: 245 85% 68%;
+    --play-secondary: 245 40% 20%;
+    --play-accent: 245 40% 24%;
 
-    --couples-primary: 330 75% 62%;
-    --couples-secondary: 330 40% 20%;
-    --couples-accent: 330 40% 18%;
+    --couples-primary: 335 85% 65%;
+    --couples-secondary: 335 40% 20%;
+    --couples-accent: 335 40% 24%;
   }
 }
 
@@ -70,7 +70,7 @@ body {
 }
 
 /* ============================================
-   FUNKY ANIMATIONS
+   FUNKY ANIMATIONS & EFFECTS
    ============================================ */
 @keyframes pulse-subtle {
   0%, 100% { opacity: 1; transform: scale(1); }
@@ -78,13 +78,13 @@ body {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
 }
 
 @keyframes wiggle {
-  0%, 100% { transform: rotate(-2deg); }
-  50% { transform: rotate(2deg); }
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
 }
 
 @keyframes shimmer {
@@ -114,39 +114,43 @@ body {
 }
 
 /* ============================================
-   FUNKY CARD GLOW EFFECTS
+   FUNKY CARD GLOW EFFECTS (LIGHT THEME ENHANCED)
    ============================================ */
 .card-glow-purple {
-  box-shadow: 0 0 30px rgba(139, 92, 246, 0.15), 0 4px 20px rgba(0,0,0,0.06);
+  box-shadow: 0 10px 30px -5px rgba(168, 85, 247, 0.25), 0 4px 12px rgba(147, 51, 234, 0.1);
 }
 
 .card-glow-pink {
-  box-shadow: 0 0 30px rgba(244, 63, 94, 0.15), 0 4px 20px rgba(0,0,0,0.06);
+  box-shadow: 0 10px 30px -5px rgba(236, 72, 153, 0.25), 0 4px 12px rgba(219, 39, 119, 0.1);
 }
 
 .card-glow-amber {
-  box-shadow: 0 0 30px rgba(245, 158, 11, 0.15), 0 4px 20px rgba(0,0,0,0.06);
+  box-shadow: 0 10px 30px -5px rgba(245, 158, 11, 0.25), 0 4px 12px rgba(217, 119, 6, 0.1);
+}
+
+.funky-shadow {
+  box-shadow: 0 12px 32px -8px rgba(124, 58, 237, 0.18), 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 /* ============================================
-   FUNKY GRADIENT TEXT
+   FUNKY GRADIENT TEXT & BUTTONS
    ============================================ */
 .text-gradient-funky {
-  background: linear-gradient(135deg, #7c3aed, #ec4899, #f59e0b);
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f59e0b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-play {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-couples {
-  background: linear-gradient(135deg, #db2777, #e11d48);
+  background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -156,7 +160,7 @@ body {
    FUNKY BADGE SHIMMER
    ============================================ */
 .badge-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
 }
