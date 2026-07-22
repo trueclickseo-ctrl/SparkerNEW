@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { Badge } from '@/components/ui/badge';
-import { Mail, Sparkles, Send, CheckCircle2, HeartHandshake, ShieldCheck, MessageSquarePlus } from 'lucide-react';
+import { Mail, Sparkles, Send, CheckCircle2, HeartHandshake, ShieldCheck, MessageSquarePlus, ExternalLink } from 'lucide-react';
 
 export default function ContactPage({
   params,
@@ -21,22 +21,21 @@ export default function ContactPage({
     message: '',
   });
 
+  const targetEmail = 'trueclickseo@gmail.com';
+  const mailtoSubject = encodeURIComponent(
+    formData.subject
+      ? `Message from Sparkers Games - ${formData.subject}`
+      : 'Message from Sparkers Games'
+  );
+  const mailtoBody = encodeURIComponent(
+    `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+  );
+  const mailtoUrl = `mailto:${targetEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Construct mailto link targetting trueclickseo@gmail.com with custom subject
-    const targetEmail = 'trueclickseo@gmail.com';
-    const emailSubject = encodeURIComponent(
-      formData.subject
-        ? `Message from Sparkers Games - ${formData.subject}`
-        : 'Message from Sparkers Games'
-    );
-    const emailBody = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-
-    // Open default mail client directly
-    window.location.href = `mailto:${targetEmail}?subject=${emailSubject}&body=${emailBody}`;
+    // Trigger direct email opening
+    window.location.href = mailtoUrl;
     setSubmitted(true);
   };
 
@@ -58,12 +57,12 @@ export default function ContactPage({
             Contact &amp; Feedback Hub
           </h1>
           <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-            Have an idea for a custom card deck, partnership, or suggestion for Sparkers Games? We read every single message!
+            Have an idea for a custom card deck, partnership, or suggestion for Sparkers Games? Send a direct email to <strong>trueclickseo@gmail.com</strong>!
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Fun & Interesting Info Cards (No Dummy Emails) */}
+          {/* Info Side Column */}
           <div className="space-y-4 md:col-span-1">
             <div className="p-5 rounded-2xl bg-gradient-to-tr from-amber-50 to-orange-50 dark:from-slate-900 dark:to-slate-800 border border-amber-200/80 dark:border-amber-900/50 space-y-2.5">
               <div className="flex items-center gap-2 text-amber-700 dark:text-amber-400 font-bold text-sm">
@@ -85,19 +84,25 @@ export default function ContactPage({
 
             <div className="p-5 rounded-2xl bg-gradient-to-tr from-emerald-50 to-teal-50 dark:from-slate-900 dark:to-slate-800 border border-emerald-200/80 dark:border-emerald-900/50 space-y-2.5">
               <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-bold text-sm">
-                <ShieldCheck className="w-4 h-4" /> 100% Direct Delivery
+                <Mail className="w-4 h-4" /> Direct Contact Email
               </div>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                Your message is dispatched straight to our core team at <strong>trueclickseo@gmail.com</strong>.
+              <p className="text-xs font-semibold text-slate-800 dark:text-slate-200 select-all">
+                trueclickseo@gmail.com
               </p>
+              <a
+                href={`mailto:${targetEmail}?subject=Message%20from%20Sparkers%20Games`}
+                className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-400 hover:underline"
+              >
+                <span>Click to Email Directly</span> <ExternalLink className="w-3 h-3" />
+              </a>
             </div>
           </div>
 
-          {/* Interactive Contact Form */}
+          {/* Interactive Form & Action Box */}
           <div className="md:col-span-2 p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-6">
             <div className="space-y-1">
-              <h2 className="text-xl font-heading font-bold text-slate-900 dark:text-white">Send Us a Direct Message</h2>
-              <p className="text-xs text-slate-500 dark:text-slate-400">Fill in the details below and hit send!</p>
+              <h2 className="text-xl font-heading font-bold text-slate-900 dark:text-white">Send Us a Direct Email</h2>
+              <p className="text-xs text-slate-500 dark:text-slate-400">Fill in your details below to compose and send your email to <strong>trueclickseo@gmail.com</strong>.</p>
             </div>
 
             {submitted ? (
@@ -106,17 +111,25 @@ export default function ContactPage({
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
                 <h3 className="font-heading font-bold text-lg text-emerald-950 dark:text-emerald-200">
-                  Message Dispatched!
+                  Email Prepared!
                 </h3>
                 <p className="text-xs text-emerald-800 dark:text-emerald-300 max-w-md mx-auto leading-relaxed">
-                  Your email client has opened with your message pre-filled to <strong>trueclickseo@gmail.com</strong> with the subject <em>&quot;Message from Sparkers Games&quot;</em>.
+                  If your email app didn&apos;t automatically launch, click the button below to open Gmail or your mail app directly:
                 </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="mt-2 text-xs font-bold text-emerald-700 dark:text-emerald-400 underline cursor-pointer"
-                >
-                  Send another message
-                </button>
+                <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <a
+                    href={mailtoUrl}
+                    className="py-2.5 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center gap-1.5 transition-colors"
+                  >
+                    <Mail className="w-4 h-4" /> Open Email Client Now
+                  </a>
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="text-xs text-slate-600 dark:text-slate-400 hover:underline"
+                  >
+                    Edit Form
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -133,7 +146,7 @@ export default function ContactPage({
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Email Address</label>
+                    <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Your Email Address</label>
                     <input
                       type="email"
                       placeholder="alex@example.com"
@@ -173,7 +186,7 @@ export default function ContactPage({
                   type="submit"
                   className="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer"
                 >
-                  <Send className="w-4 h-4" /> Send Message to trueclickseo@gmail.com
+                  <Send className="w-4 h-4" /> Send Email to trueclickseo@gmail.com
                 </button>
               </form>
             )}
