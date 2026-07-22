@@ -5,19 +5,17 @@ import { Locale } from '@/lib/i18n/config';
 export function Footer({ locale }: { locale: Locale }) {
   return (
     <footer className="bg-white dark:bg-slate-900 border-t border-emerald-100 dark:border-slate-800 py-12 px-4 sm:px-6 lg:px-8 transition-colors">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8">
         {/* Brand Column */}
-        <div className="lg:col-span-2 space-y-4">
-          <div className="flex items-center space-x-3 rtl:space-x-reverse">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center shadow-md">
-              <Sparkles className="w-4 h-4" />
-            </div>
+        <div className="space-y-4">
+          <div className="flex items-center gap-2">
+            <span className="text-xl">✨</span>
             <span className="font-heading font-bold text-lg text-emerald-950 dark:text-emerald-400">
               Sparkers<span className="text-amber-500">.games</span>
             </span>
           </div>
           <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed max-w-sm">
-            Sparkers Games is an interactive multi-lingual game platform engineered for couples, party hosts, friends, and teams to build deep connections.
+            Sparkers Games is an interactive multi-lingual game platform engineered for couples, party hosts, students, educators, and teams to build deep connections.
           </p>
           <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 pt-2">
             <Link
@@ -43,31 +41,32 @@ export function Footer({ locale }: { locale: Locale }) {
           </ul>
         </div>
 
-        {/* Silo Column 2: Couples Hub */}
+        {/* Silo Column 2: Educational & Brain Gym */}
+        <div className="space-y-3">
+          <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-amber-700 dark:text-amber-400">
+            Education &amp; Brainstorming
+          </h4>
+          <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
+            <li><Link href={`/${locale}/educational/classroom-icebreakers`} className="hover:text-amber-600 font-medium">🎓 Student Icebreakers (25 Cards)</Link></li>
+            <li><Link href={`/${locale}/educational/teacher-reflections`} className="hover:text-amber-600 font-medium">🍎 Teacher Reflections (25 Cards)</Link></li>
+            <li><Link href={`/${locale}/educational/student-debates`} className="hover:text-amber-600 font-medium">🗣️ University Debates (25 Cards)</Link></li>
+            <li><Link href={`/${locale}/educational/brain-exercise`} className="hover:text-amber-600 font-medium">🧠 Brain Exercise Gym (25 Cards)</Link></li>
+            <li><Link href={`/${locale}/educational/college-study-breaks`} className="hover:text-amber-600 font-medium">☕ College Study Breaks (25 Cards)</Link></li>
+          </ul>
+        </div>
+
+        {/* Silo Column 3: Couples Hub & Resources */}
         <div className="space-y-3">
           <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-slate-900 dark:text-white">
-            Couples Hub
+            Couples &amp; Resources
           </h4>
           <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
             <li><Link href={`/${locale}/couples/romantic`} className="hover:text-rose-600">Romantic Decks</Link></li>
             <li><Link href={`/${locale}/couples/flirty-sparks`} className="hover:text-rose-600">Flirty Questions</Link></li>
             <li><Link href={`/${locale}/couples/long-distance-connect`} className="hover:text-rose-600">Long Distance Mode</Link></li>
-            <li><Link href={`/${locale}/couples/date-night-sparks`} className="hover:text-rose-600">Date Night Starters</Link></li>
-            <li><Link href={`/${locale}/quizzes/love-language`} className="hover:text-rose-600">Love Language Quiz</Link></li>
-          </ul>
-        </div>
-
-        {/* Silo Column 3: Encyclopedia & Legal */}
-        <div className="space-y-3">
-          <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-slate-900 dark:text-white">
-            Resources & Legal
-          </h4>
-          <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
             <li><Link href={`/${locale}/encyclopedia`} className="hover:text-emerald-600">Game Encyclopedia</Link></li>
             <li><Link href={`/${locale}/blog`} className="hover:text-emerald-600">Sparkers Blog</Link></li>
-
             <li><Link href="/rss.xml" className="hover:text-emerald-600 flex items-center gap-1"><Rss className="w-3.5 h-3.5" /> RSS Feed</Link></li>
-            <li><Link href={`/${locale}/privacy`} className="hover:text-emerald-600 flex items-center gap-1"><Shield className="w-3.5 h-3.5" /> Privacy Policy</Link></li>
           </ul>
         </div>
       </div>
