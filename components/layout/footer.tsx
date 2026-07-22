@@ -26,8 +26,6 @@ export function Footer({ locale }: { locale: Locale }) {
             >
               <Gamepad2 className="w-3.5 h-3.5" /> 107+ Categories &amp; Decks
             </Link>
-            <span>•</span>
-            <span className="flex items-center gap-1"><Heart className="w-3.5 h-3.5 text-rose-500" /> 27 Locales</span>
           </div>
         </div>
 

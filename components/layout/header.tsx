@@ -63,7 +63,7 @@ export function Header({ locale }: { locale: Locale }) {
           </Link>
         </nav>
 
-        {/* Desktop Controls (Search, Locale, Theme) */}
+        {/* Desktop Controls (Search, Theme) */}
         <div className="hidden lg:flex items-center space-x-3 rtl:space-x-reverse">
           <button
             onClick={() => setIsSearchOpen(true)}
@@ -73,7 +73,6 @@ export function Header({ locale }: { locale: Locale }) {
             <span>Search...</span>
             <kbd className="px-1.5 py-0.5 text-[10px] bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700">⌘K</kbd>
           </button>
-          <LocaleSwitcher currentLocale={locale} />
           <ThemeToggle />
         </div>
 
