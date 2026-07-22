@@ -21,10 +21,11 @@ export function MegaMenu({ locale, onClose }: { locale: string; onClose?: () => 
       description: '89 Framework romantic & intimacy prompts',
       href: `/${locale}/couples`,
       items: [
-        { name: 'Romantic & Deep', href: `/${locale}/couples?cat=romantic` },
-        { name: 'Flirty Conversation', href: `/${locale}/couples?cat=flirty` },
-        { name: 'Long Distance Mode', href: `/${locale}/couples?cat=long-distance` },
-        { name: 'Date Night Decks', href: `/${locale}/couples?cat=date-night` },
+        { name: '🔥 Gen Z & Vibe Check', href: `/${locale}/couples?cat=gen-z` },
+        { name: '📖 Love Stories & Lore', href: `/${locale}/couples?cat=romantic-stories` },
+        { name: '💕 Romantic Decks', href: `/${locale}/couples?cat=romantic` },
+        { name: '🌶️ Spicy & After Dark', href: `/${locale}/couples?cat=spicy-teasers` },
+        { name: '🔮 Deep Intimacy', href: `/${locale}/couples?cat=deep` },
       ],
     },
     {

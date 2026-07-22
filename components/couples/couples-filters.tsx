@@ -10,14 +10,18 @@ export function CouplesFilters({
   onCategoryChange: (cat: string) => void;
 }) {
   const categories = [
-    { id: 'all', label: 'All Decks' },
-    { id: 'deep', label: 'Deep Intimacy' },
-    { id: 'romantic', label: 'Romantic' },
-    { id: 'flirty', label: 'Flirty & Spicy' },
-    { id: 'long-distance', label: 'Long Distance' },
-    { id: 'marriage', label: 'Marriage' },
-    { id: 'date-night', label: 'Date Night' },
-    { id: 'new-couples', label: 'New Couples' },
+    { id: 'all', label: '✨ All Decks' },
+    { id: 'gen-z', label: '🔥 Gen Z & Vibe Check' },
+    { id: 'romantic-stories', label: '📖 Love Stories & Lore' },
+    { id: 'romantic', label: '💕 Romantic Decks' },
+    { id: 'spicy-teasers', label: '🌶️ Spicy & After Dark' },
+    { id: 'deep', label: '🔮 Deep Intimacy' },
+    { id: 'flirty', label: '💋 Flirty Questions' },
+    { id: 'compatibility', label: '🎯 Life Goals & Vision' },
+    { id: 'long-distance', label: '✈️ Long Distance' },
+    { id: 'marriage', label: '💍 Marriage & Milestones' },
+    { id: 'date-night', label: '🥂 Date Night' },
+    { id: 'new-couples', label: '🌱 New Couples' },
   ];
 
   return (
@@ -29,10 +33,10 @@ export function CouplesFilters({
             key={cat.id}
             onClick={() => onCategoryChange(cat.id)}
             className={cn(
-              'px-3 py-1.5 text-xs font-medium rounded-full transition-all cursor-pointer',
+              'px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all cursor-pointer shadow-xs hover:scale-105',
               isActive
-                ? 'bg-rose-600 text-white shadow-md shadow-rose-600/20'
-                : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800'
+                ? 'bg-gradient-to-r from-pink-500 to-rose-600 text-white shadow-md shadow-rose-500/25 ring-2 ring-rose-400/50'
+                : 'bg-white/90 dark:bg-slate-900 text-purple-950 dark:text-purple-300 border border-purple-200/80 dark:border-slate-800 hover:bg-purple-50 dark:hover:bg-slate-800'
             )}
           >
             {cat.label}
