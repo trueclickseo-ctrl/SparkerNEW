@@ -3,7 +3,6 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { Sparkles, Search, Menu, ChevronDown } from 'lucide-react';
-import { LocaleSwitcher } from '@/components/locale-switcher';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { MegaMenu } from './mega-menu';
 import { MobileNav } from './mobile-nav';
@@ -14,6 +13,7 @@ export function Header({ locale }: { locale: Locale }) {
   const [isMegaOpen, setIsMegaOpen] = React.useState(false);
   const [isMobileOpen, setIsMobileOpen] = React.useState(false);
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
+  const headerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const handleOpenSearch = () => setIsSearchOpen(true);
@@ -21,8 +21,23 @@ export function Header({ locale }: { locale: Locale }) {
     return () => window.removeEventListener('open-search', handleOpenSearch);
   }, []);
 
+  // Close Mega Menu when clicking outside header container
+  React.useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setIsMegaOpen(false);
+      }
+    }
+    if (isMegaOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMegaOpen]);
+
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-lg bg-white/90 dark:bg-slate-900/90 border-b-2 border-purple-200/80 dark:border-purple-900/50 transition-colors shadow-sm">
+    <header ref={headerRef} className="sticky top-0 z-50 backdrop-blur-lg bg-white/95 dark:bg-slate-900/95 border-b-2 border-purple-200/80 dark:border-purple-900/50 transition-colors shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href={`/${locale}`} className="flex items-center space-x-3 rtl:space-x-reverse group shrink-0 mr-4 lg:mr-8">
@@ -43,22 +58,22 @@ export function Header({ locale }: { locale: Locale }) {
             <span>Explore All Games</span>
             <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isMegaOpen ? 'rotate-180 text-emerald-600' : ''}`} />
           </button>
-          <Link href={`/${locale}/play`} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors whitespace-nowrap">
+          <Link href={`/${locale}/play`} onClick={() => setIsMegaOpen(false)} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors whitespace-nowrap">
             Party Games
           </Link>
-          <Link href={`/${locale}/couples`} className="hover:text-rose-600 dark:hover:text-rose-400 transition-colors whitespace-nowrap">
+          <Link href={`/${locale}/couples`} onClick={() => setIsMegaOpen(false)} className="hover:text-rose-600 dark:hover:text-rose-400 transition-colors whitespace-nowrap">
             Couples Hub
           </Link>
-          <Link href={`/${locale}/truth-or-dare-questions`} className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors font-extrabold text-amber-600 dark:text-amber-400 whitespace-nowrap">
+          <Link href={`/${locale}/truth-or-dare-questions`} onClick={() => setIsMegaOpen(false)} className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors font-extrabold text-amber-600 dark:text-amber-400 whitespace-nowrap">
             🔥 555+ Truth or Dare
           </Link>
-          <Link href={`/${locale}/cards`} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-bold text-purple-700 dark:text-purple-300 whitespace-nowrap">
+          <Link href={`/${locale}/cards`} onClick={() => setIsMegaOpen(false)} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-bold text-purple-700 dark:text-purple-300 whitespace-nowrap">
             📦 Physical Cards
           </Link>
-          <Link href={`/${locale}/quizzes`} className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors whitespace-nowrap">
+          <Link href={`/${locale}/quizzes`} onClick={() => setIsMegaOpen(false)} className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors whitespace-nowrap">
             Quizzes &amp; Tools
           </Link>
-          <Link href={`/${locale}/encyclopedia`} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors whitespace-nowrap">
+          <Link href={`/${locale}/encyclopedia`} onClick={() => setIsMegaOpen(false)} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors whitespace-nowrap">
             Encyclopedia
           </Link>
         </nav>
@@ -96,15 +111,7 @@ export function Header({ locale }: { locale: Locale }) {
       </div>
 
       {/* Mega Menu Overlay */}
-      {isMegaOpen && (
-        <>
-          <div
-            className="fixed inset-0 top-16 bg-slate-950/20 backdrop-blur-[2px] z-40"
-            onClick={() => setIsMegaOpen(false)}
-          />
-          <MegaMenu locale={locale} onClose={() => setIsMegaOpen(false)} />
-        </>
-      )}
+      {isMegaOpen && <MegaMenu locale={locale} onClose={() => setIsMegaOpen(false)} />}
 
       {/* Mobile Nav Drawer */}
       <MobileNav
