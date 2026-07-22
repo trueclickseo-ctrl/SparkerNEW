@@ -66,8 +66,8 @@ export default async function CouplesDeckDetailPage({
           </p>
 
           <div className="flex items-center justify-center gap-6 p-3 rounded-xl bg-white dark:bg-slate-900 border border-rose-100 dark:border-rose-950/60 shadow-sm text-xs font-medium text-slate-600 dark:text-slate-400 max-w-md mx-auto">
-            <span className="flex items-center gap-1.5"><Heart className="w-4 h-4 text-rose-500" /> {deck.promptCount} Cards</span>
-            <span className="flex items-center gap-1.5"><Sparkles className="w-4 h-4 text-rose-500" /> 89 Games Framework</span>
+            <span className="flex items-center gap-1.5"><Heart className="w-4 h-4 text-rose-500" /> {deck.samplePrompts.length} Digital Cards</span>
+            <span className="flex items-center gap-1.5"><Sparkles className="w-4 h-4 text-rose-500" /> Interactive Deck</span>
           </div>
         </div>
 

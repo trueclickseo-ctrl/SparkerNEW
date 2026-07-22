@@ -41,7 +41,7 @@ export function CouplesGrid({
 
           <CardContent className="space-y-3">
             <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
-              <span className="flex items-center gap-1"><Heart className="w-3.5 h-3.5 text-rose-500" /> {deck.promptCount} Questions</span>
+              <span className="flex items-center gap-1"><Heart className="w-3.5 h-3.5 text-rose-500" /> {deck.samplePrompts.length} Digital Cards</span>
               <span className="flex items-center gap-1"><Flame className="w-3.5 h-3.5 text-rose-500" /> {deck.category}</span>
             </div>
 
