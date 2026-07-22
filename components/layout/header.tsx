@@ -35,7 +35,7 @@ export function Header({ locale }: { locale: Locale }) {
         </Link>
 
         {/* Desktop Navigation Link Cluster */}
-        <nav className="hidden lg:flex items-center space-x-6 rtl:space-x-reverse text-xs font-semibold text-slate-700 dark:text-slate-300">
+        <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6 rtl:space-x-reverse text-xs font-semibold text-slate-700 dark:text-slate-300">
           <button
             onClick={() => setIsMegaOpen(!isMegaOpen)}
             className="flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400 cursor-pointer transition-colors py-2"
@@ -43,28 +43,28 @@ export function Header({ locale }: { locale: Locale }) {
             <span>Explore All Games</span>
             <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isMegaOpen ? 'rotate-180 text-emerald-600' : ''}`} />
           </button>
-          <Link href={`/${locale}/play`} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+          <Link href={`/${locale}/play`} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors whitespace-nowrap">
             Party Games
           </Link>
-          <Link href={`/${locale}/couples`} className="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">
+          <Link href={`/${locale}/couples`} className="hover:text-rose-600 dark:hover:text-rose-400 transition-colors whitespace-nowrap">
             Couples Hub
           </Link>
-          <Link href={`/${locale}/truth-or-dare-questions`} className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors font-extrabold text-amber-600 dark:text-amber-400">
+          <Link href={`/${locale}/truth-or-dare-questions`} className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors font-extrabold text-amber-600 dark:text-amber-400 whitespace-nowrap">
             🔥 555+ Truth or Dare
           </Link>
-          <Link href={`/${locale}/cards`} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-bold text-purple-700 dark:text-purple-300">
+          <Link href={`/${locale}/cards`} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-bold text-purple-700 dark:text-purple-300 whitespace-nowrap">
             📦 Physical Cards
           </Link>
-          <Link href={`/${locale}/quizzes`} className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">
-            Quizzes & Tools
+          <Link href={`/${locale}/quizzes`} className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors whitespace-nowrap">
+            Quizzes &amp; Tools
           </Link>
-          <Link href={`/${locale}/encyclopedia`} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+          <Link href={`/${locale}/encyclopedia`} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors whitespace-nowrap">
             Encyclopedia
           </Link>
         </nav>
 
         {/* Desktop Controls (Search, Theme) */}
-        <div className="hidden lg:flex items-center space-x-3 rtl:space-x-reverse">
+        <div className="hidden lg:flex items-center space-x-3 xl:space-x-4 ml-6 xl:ml-10 rtl:space-x-reverse rtl:ml-0 rtl:mr-6">
           <button
             onClick={() => setIsSearchOpen(true)}
             className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs text-slate-500 dark:text-slate-400 border border-slate-200/60 dark:border-slate-700/60 hover:border-emerald-300 transition-colors cursor-pointer"
