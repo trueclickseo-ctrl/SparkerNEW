@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Sparkles, Heart, Gamepad2, Shield, Rss, FileText } from 'lucide-react';
+import { Sparkles, Heart, Gamepad2, Shield, Rss } from 'lucide-react';
 import { Locale } from '@/lib/i18n/config';
 
 export function Footer({ locale }: { locale: Locale }) {
@@ -67,16 +67,15 @@ export function Footer({ locale }: { locale: Locale }) {
           <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
             <li><Link href={`/${locale}/encyclopedia`} className="hover:text-emerald-600">Game Encyclopedia</Link></li>
             <li><Link href={`/${locale}/blog`} className="hover:text-emerald-600">Sparkers Blog</Link></li>
-            <li><Link href="/llms.txt" className="hover:text-emerald-600 flex items-center gap-1"><FileText className="w-3.5 h-3.5" /> llms.txt</Link></li>
+
             <li><Link href="/rss.xml" className="hover:text-emerald-600 flex items-center gap-1"><Rss className="w-3.5 h-3.5" /> RSS Feed</Link></li>
             <li><Link href={`/${locale}/privacy`} className="hover:text-emerald-600 flex items-center gap-1"><Shield className="w-3.5 h-3.5" /> Privacy Policy</Link></li>
           </ul>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
-        <p>© {new Date().getFullYear()} Sparkers Games. All global content rights reserved.</p>
-        <p className="text-[11px]">Designed for high-performance internationalization & AEO/GEO indexing.</p>
+      <div className="max-w-7xl mx-auto pt-6 border-t border-slate-100 dark:border-slate-800 flex justify-center items-center text-xs text-slate-500 dark:text-slate-400">
+        <p>© {new Date().getFullYear()} Sparkers Games. All rights reserved.</p>
       </div>
     </footer>
   );

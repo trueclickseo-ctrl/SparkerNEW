@@ -124,17 +124,26 @@ export default function GamesDirectoryPage({ params }: { params: Promise<{ local
             Every game, party deck, intimacy card, and quiz in the Sparkers universe — pick one and play instantly.
           </p>
 
-          {/* Stats Bar */}
+          {/* Stats Bar — clickable filters */}
           <div className="flex flex-wrap justify-center gap-4 pt-2">
-            {[
-              { icon: '🎯', label: `${ALL.length}+ Games & Decks`, color: 'bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-300' },
-              { icon: '🎪', label: `${allPlayGames.length + EXTRA_GAMES.filter(e => e.type === 'play').length}+ Party Games`, color: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300' },
-              { icon: '💑', label: `${allCouplesGames.length + EXTRA_GAMES.filter(e => e.type === 'couples').length}+ Couples Decks`, color: 'bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300' },
-            ].map(s => (
-              <span key={s.label} className={`px-4 py-1.5 rounded-full text-xs font-bold ${s.color}`}>
-                {s.icon} {s.label}
-              </span>
-            ))}
+            <button
+              onClick={() => setFilter('all')}
+              className={`px-4 py-1.5 rounded-full text-xs font-bold cursor-pointer transition-all hover:scale-105 ${filter === 'all' ? 'bg-violet-600 text-white shadow-md shadow-violet-200' : 'bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-300 hover:bg-violet-200'}`}
+            >
+              🎯 {ALL.length}+ Games &amp; Decks
+            </button>
+            <button
+              onClick={() => setFilter('play')}
+              className={`px-4 py-1.5 rounded-full text-xs font-bold cursor-pointer transition-all hover:scale-105 ${filter === 'play' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200' : 'bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 hover:bg-indigo-200'}`}
+            >
+              🎪 {allPlayGames.length + EXTRA_GAMES.filter(e => e.type === 'play').length}+ Party Games
+            </button>
+            <button
+              onClick={() => setFilter('couples')}
+              className={`px-4 py-1.5 rounded-full text-xs font-bold cursor-pointer transition-all hover:scale-105 ${filter === 'couples' ? 'bg-rose-600 text-white shadow-md shadow-rose-200' : 'bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 hover:bg-rose-200'}`}
+            >
+              💑 {allCouplesGames.length + EXTRA_GAMES.filter(e => e.type === 'couples').length}+ Couples Decks
+            </button>
           </div>
         </div>
 
