@@ -78,7 +78,7 @@ export function Header({ locale }: { locale: Locale }) {
           </Link>
         </nav>
 
-        {/* Desktop Controls (Search, Theme) */}
+        {/* Desktop Controls (Search) */}
         <div className="hidden lg:flex items-center space-x-3 xl:space-x-4 ml-6 xl:ml-10 rtl:space-x-reverse rtl:ml-0 rtl:mr-6">
           <button
             onClick={() => setIsSearchOpen(true)}
@@ -88,7 +88,6 @@ export function Header({ locale }: { locale: Locale }) {
             <span>Search...</span>
             <kbd className="px-1.5 py-0.5 text-[10px] bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700">⌘K</kbd>
           </button>
-          <ThemeToggle />
         </div>
 
         {/* Mobile Control Trigger */}
