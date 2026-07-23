@@ -51,7 +51,7 @@ export default function TruthOrDareMasterPage({
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Breadcrumbs
         items={[
           { name: 'Home', url: `/${locale}` },
@@ -60,7 +60,7 @@ export default function TruthOrDareMasterPage({
         ]}
       />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-12">
+      
         {/* Hero Banner */}
         <div className="text-center space-y-4 max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-950/60 text-orange-800 dark:text-orange-300 text-xs font-black uppercase tracking-wider shadow-xs">
@@ -325,7 +325,7 @@ export default function TruthOrDareMasterPage({
             </Link>
           </div>
         </div>
-      </main>
-    </div>
+      
+    </>
   );
 }

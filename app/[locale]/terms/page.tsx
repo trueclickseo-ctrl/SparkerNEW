@@ -12,7 +12,7 @@ export default async function TermsOfServicePage({
   const locale = resolvedParams.locale;
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Breadcrumbs
         items={[
           { name: 'Home', url: `/${locale}` },
@@ -20,7 +20,7 @@ export default async function TermsOfServicePage({
         ]}
       />
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-10">
+      
         <div className="text-center space-y-4">
           <Badge variant="couples" className="px-3 py-1 text-xs">
             <Scale className="w-3.5 h-3.5 mr-1" /> Legal Terms &amp; Usage
@@ -68,7 +68,7 @@ export default async function TermsOfServicePage({
             </p>
           </section>
         </div>
-      </main>
-    </div>
+      
+    </>
   );
 }

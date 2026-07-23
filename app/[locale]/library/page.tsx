@@ -32,7 +32,7 @@ export default function LibraryPage({
   });
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Breadcrumbs
         items={[
           { name: 'Home', url: `/${locale}` },
@@ -40,7 +40,7 @@ export default function LibraryPage({
         ]}
       />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-8">
+      
         {/* Header */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 text-xs font-semibold">
@@ -124,7 +124,7 @@ export default function LibraryPage({
             </Card>
           ))}
         </div>
-      </main>
-    </div>
+      
+    </>
   );
 }

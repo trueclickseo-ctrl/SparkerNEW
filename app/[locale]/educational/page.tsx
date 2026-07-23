@@ -15,7 +15,7 @@ export default async function EducationalDirectoryPage({
   const locale = resolvedParams.locale;
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Breadcrumbs
         items={[
           { name: 'Home', url: `/${locale}` },
@@ -23,7 +23,7 @@ export default async function EducationalDirectoryPage({
         ]}
       />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-10">
+      
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <Badge variant="amber" className="px-3 py-1 text-xs">
             <GraduationCap className="w-3.5 h-3.5 mr-1" /> Educational & Brainstorming Hub
@@ -67,7 +67,7 @@ export default async function EducationalDirectoryPage({
             </Card>
           ))}
         </div>
-      </main>
-    </div>
+      
+    </>
   );
 }

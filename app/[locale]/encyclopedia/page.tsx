@@ -18,7 +18,7 @@ export default function EncyclopediaHubPage({
   const locale = resolvedParams.locale;
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Breadcrumbs
         items={[
           { name: 'Home', url: `/${locale}` },
@@ -26,7 +26,7 @@ export default function EncyclopediaHubPage({
         ]}
       />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-8">
+      
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <Badge variant="default" className="px-3 py-1">
             <BookOpen className="w-3.5 h-3.5" /> Official Game Guides & Etymology
@@ -57,7 +57,7 @@ export default function EncyclopediaHubPage({
             </Card>
           ))}
         </div>
-      </main>
-    </div>
+      
+    </>
   );
 }

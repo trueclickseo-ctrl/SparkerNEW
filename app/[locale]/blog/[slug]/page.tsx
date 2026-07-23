@@ -43,7 +43,7 @@ export default async function BlogPostDetailPage({
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -57,7 +57,7 @@ export default async function BlogPostDetailPage({
         ]}
       />
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-8">
+      
         <Link href={`/${resolvedParams.locale}/blog`}>
           <Button variant="outline" size="sm">
             <ArrowLeft className="w-4 h-4" /> Back to Blog
@@ -93,7 +93,7 @@ export default async function BlogPostDetailPage({
             </Badge>
           ))}
         </div>
-      </main>
-    </div>
+      
+    </>
   );
 }

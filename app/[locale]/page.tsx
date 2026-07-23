@@ -9,6 +9,8 @@ import { FAQSection } from '@/components/home/faq-section';
 import { getDictionary } from '@/lib/i18n/dictionaries';
 import { Locale } from '@/lib/i18n/config';
 
+// The [locale]/layout.tsx already wraps this in <Header>, <main>, and <Footer>.
+// This page only provides the page content — no extra wrapper needed.
 export default async function LocalizedHomePage({
   params,
 }: {
@@ -19,17 +21,15 @@ export default async function LocalizedHomePage({
   const dict = getDictionary(locale);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Breadcrumbs items={[{ name: 'Home', url: `/${locale}` }]} />
-      <main className="flex-grow">
-        <Hero locale={locale} dict={dict} />
-        <AudienceSelector locale={locale} />
-        <FeaturedGames locale={locale} />
-        <FeaturedQuizzes locale={locale} />
-        <Testimonials />
-        <Newsletter />
-        <FAQSection />
-      </main>
-    </div>
+      <Hero locale={locale} dict={dict} />
+      <AudienceSelector locale={locale} />
+      <FeaturedGames locale={locale} />
+      <FeaturedQuizzes locale={locale} />
+      <Testimonials />
+      <Newsletter />
+      <FAQSection />
+    </>
   );
 }

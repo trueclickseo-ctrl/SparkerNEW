@@ -37,7 +37,7 @@ export default function CardsPage({
   });
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Breadcrumbs
         items={[
           { name: 'Home', url: `/${locale}` },
@@ -45,7 +45,7 @@ export default function CardsPage({
         ]}
       />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-10">
+      
         {/* Header */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 text-xs font-extrabold shadow-xs">
@@ -186,7 +186,7 @@ export default function CardsPage({
             </div>
           ))}
         </div>
-      </main>
+      
 
       {/* Modal for "View Cards Inside" Preview */}
       {selectedDeck && (
@@ -235,6 +235,6 @@ export default function CardsPage({
           </div>
         </Modal>
       )}
-    </div>
+    </>
   );
 }

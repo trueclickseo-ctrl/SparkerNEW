@@ -41,7 +41,7 @@ export default function WheelSpinnerPage({
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Breadcrumbs
         items={[
           { name: 'Home', url: `/${locale}` },
@@ -50,7 +50,7 @@ export default function WheelSpinnerPage({
         ]}
       />
 
-      <main className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-8">
+      
         <div className="text-center space-y-3">
           <Badge variant="play" className="px-3 py-1">
             <Dices className="w-3.5 h-3.5" /> HTML5 Decision Wheel
@@ -87,7 +87,7 @@ export default function WheelSpinnerPage({
             🎉 Result: &quot;{selectedWinner}&quot;
           </div>
         )}
-      </main>
-    </div>
+      
+    </>
   );
 }

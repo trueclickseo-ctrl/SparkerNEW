@@ -1,3 +1,6 @@
+import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
+import { CookieBanner } from '@/components/ui/cookie-banner';
 import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { Hero } from '@/components/home/hero';
 import { AudienceSelector } from '@/components/home/audience-selector';
@@ -8,11 +11,14 @@ import { Newsletter } from '@/components/home/newsletter';
 import { FAQSection } from '@/components/home/faq-section';
 import { getDictionary } from '@/lib/i18n/dictionaries';
 
+// Root page: outside [locale] layout so we include Header/Footer directly.
+// This page serves the "/" path (Hostinger static export root).
 export default function Home() {
   const dict = getDictionary('en');
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
+      <Header locale="en" />
       <Breadcrumbs items={[{ name: 'Home', url: '/en' }]} />
       <main className="flex-grow">
         <Hero locale="en" dict={dict} />
@@ -23,6 +29,8 @@ export default function Home() {
         <Newsletter />
         <FAQSection />
       </main>
-    </div>
+      <Footer locale="en" />
+      <CookieBanner />
+    </>
   );
 }

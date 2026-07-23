@@ -35,7 +35,7 @@ export default async function EducationalDeckDetailPage({
   });
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(gameSchema) }}
@@ -49,7 +49,7 @@ export default async function EducationalDeckDetailPage({
         ]}
       />
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-10">
+      
         {/* Header Metadata */}
         <div className="space-y-4 text-center">
           <div className="flex items-center justify-center gap-2">
@@ -82,7 +82,7 @@ export default async function EducationalDeckDetailPage({
         <Alert variant="info" title="Classroom & Workshop Ready">
           Use these digital cards on interactive smartboards, projector screens, or mobile devices during lectures, student orientations, or faculty workshops.
         </Alert>
-      </main>
-    </div>
+      
+    </>
   );
 }

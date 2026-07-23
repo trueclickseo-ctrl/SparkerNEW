@@ -54,7 +54,7 @@ export default function CoupleNameGeneratorPage({
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Breadcrumbs
         items={[
           { name: 'Home', url: `/${locale}` },
@@ -63,7 +63,7 @@ export default function CoupleNameGeneratorPage({
         ]}
       />
 
-      <main className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-8">
+      
         <div className="text-center space-y-3">
           <Badge variant="amber" className="px-3 py-1">
             <Sliders className="w-3.5 h-3.5" /> Couple Nickname Utility
@@ -130,7 +130,7 @@ export default function CoupleNameGeneratorPage({
             </CardContent>
           </Card>
         )}
-      </main>
-    </div>
+      
+    </>
   );
 }

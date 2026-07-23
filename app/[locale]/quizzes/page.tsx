@@ -50,7 +50,7 @@ export default function QuizzesHubPage({
   ];
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Breadcrumbs
         items={[
           { name: 'Home', url: `/${locale}` },
@@ -58,7 +58,7 @@ export default function QuizzesHubPage({
         ]}
       />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-8">
+      
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <Badge variant="amber" className="px-3 py-1">
             <Sparkles className="w-3.5 h-3.5" /> Interactive Tools & Assessments
@@ -98,7 +98,7 @@ export default function QuizzesHubPage({
             </Card>
           ))}
         </div>
-      </main>
-    </div>
+      
+    </>
   );
 }

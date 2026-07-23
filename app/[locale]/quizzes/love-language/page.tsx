@@ -152,7 +152,7 @@ export default function LoveLanguageQuizPage({
   const results = calculateResults();
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Breadcrumbs
         items={[
           { name: 'Home', url: `/${locale}` },
@@ -161,7 +161,7 @@ export default function LoveLanguageQuizPage({
         ]}
       />
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-8">
+      
         <div className="text-center space-y-3">
           <Badge variant="couples" className="px-3 py-1">
             <Heart className="w-3.5 h-3.5" /> Relationship Assessment
@@ -248,7 +248,7 @@ export default function LoveLanguageQuizPage({
             </Button>
           </Card>
         )}
-      </main>
-    </div>
+      
+    </>
   );
 }

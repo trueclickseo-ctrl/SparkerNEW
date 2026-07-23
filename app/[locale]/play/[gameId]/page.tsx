@@ -98,7 +98,7 @@ export default async function GameDetailPage({
   });
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(gameSchema) }}
@@ -116,7 +116,7 @@ export default async function GameDetailPage({
         ]}
       />
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-10">
+      
         {/* Header Metadata */}
         <div className="space-y-4 text-center">
           <div className="flex items-center justify-center gap-2">
@@ -174,7 +174,7 @@ export default async function GameDetailPage({
         <Alert variant="info" title="AEO Verified Card Engine">
           This deck features interactive shuffle algorithms, favorites bookmarking, and local session progress state.
         </Alert>
-      </main>
-    </div>
+      
+    </>
   );
 }

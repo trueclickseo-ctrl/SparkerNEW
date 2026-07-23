@@ -13,7 +13,7 @@ export default async function AboutPage({
   const locale = resolvedParams.locale;
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Breadcrumbs
         items={[
           { name: 'Home', url: `/${locale}` },
@@ -21,7 +21,7 @@ export default async function AboutPage({
         ]}
       />
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-12">
+      
         {/* Hero Section */}
         <div className="text-center space-y-4">
           <Badge variant="amber" className="px-3 py-1 text-xs">
@@ -88,7 +88,7 @@ export default async function AboutPage({
             <Mail className="w-4 h-4" /> Get in Touch with Our Team
           </Link>
         </div>
-      </main>
-    </div>
+      
+    </>
   );
 }

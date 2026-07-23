@@ -53,7 +53,7 @@ export default async function EncyclopediaDetailPage({
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -75,7 +75,7 @@ export default async function EncyclopediaDetailPage({
         ]}
       />
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-10">
+      
         {/* Header Title */}
         <div className="space-y-4">
           <Badge variant="default" className="w-max">
@@ -215,7 +215,7 @@ export default async function EncyclopediaDetailPage({
             ))}
           </div>
         </section>
-      </main>
-    </div>
+      
+    </>
   );
 }
