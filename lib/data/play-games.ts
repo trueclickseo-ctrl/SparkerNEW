@@ -17,7 +17,7 @@ export const PLAY_GAMES: PartyGame[] = [
   {
     id: 'truth-or-dare',
     title: 'Truth or Dare Classic',
-    shortDescription: 'Over 500+ hilarious dares and deep truths for parties and icebreakers.',
+    shortDescription: '320 real truths and dares across 8 categories — party, deep, flirty, Gen Z, funny & more.',
     fullDescription: 'The ultimate party game! Draw cards to answer reveals about yourself or perform dares.',
     audience: ['party', 'teens', 'large-groups', 'small-groups'],
     category: 'Party Classic',

@@ -19,15 +19,11 @@ export async function generateStaticParams() {
 function getPromptsForGame(gameId: string): string[] {
   switch (gameId) {
     case 'truth-or-dare': {
-      // Combine truths + dares from all relevant ToD categories
-      const partyCategory = TRUTH_OR_DARE_MASTER_555.find((c) => c.id === 'party-icebreakers');
-      const deepCategory  = TRUTH_OR_DARE_MASTER_555.find((c) => c.id === 'deep-vulnerable');
-      const funnyCategory = TRUTH_OR_DARE_MASTER_555.find((c) => c.id === 'funny-absurd');
-      return [
-        ...(partyCategory ? [...partyCategory.truths, ...partyCategory.dares] : []),
-        ...(deepCategory  ? [...deepCategory.truths,  ...deepCategory.dares]  : []),
-        ...(funnyCategory ? [...funnyCategory.truths,  ...funnyCategory.dares] : []),
-      ];
+      // Load ALL 8 categories → 8 × (20 truths + 20 dares) = 320 real prompts
+      return TRUTH_OR_DARE_MASTER_555.flatMap((cat) => [
+        ...cat.truths,
+        ...cat.dares,
+      ]);
     }
     case 'never-have-i-ever': {
       const db    = QUESTION_DATABASE.find((g) => g.id === 'never-have-i-ever');

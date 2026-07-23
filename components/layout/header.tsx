@@ -64,7 +64,7 @@ export function Header({ locale }: { locale: Locale }) {
             Couples Hub
           </Link>
           <Link href={`/${locale}/truth-or-dare-questions`} onClick={() => setIsMegaOpen(false)} className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors font-extrabold text-amber-600 dark:text-amber-400 whitespace-nowrap">
-            🔥 555+ Truth or Dare
+            🔥 320 Truth or Dare
           </Link>
           <Link href={`/${locale}/cards`} onClick={() => setIsMegaOpen(false)} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-bold text-purple-700 dark:text-purple-300 whitespace-nowrap">
             📦 Physical Cards
