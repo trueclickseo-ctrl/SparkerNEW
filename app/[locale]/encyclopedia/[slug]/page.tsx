@@ -41,14 +41,16 @@ export default async function EncyclopediaDetailPage({
     headline: article.title,
     description: article.aeoDefinition,
     author: {
-      '@id': 'https://sparkers.games/#organization',
+      '@type': 'Organization',
+      name: 'Sparkers Games',
+      '@id': 'https://sparkersgames.com/#organization',
     },
     publisher: {
-      '@id': 'https://sparkers.games/#organization',
+      '@id': 'https://sparkersgames.com/#organization',
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://sparkers.games/${resolvedParams.locale}/encyclopedia/${article.slug}`,
+      '@id': `https://sparkersgames.com/${resolvedParams.locale}/encyclopedia/${article.slug}`,
     },
   };
 

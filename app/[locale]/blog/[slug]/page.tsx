@@ -31,14 +31,14 @@ export default async function BlogPostDetailPage({
     author: {
       '@type': 'Person',
       name: post.author.name,
-      jobTitle: post.author.role,
+      '@id': 'https://sparkersgames.com/#organization',
     },
     publisher: {
-      '@id': 'https://sparkers.games/#organization',
+      '@id': 'https://sparkersgames.com/#organization',
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://sparkers.games/${resolvedParams.locale}/blog/${post.slug}`,
+      '@id': `https://sparkersgames.com/${resolvedParams.locale}/blog/${post.slug}`,
     },
   };
 

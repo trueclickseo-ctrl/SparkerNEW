@@ -44,7 +44,7 @@ export function Header({ locale }: { locale: Locale }) {
             <Sparkles className="w-5 h-5 animate-pulse-subtle" />
           </div>
           <span className="font-heading font-extrabold text-xl tracking-tight text-purple-950 dark:text-purple-300">
-            Sparkers<span className="text-amber-500 font-black">.games</span>
+            Sparkers <span className="text-amber-500 font-black">Games</span>
           </span>
         </Link>
 

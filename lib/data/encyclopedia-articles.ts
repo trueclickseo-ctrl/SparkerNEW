@@ -37,8 +37,8 @@ export const ENCYCLOPEDIA_ARTICLES: EncyclopediaArticle[] = [
       { question: 'Can Truth or Dare be played online?', answer: 'Yes, online card generators allow remote friends and long-distance partners to play over video calls.' },
     ],
     sources: [
-      { title: 'Oxford Dictionary of World Folklore', url: 'https://sparkers.games/sources/folklore' },
-      { title: 'Journal of Social Psychology', url: 'https://sparkers.games/sources/psychology' },
+      { title: 'Oxford Dictionary of World Folklore', url: 'https://sparkersgames.com/sources/folklore' },
+      { title: 'Journal of Social Psychology', url: 'https://sparkersgames.com/sources/psychology' },
     ],
     relatedGames: [
       { title: 'Never Have I Ever', url: '/play/never-have-i-ever' },
@@ -70,7 +70,7 @@ export const ENCYCLOPEDIA_ARTICLES: EncyclopediaArticle[] = [
       { question: 'How many players are needed for Never Have I Ever?', answer: 'The game works best with 4 to 12+ players.' },
     ],
     sources: [
-      { title: 'Encyclopedia of Party Culture', url: 'https://sparkers.games/sources/party' },
+      { title: 'Encyclopedia of Party Culture', url: 'https://sparkersgames.com/sources/party' },
     ],
     relatedGames: [
       { title: 'Truth or Dare', url: '/play/truth-or-dare' },

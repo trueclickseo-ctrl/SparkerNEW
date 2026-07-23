@@ -28,7 +28,7 @@ export default async function AboutPage({
             <Sparkles className="w-3.5 h-3.5 mr-1" /> Our Mission & Vision
           </Badge>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-slate-900 dark:text-white tracking-tight">
-            About Sparkers<span className="text-amber-500">.games</span>
+            About Sparkers <span className="text-amber-500">Games</span>
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
             We build meaningful, interactive, and entertaining digital card games designed to bring people together — from long-distance lovers to lively classroom brainstorming sessions.

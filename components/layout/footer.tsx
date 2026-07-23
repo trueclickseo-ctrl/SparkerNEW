@@ -14,7 +14,7 @@ export function Footer({ locale }: { locale: Locale }) {
               ✨
             </div>
             <span className="font-heading font-extrabold text-2xl text-white tracking-tight">
-              Sparkers<span className="text-amber-400">.games</span>
+              Sparkers <span className="text-amber-400">Games</span>
             </span>
           </div>
 
