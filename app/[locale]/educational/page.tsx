@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { EDUCATIONAL_DECKS } from '@/lib/data/educational-games';
 import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { Badge } from '@/components/ui/badge';
@@ -24,16 +25,38 @@ export default async function EducationalDirectoryPage({
       />
 
       
-        <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <Badge variant="amber" className="px-3 py-1 text-xs">
-            <GraduationCap className="w-3.5 h-3.5 mr-1" /> Educational & Brainstorming Hub
-          </Badge>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Academic, Teacher & Brainstorming Decks
-          </h1>
-          <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
-            Curated prompt decks with 25 questions each for school classrooms, university seminars, faculty reflections, student study breaks, and creative brain exercise gyms.
-          </p>
+        <div className="grid lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto mb-12">
+          <div className="text-center lg:text-left space-y-4">
+            <Badge variant="amber" className="px-3 py-1 text-xs">
+              <GraduationCap className="w-3.5 h-3.5 mr-1" /> Educational & Brainstorming Hub
+            </Badge>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-slate-900 dark:text-white tracking-tight">
+              Academic, Teacher & Brainstorming Decks
+            </h1>
+            <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+              Curated prompt decks with 25 questions each for school classrooms, university seminars, faculty reflections, student study breaks, and creative brain exercise gyms.
+            </p>
+          </div>
+          {/* Educational Image */}
+          <div className="relative hidden lg:block">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-amber-900/10 border border-amber-100 dark:border-slate-800">
+              <Image
+                src="/images/educational-students.jpg"
+                alt="College students engaged in a classroom icebreaker discussion"
+                width={560}
+                height={320}
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-amber-900/30 to-transparent" />
+              <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm px-3 py-2 rounded-xl shadow-lg border border-amber-100 dark:border-slate-700">
+                <span className="text-lg">🎓</span>
+                <div>
+                  <p className="text-xs font-bold text-slate-900 dark:text-white">5 Academic Decks</p>
+                  <p className="text-[10px] text-slate-500">125 curated classroom prompts</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
