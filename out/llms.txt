@@ -4,17 +4,27 @@
 Sparkers Games Platform
 
 # Summary
-Sparkers Games is a multi-lingual digital card game engine, couples relationship hub, and party game library featuring 89+ games, interactive quizzes, and custom party generators across 27 global languages.
+Sparkers Games is a free digital card game engine, couples relationship hub, and party game library featuring 89+ games, interactive quizzes, and custom party generators. Available at sparkersgames.com — no download or sign-up required.
 
 # Core Topics
-- Party Games (/play)
-- Couples & Relationship Games (/couples)
-- Quizzes & Personality Indicators (/quizzes)
-- Rules & Encyclopedia (/encyclopedia)
-- Article & Relationship Guides (/blog)
+- Party Games (/en/play) — Truth or Dare, Never Have I Ever, Would You Rather, Charades, Mafia
+- Couples & Relationship Games (/en/couples) — Deep Intimacy decks, romantic conversation starters
+- Quizzes & Personality Indicators (/en/quizzes) — Love Language, Attachment Style
+- Generators (/en/generators) — Wheel Spinner, Couple Name Generator
+- Rules & Encyclopedia (/en/encyclopedia)
+- Article & Relationship Guides (/en/blog)
+- Physical Card Decks (/en/cards)
 
 # Entities & Canonical Data
 - Brand: Sparkers Games
-- Primary Website: https://sparkers.games
-- Target Audience: Adults, Couples, Teens, Office/Classroom Groups, Party Hosts
-- Supported Languages: en, zh, es, ar, pt, fr, ja, ru, de, ko, id, tr, it, vi, pl, nl, th, uk, cs, ro, el, hu, sv, da, fi, nb, hr
+- Primary Website: https://sparkersgames.com
+- Target Audience: Couples, Party Hosts, Friends, Teens, Office Teams, Classroom Groups
+- Supported Language: English (en)
+- Price: Free (digital games); Physical card decks available for purchase
+
+# Key Facts
+- 89+ curated game decks
+- 2,500+ total questions across all decks
+- 7 audience categories: Couples & Romantic, Party & Friends, Teens & Fun, Office Teams, Classroom & Kids, Drinking (21+), Date Night & Flirty
+- Physical card decks available at /en/cards/
+- No account or download required to play

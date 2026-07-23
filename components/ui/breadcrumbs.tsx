@@ -11,7 +11,12 @@ export interface BreadcrumbItem {
 }
 
 export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
-  const schemaItems = [{ name: 'Home', url: '/' }, ...items];
+  // For schema: use items directly (caller is responsible for including Home if needed)
+  // We add Home as position-1 only if the first item is NOT already Home
+  const firstIsHome = items.length === 1 && (items[0].url === '/' || items[0].url.match(/^\/[a-z]{2}\/?$/));
+  const schemaItems = firstIsHome
+    ? items  // homepage — just one "Home" item
+    : [{ name: 'Home', url: '/' }, ...items];
   const breadcrumbSchema = getBreadcrumbSchema(schemaItems);
 
   return (

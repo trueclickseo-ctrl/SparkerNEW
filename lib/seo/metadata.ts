@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { BaseMetadataInput } from '@/types/seo';
 
 const SITE_NAME = 'Sparkers Games';
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://sparkers.games';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://sparkersgames.com';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.jpg`;
 const TWITTER_HANDLE = '@SparkersGames';
 
@@ -19,7 +19,8 @@ export function constructMetadata({
   locale = 'en',
 }: BaseMetadataInput): Metadata {
   const url = `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
-  const fullTitle = `${title} | ${SITE_NAME}`;
+  // Avoid "Brand | Brand" duplication when title already contains the site name
+  const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
 
   return {
     title: fullTitle,
@@ -30,11 +31,7 @@ export function constructMetadata({
       canonical: url,
       languages: {
         'en-US': `${SITE_URL}/en${path}`,
-        'es-ES': `${SITE_URL}/es${path}`,
-        'fr-FR': `${SITE_URL}/fr${path}`,
-        'de-DE': `${SITE_URL}/de${path}`,
-        'ar-SA': `${SITE_URL}/ar${path}`,
-        'x-default': `${SITE_URL}${path}`,
+        'x-default': `${SITE_URL}/en${path}`,
       },
     },
     openGraph: {

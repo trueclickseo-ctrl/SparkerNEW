@@ -1,6 +1,6 @@
 import { FAQItem, HowToStep } from '@/types/seo';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://sparkers.games';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://sparkersgames.com';
 
 export function getOrganizationSchema() {
   return {
@@ -26,13 +26,9 @@ export function getWebSiteSchema() {
     '@id': `${SITE_URL}/#website`,
     url: SITE_URL,
     name: 'Sparkers Games',
+    description: 'Free interactive party and couples card games — Truth or Dare, Would You Rather, Never Have I Ever, and 89+ more. No download or sign-up needed.',
     publisher: {
       '@id': `${SITE_URL}/#organization`,
-    },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${SITE_URL}/search?q={search_term_string}`,
-      'query-input': 'required name=search_term_string',
     },
   };
 }

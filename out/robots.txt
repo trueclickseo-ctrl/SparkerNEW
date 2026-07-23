@@ -1,4 +1,26 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sparkers.games/sitemap.xml
+# Allow major AI crawlers explicitly for GEO (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+Sitemap: https://sparkersgames.com/sitemap.xml

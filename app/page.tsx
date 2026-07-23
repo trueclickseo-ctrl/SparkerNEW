@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { CookieBanner } from '@/components/ui/cookie-banner';
@@ -10,6 +11,12 @@ import { Testimonials } from '@/components/home/testimonials';
 import { Newsletter } from '@/components/home/newsletter';
 import { FAQSection } from '@/components/home/faq-section';
 import { getDictionary } from '@/lib/i18n/dictionaries';
+
+// Root page at "/" — noindex to prevent duplicate content with /en/
+// The canonical page is https://sparkersgames.com/en/
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 // Root page: outside [locale] layout so we include Header/Footer directly.
 // This page serves the "/" path (Hostinger static export root).
