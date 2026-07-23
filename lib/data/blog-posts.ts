@@ -270,4 +270,86 @@ Reciprocal sharing creates deep neural alignment and feelings of safety between 
     readTime: '5 min read',
     tags: ['First Date', 'Icebreakers', 'Gen Z'],
   },
+
+  // 12. Couples Questions
+  {
+    slug: 'would-you-rather-questions-for-couples',
+    title: '100+ Best Would You Rather Questions for Couples (Fun, Deep & Spicy)',
+    excerpt: 'The ultimate collection of Would You Rather questions designed specifically for couples to ignite conversation, laughter, and romance.',
+    content: `Would You Rather is one of the most effective conversation starters for couples whether you have been dating for 3 months or married for 10 years.
+
+### Fun & Lighthearted Questions
+1. Would you rather have a surprise date night planned for you every week, or take one luxury vacation together every year?
+2. Would you rather cook dinner together every night or have breakfast served in bed every weekend?
+3. Would you rather binge-watch a mystery series or play competitive card games all night?
+
+### Deep & Romantic Questions
+1. Would you rather read each other's minds for one day or relive our favorite memory together?
+2. Would you rather move to a new coastal town together or build our dream home in the city?
+
+### How to Use This Prompt List
+Draw cards from our online [Would You Rather Game Deck](/en/play/would-you-rather/) or [89 Intimacy Deck](/en/couples/deep-intimacy/) for instant interactive fun!`,
+    category: 'Couples Advice',
+    author: {
+      name: 'Dr. Sarah Jenkins',
+      role: 'Relationship Counselor',
+      avatar: '/authors/sarah.jpg',
+    },
+    publishedAt: '2026-07-22',
+    readTime: '6 min read',
+    tags: ['Couples', 'Would You Rather', 'Date Night'],
+  },
+
+  // 13. Couples Confessions
+  {
+    slug: 'never-have-i-ever-questions-for-couples',
+    title: '75 Never Have I Ever Questions for Couples (Uncover Fun Secrets)',
+    excerpt: 'Fun, flirty, and surprising Never Have I Ever questions designed for partners and date nights.',
+    content: `Never Have I Ever is not just for college parties — it is a fantastic way for couples to learn secret stories about each other's past.
+
+### Lighthearted Couple Confessions
+1. Never have I ever practiced what I was going to say before calling you.
+2. Never have I ever worn your hoodie when you weren't looking.
+3. Never have I ever accidentally bought a gift for you that I secretly wanted for myself.
+
+### Flirty & Romantic Confessions
+1. Never have I ever gotten butterflies watching you walk across a room.
+2. Never have I ever planned our future home in my head during our early dates.
+
+Play the interactive [Never Have I Ever Online Deck](/en/play/never-have-i-ever/) with finger counters!`,
+    category: 'Couples Advice',
+    author: {
+      name: 'Maya Lin',
+      role: 'Gen Z Relationship Writer',
+      avatar: '/authors/maya.jpg',
+    },
+    publishedAt: '2026-07-21',
+    readTime: '5 min read',
+    tags: ['Never Have I Ever', 'Couples', 'Flirty'],
+  },
+
+  // 14. Deep Intimacy
+  {
+    slug: 'deep-questions-to-ask-your-partner',
+    title: '50 Deep Questions to Ask Your Partner to Strengthen Your Emotional Bond',
+    excerpt: 'Meaningful, psychology-backed questions to deepen intimacy, vulnerability, and mutual trust.',
+    content: `Psychologists emphasize that emotional intimacy requires continuous curiosity about your partner's evolving inner world.
+
+### Deep Intimacy Prompts
+1. What is one goal you want us to accomplish together in the next 3 years?
+2. When do you feel most safe, supported, and cherished by me?
+3. What childhood memory shaped how you express love today?
+4. What is a hidden dream you rarely voice out loud?
+
+Explore the full 25-prompt [89 Intimacy & Soul Deck](/en/couples/deep-intimacy/) online for free!`,
+    category: 'Couples Advice',
+    author: {
+      name: 'Dr. Sarah Jenkins',
+      role: 'Relationship Counselor',
+      avatar: '/authors/sarah.jpg',
+    },
+    publishedAt: '2026-07-23',
+    readTime: '7 min read',
+    tags: ['Intimacy', 'Deep Questions', 'Relationship Advice'],
+  },
 ];

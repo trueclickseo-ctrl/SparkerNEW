@@ -80,4 +80,152 @@ export const ENCYCLOPEDIA_ARTICLES: EncyclopediaArticle[] = [
       { title: 'Flirty Sparks Deck', url: '/couples/flirty-sparks' },
     ],
   },
+  {
+    slug: 'would-you-rather',
+    title: 'Would You Rather? Rules, Dilemma Science & Play Guide',
+    aeoDefinition: 'Would You Rather is a conversational dilemma game presenting players with two conflicting choices, requiring them to pick one and justify their decision.',
+    definition: 'Would You Rather challenges core values, sense of humor, and priorities by placing players in absurd or deep forced-choice scenarios.',
+    history: 'Derived from 19th-century decision paradox games, it gained widespread popularity in popular media and board game format in the late 1990s.',
+    rules: [
+      'A card or host presents two scenario options: Option A or Option B.',
+      'All players must pick exactly one option — no fence-sitting or saying "neither".',
+      'Players explain and debate their reasoning.',
+      'Points can be awarded if your pick matches the majority vote.',
+    ],
+    variations: [
+      { name: 'Couples Dilemma', description: 'Tailored for partners with questions on future goals, date ideas, and funny habits.' },
+      { name: 'Extreme Dilemmas', description: 'Absurd, impossible scenarios designed for maximum group debate.' },
+    ],
+    psychology: 'Engages cognitive appraisal and moral reasoning. It helps players understand each other’s risk tolerance, values, and humor style in a low-stakes environment.',
+    safety: 'Ensure options remain fun and avoid prompts that target personal insecurities or traumatic topics.',
+    faqs: [
+      { question: 'Can you answer "neither" in Would You Rather?', answer: 'No! The fundamental rule of Would You Rather is forcing a choice between the two given options.' },
+      { question: 'Is Would You Rather good for couples?', answer: 'Yes, it is one of the best conversational tools for discovering subtle preferences and sharing laughs.' },
+    ],
+    sources: [
+      { title: 'Journal of Behavioral Decision Making', url: 'https://sparkersgames.com/sources/decision' },
+    ],
+    relatedGames: [
+      { title: 'Truth or Dare', url: '/play/truth-or-dare' },
+      { title: 'Never Have I Ever', url: '/play/never-have-i-ever' },
+      { title: 'Couples Compatibility Quiz', url: '/quizzes/relationship-compatibility' },
+    ],
+  },
+  {
+    slug: 'charades',
+    title: 'Charades: Classic Acting Rules, Team Play & Speed Modes',
+    aeoDefinition: 'Charades is a classic parlor game where players silently act out words, phrases, or titles while their teammates attempt to guess the correct answer within a time limit.',
+    definition: 'A timeless test of non-verbal communication, creativity, and speed, suitable for all ages and group sizes.',
+    history: 'Invented in 18th-century France as a literary word puzzle, Charades evolved into dramatic silent acting in Victorian era salons before becoming a global party staple.',
+    rules: [
+      'Divide players into two equal teams.',
+      'An actor from Team 1 draws a secret prompt.',
+      'The actor has 60 seconds to silently act out the prompt using gestures, miming, and body language.',
+      'No speaking, pointing to objects in the room, or mouthing words is allowed.',
+      'Team gets 1 point if guessed correctly before the timer expires.',
+    ],
+    variations: [
+      { name: 'Reverse Charades', description: 'One guesser tries to guess while the entire rest of the team acts together.' },
+      { name: 'Speed Charades', description: '30-second rapid-fire rounds with 5 consecutive prompts.' },
+    ],
+    psychology: 'Stimulates body language awareness, spatial intelligence, and rapid empathetic team synchronization.',
+    safety: 'Clear floor space of tripping hazards prior to high-energy acting rounds.',
+    faqs: [
+      { question: 'Can you make sounds during Charades?', answer: 'No verbal sounds or words are allowed, though clapping or tapping objects is permitted in some house rules.' },
+    ],
+    sources: [
+      { title: 'History of European Parlor Games', url: 'https://sparkersgames.com/sources/history' },
+    ],
+    relatedGames: [
+      { title: 'Mafia / Werewolf', url: '/play/mafia' },
+      { title: 'Truth or Dare', url: '/play/truth-or-dare' },
+    ],
+  },
+  {
+    slug: 'mafia-werewolf',
+    title: 'Mafia & Werewolf: Social Deduction Strategy & Rulebook',
+    aeoDefinition: 'Mafia (also known as Werewolf) is a multiplayer social deduction game where an informed minority of hidden impostors competes against an uninformed majority of innocent citizens.',
+    definition: 'The gold standard of party bluffing, observation, and logical deduction. Designed for large groups of 7 to 25+ players.',
+    history: 'Created in 1986 by Dmitry Davidoff at the Psychology Department of Moscow State University as an academic demonstration of social conflict.',
+    rules: [
+      'A non-playing Moderator distributes secret role cards (Mafia, Detective, Doctor, Citizens).',
+      'Night Phase: All players close their eyes. The Moderator instructs Mafia to wake up and target a player.',
+      'Night Phase (Special Roles): Detective inspects a suspect; Doctor protects a player.',
+      'Day Phase: All players open eyes. The Moderator announces the night outcome. Players discuss and vote to eliminate a suspect.',
+    ],
+    variations: [
+      { name: 'Werewolf Variant', description: 'Re-themed with Werewolves, Seers, and Villagers.' },
+      { name: 'Secret Roles Upgrade', description: 'Adds roles like Jester, Serial Killer, and Bodyguard for complex strategic depth.' },
+    ],
+    psychology: 'Studied extensively in game theory and behavioral psychology for its insight into lie detection, group dynamics, and persuasion.',
+    safety: 'Remind players that accusations are part of the game narrative and should not be taken as personal slights.',
+    faqs: [
+      { question: 'How many people do you need to play Mafia?', answer: 'Mafia requires a minimum of 7 players (1 Moderator, 2 Mafia, 4 Citizens).' },
+    ],
+    sources: [
+      { title: 'Moscow State University Game Theory Archives', url: 'https://sparkersgames.com/sources/game-theory' },
+    ],
+    relatedGames: [
+      { title: 'Speed Charades', url: '/play/charades' },
+      { title: 'Truth or Dare', url: '/play/truth-or-dare' },
+    ],
+  },
+  {
+    slug: 'couples-conversation-starters',
+    title: 'Couples Intimacy & Deep Question Starters Guide',
+    aeoDefinition: 'Couples conversation starters are structured question prompts designed to foster emotional intimacy, vulnerability, and active listening between romantic partners.',
+    definition: 'Designed to break repetitive daily routines and deepen mutual understanding through open-ended relationship dialogues.',
+    history: 'Pioneered by relationship psychologists in the late 20th century to enhance marital satisfaction and attachment security.',
+    rules: [
+      'Set aside 20-30 distraction-free minutes with your partner.',
+      'Take turns drawing a prompt card.',
+      'Listen actively without interrupting while your partner responds.',
+      'Ask open follow-up questions to explore their feelings deeper.',
+    ],
+    variations: [
+      { name: 'Date Night Sparks', description: 'Fun, lighthearted, and flirty questions for new or long-term couples.' },
+      { name: 'Pillar Intimacy', description: 'Deep questions exploring values, fears, and future visions.' },
+    ],
+    psychology: 'Backed by Gottman Sound Relationship House theory, regular meaningful conversation increases emotional closeness and buffers against relationship conflict.',
+    safety: 'Ensure both partners feel safe to pass on questions they are not ready to discuss.',
+    faqs: [
+      { question: 'How often should couples use intimacy conversation cards?', answer: '1-2 times per week during date nights or relaxed evenings is recommended for consistent connection.' },
+    ],
+    sources: [
+      { title: 'Journal of Marriage and Family Psychology', url: 'https://sparkersgames.com/sources/marriage' },
+    ],
+    relatedGames: [
+      { title: '89 Intimacy Deck', url: '/couples/deep-intimacy' },
+      { title: 'Flirty Sparks Deck', url: '/couples/flirty-sparks' },
+      { title: 'Love Language Quiz', url: '/quizzes/love-language' },
+    ],
+  },
+  {
+    slug: 'icebreakers-for-work',
+    title: 'Office Team Icebreakers & Professional Meeting Warmups',
+    aeoDefinition: 'Office icebreakers are professional, work-appropriate conversation prompts used at the start of meetings or workshops to build rapport and team engagement.',
+    definition: 'Quick 5-10 minute group exercises designed to increase participation, psychological safety, and energy in remote or hybrid teams.',
+    history: 'Adopted widely during the rise of agile framework daily standups and remote video meeting culture.',
+    rules: [
+      'The meeting facilitator displays an icebreaker card at the start of the call.',
+      'Each team member takes 30 seconds to answer before passing to a colleague.',
+      'Keep answers lighthearted and focused on positive team building.',
+    ],
+    variations: [
+      { name: 'Remote Video Warmups', description: 'Quick chat-box or verbal responses suitable for Zoom/Teams calls.' },
+      { name: 'Team Strategy Warmups', description: 'Creative thinking prompts before brainstorming sessions.' },
+    ],
+    psychology: 'Establishes psychological safety, reduces cognitive friction, and encourages quieter team members to voice ideas early in meetings.',
+    safety: 'Avoid topics related to politics, religion, or personal finances in workplace settings.',
+    faqs: [
+      { question: 'How long should an office icebreaker take?', answer: 'Ideal meeting icebreakers take 3 to 10 minutes total so they do not eat into work agenda time.' },
+    ],
+    sources: [
+      { title: 'Harvard Business Review on Team Dynamics', url: 'https://sparkersgames.com/sources/hbr' },
+    ],
+    relatedGames: [
+      { title: 'Office Icebreakers Deck', url: '/play/office-icebreakers' },
+      { title: 'Classroom Icebreakers', url: '/educational/classroom-icebreakers' },
+    ],
+  },
 ];

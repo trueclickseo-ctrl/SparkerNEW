@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { PLAY_GAMES } from '@/lib/data/play-games';
 import { COUPLES_DECKS } from '@/lib/data/couples-games';
+import { ENCYCLOPEDIA_ARTICLES } from '@/lib/data/encyclopedia-articles';
+import { BLOG_POSTS } from '@/lib/data/blog-posts';
 
 export const dynamic = 'force-static';
 
@@ -54,6 +56,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.85,
+    });
+  }
+
+  // ─── Encyclopedia Article pages ──────────────────────────────────────────
+  for (const article of ENCYCLOPEDIA_ARTICLES) {
+    entries.push({
+      url: `${BASE_URL}/${LOCALE}/encyclopedia/${article.slug}/`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    });
+  }
+
+  // ─── Blog Post pages ───────────────────────────────────────────────────────
+  for (const post of BLOG_POSTS) {
+    entries.push({
+      url: `${BASE_URL}/${LOCALE}/blog/${post.slug}/`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
     });
   }
 
