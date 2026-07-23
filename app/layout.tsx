@@ -70,6 +70,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
 
+        {/* ── GA4 Google Analytics Direct ── */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-EZCZ3TKWVQ"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EZCZ3TKWVQ', { page_path: window.location.pathname });
+          `}
+        </Script>
+
         {/* ── Favicon ── */}
         <link rel="icon" href="https://sparkersgames.com/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://sparkersgames.com/favicon-32x32.png" />
