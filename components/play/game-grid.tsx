@@ -46,7 +46,7 @@ export function GameGrid({
               <span className="flex items-center gap-1"><Flame className="w-3.5 h-3.5 text-amber-500" /> {game.difficulty}</span>
             </div>
             <p className="text-[11px] text-slate-400 dark:text-slate-500">
-              Deck size: <strong>{game.cardCount} cards</strong>
+              {game.shortDescription.split('.')[0]}.
             </p>
           </CardContent>
 

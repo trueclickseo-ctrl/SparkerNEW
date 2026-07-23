@@ -14,7 +14,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
     name: 'Truth or Dare',
     slug: 'truth-or-dare',
     category: 'Party Classic',
-    cardCount: 520,
+    cardCount: 5,
     description: 'Classic truths and dares ranging from mild icebreakers to hilarious party challenges.',
     prompts: [
       'Truth: What is the most embarrassing song playlist on your phone?',
@@ -29,7 +29,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
     name: 'Never Have I Ever',
     slug: 'never-have-i-ever',
     category: 'Icebreaker',
-    cardCount: 450,
+    cardCount: 4,
     description: 'Discover wild stories and shared experiences with group finger counters.',
     prompts: [
       'Never have I ever re-gifted a present I did not want.',
@@ -43,7 +43,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
     name: 'Would You Rather',
     slug: 'would-you-rather',
     category: 'Debate & Dilemmas',
-    cardCount: 380,
+    cardCount: 3,
     description: 'Absurd dilemmas and impossible choices designed for group debates.',
     prompts: [
       'Would you rather be able to fly at walking speed or run at 100 mph?',
@@ -56,7 +56,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
     name: 'Speed Charades',
     slug: 'charades',
     category: 'Action & Acting',
-    cardCount: 300,
+    cardCount: 3,
     description: 'Silent acting prompts featuring pop culture, funny actions, and movies.',
     prompts: [
       'Act out: A penguin trying to walk on ice wearing high heels.',
@@ -69,7 +69,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
     name: 'Mafia & Werewolf',
     slug: 'mafia',
     category: 'Social Deduction',
-    cardCount: 50,
+    cardCount: 3,
     description: 'Bluffing, secret identity roleplay, and village survival game.',
     prompts: [
       'Role: Mafia Boss — Secretly eliminate citizens during night phases.',
@@ -82,7 +82,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
     name: '21 Questions',
     slug: '21-questions',
     category: 'Intimacy & Bonding',
-    cardCount: 210,
+    cardCount: 3,
     description: 'Sequential rapid-fire questions to get to know anyone deeply.',
     prompts: [
       'Question #1: What is your favorite memory from childhood?',
@@ -95,7 +95,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
     name: 'Double Entendres & 2-Way Meanings',
     slug: 'truth-or-dare',
     category: 'Double Entendres (2-Way)',
-    cardCount: 180,
+    cardCount: 4,
     description: 'Clever, cheeky questions and prompts with innocent surfaces but cheeky double meanings.',
     prompts: [
       'What is something that starts out hard, gets warm and soft, and feels amazing when you finish?',
@@ -109,7 +109,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
     name: 'After Dark Adult 18+ Truths',
     slug: 'truth-or-dare',
     category: 'Adult 18+ Spicy',
-    cardCount: 220,
+    cardCount: 4,
     description: 'Bold, sensual, and uncensored adult questions for romantic partners and late-night parties.',
     prompts: [
       'What is your ultimate late-night fantasy that you have never shared out loud?',
@@ -123,7 +123,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
     name: 'Gen Z Red Flags & Icks',
     slug: 'genz-unfiltered-icks',
     category: 'Gen Z Red Flags & Icks',
-    cardCount: 195,
+    cardCount: 4,
     description: 'Unfiltered Gen Z prompts on dating icks, main character syndrome, and situationships.',
     prompts: [
       'Never have I ever ghosted someone because they gave me an instant ick.',
@@ -137,7 +137,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
     name: 'Spicy 18+ Never Have I Ever',
     slug: 'never-have-i-ever',
     category: 'Spicy 18+ Confessions',
-    cardCount: 240,
+    cardCount: 3,
     description: 'Risqué adult confessions for wild game nights with drinks and close friends.',
     prompts: [
       'Never have I ever had a crush on a friend’s sibling or ex.',
@@ -150,7 +150,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
     name: 'Conversation Starters',
     slug: 'office-icebreakers',
     category: 'Group Bonding',
-    cardCount: 320,
+    cardCount: 2,
     description: 'Engaging starters for dinner parties, road trips, and coffee chats.',
     prompts: [
       'What is one piece of advice you wish you knew 5 years ago?',
@@ -162,7 +162,7 @@ export const QUESTION_DATABASE: LibraryGame[] = [
     name: 'Team Ice Breakers',
     slug: 'office-icebreakers',
     category: 'Office & School',
-    cardCount: 250,
+    cardCount: 2,
     description: 'Workplace-safe and classroom-friendly icebreaker warmups.',
     prompts: [
       'What was your very first job and what did you learn from it?',

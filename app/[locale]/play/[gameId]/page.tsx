@@ -4,6 +4,8 @@ import { Badge } from '@/components/ui/badge';
 import { Alert } from '@/components/ui/alert';
 import { CardDeckPlayer } from '@/components/engine/card-deck-player';
 import { PLAY_GAMES } from '@/lib/data/play-games';
+import { TRUTH_OR_DARE_MASTER_555 } from '@/lib/data/truth-or-dare-master-555';
+import { QUESTION_DATABASE } from '@/lib/data/question-database';
 import { getGameSchema, getHowToSchema } from '@/lib/seo/jsonld';
 import { Users, Clock, Flame } from 'lucide-react';
 
@@ -11,6 +13,59 @@ export async function generateStaticParams() {
   return PLAY_GAMES.map((game) => ({
     gameId: game.id,
   }));
+}
+
+/** Build a real, game-specific prompt list from the master data files */
+function getPromptsForGame(gameId: string): string[] {
+  switch (gameId) {
+    case 'truth-or-dare': {
+      // Combine truths + dares from all relevant ToD categories
+      const partyCategory = TRUTH_OR_DARE_MASTER_555.find((c) => c.id === 'party-icebreakers');
+      const deepCategory  = TRUTH_OR_DARE_MASTER_555.find((c) => c.id === 'deep-vulnerable');
+      const funnyCategory = TRUTH_OR_DARE_MASTER_555.find((c) => c.id === 'funny-absurd');
+      return [
+        ...(partyCategory ? [...partyCategory.truths, ...partyCategory.dares] : []),
+        ...(deepCategory  ? [...deepCategory.truths,  ...deepCategory.dares]  : []),
+        ...(funnyCategory ? [...funnyCategory.truths,  ...funnyCategory.dares] : []),
+      ];
+    }
+    case 'never-have-i-ever': {
+      const db    = QUESTION_DATABASE.find((g) => g.id === 'never-have-i-ever');
+      const spicy = QUESTION_DATABASE.find((g) => g.id === 'spicy-never-have-i-ever');
+      const genz  = QUESTION_DATABASE.find((g) => g.id === 'genz-unfiltered-icks');
+      return [
+        ...(db    ? db.prompts    : []),
+        ...(spicy ? spicy.prompts : []),
+        ...(genz  ? genz.prompts  : []),
+      ];
+    }
+    case 'would-you-rather': {
+      const db = QUESTION_DATABASE.find((g) => g.id === 'would-you-rather');
+      return db ? db.prompts : [];
+    }
+    case 'charades': {
+      const db = QUESTION_DATABASE.find((g) => g.id === 'charades');
+      return db ? db.prompts : [];
+    }
+    case 'mafia': {
+      const db = QUESTION_DATABASE.find((g) => g.id === 'mafia');
+      return db ? db.prompts : [];
+    }
+    case 'office-icebreakers': {
+      const conv = QUESTION_DATABASE.find((g) => g.id === 'conversation-starters');
+      const ice  = QUESTION_DATABASE.find((g) => g.id === 'ice-breakers');
+      const partyCategory = TRUTH_OR_DARE_MASTER_555.find((c) => c.id === 'party-icebreakers');
+      return [
+        ...(conv ? conv.prompts : []),
+        ...(ice  ? ice.prompts  : []),
+        ...(partyCategory ? partyCategory.truths : []),
+      ];
+    }
+    default: {
+      const db = QUESTION_DATABASE.find((g) => g.id === gameId);
+      return db ? db.prompts : [];
+    }
+  }
 }
 
 export default async function GameDetailPage({
@@ -23,15 +78,7 @@ export default async function GameDetailPage({
 
   if (!game) notFound();
 
-  // Generated interactive prompt cards
-  const promptList = [
-    `What is the most awkward misunderstanding you have ever experienced?`,
-    `Do a 30-second silent impression of another player!`,
-    `What is one thing on your bucket list you plan to achieve this year?`,
-    `If you had to trade places with anyone in this room for a week, who would it be?`,
-    `Sing the chorus of your favorite song with extreme emotion!`,
-    `What is the funniest rumor you have ever heard about yourself?`,
-  ];
+  const promptList = getPromptsForGame(resolvedParams.gameId);
 
   const gameSchema = getGameSchema({
     name: game.title,
@@ -89,6 +136,11 @@ export default async function GameDetailPage({
             <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-indigo-500" /> {game.numberOfPlayers}</span>
             <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-indigo-500" /> {game.duration}</span>
             <span className="flex items-center gap-1.5"><Flame className="w-4 h-4 text-amber-500" /> {game.difficulty}</span>
+            {promptList.length > 0 && (
+              <span className="flex items-center gap-1.5 text-indigo-600 dark:text-indigo-400 font-semibold">
+                🃏 {promptList.length} Cards
+              </span>
+            )}
           </div>
         </div>
 
@@ -103,7 +155,7 @@ export default async function GameDetailPage({
         {/* Rules */}
         <div className="space-y-4 pt-4 border-t border-slate-200/60 dark:border-slate-800">
           <h2 className="font-heading text-2xl font-bold text-slate-900 dark:text-white">
-            Official Rules & Game Guide
+            Official Rules &amp; Game Guide
           </h2>
           <div className="space-y-3">
             {game.rules.map((rule, idx) => (
