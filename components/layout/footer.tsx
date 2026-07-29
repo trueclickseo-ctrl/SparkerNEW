@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Sparkles, Gamepad2, Shield, Rss, Mail, Building, Scale, Lock, Users } from 'lucide-react';
+import { Sparkles, Gamepad2, Shield, Mail, Building, Scale, Lock, Users } from 'lucide-react';
 import { Locale } from '@/lib/i18n/config';
 
 export function Footer({ locale }: { locale: Locale }) {
@@ -100,11 +100,6 @@ export function Footer({ locale }: { locale: Locale }) {
             <li>
               <Link href={`/${locale}/blog`} className="hover:text-emerald-400 text-slate-400 text-[11px] transition-colors">
                 Sparkers Blog
-              </Link>
-            </li>
-            <li>
-              <Link href="/rss.xml" className="hover:text-emerald-400 text-slate-400 text-[11px] flex items-center gap-1 transition-colors">
-                <Rss className="w-3 h-3" /> RSS Feed
               </Link>
             </li>
           </ul>

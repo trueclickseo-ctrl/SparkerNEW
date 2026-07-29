@@ -7,7 +7,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from '@/comp
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { BLOG_POSTS } from '@/lib/data/blog-posts';
-import { FileText, Rss, ArrowRight, Clock, User } from 'lucide-react';
+import { FileText, ArrowRight, Clock, User } from 'lucide-react';
 
 export default function BlogIndexPage({
   params,
@@ -47,10 +47,6 @@ export default function BlogIndexPage({
               Expert articles on connection rituals, party hosting, and communication strategy.
             </p>
           </div>
-
-          <Link href="/rss.xml" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-100 dark:bg-amber-950/60 text-amber-900 dark:text-amber-300 text-xs font-semibold hover:bg-amber-200 transition-colors">
-            <Rss className="w-3.5 h-3.5" /> RSS Feed
-          </Link>
         </div>
 
         {/* Categories Bar */}
