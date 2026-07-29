@@ -29,11 +29,11 @@ const GTM_ID = 'GTM-KPVSZ4R6';
 const softwareAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  '@id': 'https://sparkersgames.com/#app',
+  '@id': 'https://www.sparkersgames.com/#app',
   name: 'Sparkers Games',
   applicationCategory: 'GameApplication',
   operatingSystem: 'Web Browser',
-  url: 'https://sparkersgames.com',
+  url: 'https://www.sparkersgames.com',
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -42,7 +42,7 @@ const softwareAppSchema = {
   description:
     '89+ interactive party and couples games, love language quizzes, icebreakers, and card generators. Free, no download required.',
   publisher: {
-    '@id': 'https://sparkersgames.com/#organization',
+    '@id': 'https://www.sparkersgames.com/#organization',
   },
 };
 
@@ -84,12 +84,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           `}
         </Script>
 
-        {/* ── Favicon ── */}
-        <link rel="icon" href="https://sparkersgames.com/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/png" sizes="32x32" href="https://sparkersgames.com/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="https://sparkersgames.com/favicon-16x16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="https://sparkersgames.com/apple-touch-icon.png" />
-        <link rel="shortcut icon" href="https://sparkersgames.com/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
 
         {/* ── Structured Data ── */}
         <script
