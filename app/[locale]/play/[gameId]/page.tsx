@@ -9,11 +9,32 @@ import { QUESTION_DATABASE } from '@/lib/data/question-database';
 import { getGameSchema, getHowToSchema } from '@/lib/seo/jsonld';
 import { Users, Clock, Flame } from 'lucide-react';
 
+import { constructMetadata } from '@/lib/seo/metadata';
+
 export async function generateStaticParams() {
   return PLAY_GAMES.map((game) => ({
     gameId: game.id,
   }));
 }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; gameId: string }>;
+}) {
+  const resolvedParams = await params;
+  const game = PLAY_GAMES.find((g) => g.id === resolvedParams.gameId);
+  if (!game) return {};
+  return constructMetadata({
+    title: game.title,
+    description: game.shortDescription,
+    path: `/play/${game.id}/`,
+    locale: resolvedParams.locale,
+    ogImageSlug: `play-${game.id}`,
+    keywords: [game.category, 'party game', 'group game', game.title.toLowerCase()],
+  });
+}
+
 
 /** Build a real, game-specific prompt list from the master data files */
 function getPromptsForGame(gameId: string): string[] {

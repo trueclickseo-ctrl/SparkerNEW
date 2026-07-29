@@ -17,16 +17,26 @@ export function constructMetadata({
   authors,
   noIndex = false,
   locale = 'en',
+  author = 'Sparkers Games',
+  publisher = 'Sparkers Games',
+  themeColor = '#7c3aed',
+  ogImageSlug,
 }: BaseMetadataInput): Metadata {
   const url = `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
-  // Avoid "Brand | Brand" duplication when title already contains the site name
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+  
+  // Use pre-built static SVG or fallback to default
+  const ogImageUrl = ogImageSlug 
+    ? `${SITE_URL}/og/${ogImageSlug}.svg`
+    : DEFAULT_OG_IMAGE;
 
   return {
     title: fullTitle,
     description,
     keywords: keywords.join(', '),
     metadataBase: new URL(SITE_URL),
+    authors: [{ name: author }],
+    publisher: publisher,
     icons: {
       icon: [
         { url: '/favicon.ico', sizes: 'any' },
@@ -50,7 +60,7 @@ export function constructMetadata({
       siteName: SITE_NAME,
       images: [
         {
-          url: DEFAULT_OG_IMAGE,
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: fullTitle,
@@ -66,7 +76,7 @@ export function constructMetadata({
       card: 'summary_large_image',
       title: fullTitle,
       description,
-      images: [DEFAULT_OG_IMAGE],
+      images: [ogImageUrl],
       creator: TWITTER_HANDLE,
       site: TWITTER_HANDLE,
     },

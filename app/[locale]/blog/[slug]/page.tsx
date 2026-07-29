@@ -6,11 +6,34 @@ import { Button } from '@/components/ui/button';
 import { BLOG_POSTS } from '@/lib/data/blog-posts';
 import { FileText, Clock, User, Calendar, ArrowLeft } from 'lucide-react';
 
+import { constructMetadata } from '@/lib/seo/metadata';
+
 export async function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({
     slug: post.slug,
   }));
 }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const resolvedParams = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
+  if (!post) return {};
+  return constructMetadata({
+    title: post.title,
+    description: post.excerpt,
+    path: `/blog/${post.slug}/`,
+    locale: resolvedParams.locale,
+    ogType: 'article',
+    publishedTime: post.publishedAt,
+    ogImageSlug: `blog-${post.slug}`,
+    keywords: post.tags,
+  });
+}
+
 
 export default async function BlogPostDetailPage({
   params,

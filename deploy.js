@@ -14,6 +14,7 @@ const PROTECTED = new Set([
   'next.config.ts', 'postcss.config.mjs', 'eslint.config.mjs', 'middleware.ts',
   'AGENTS.md', 'CLAUDE.md', 'README.md', 'next-env.d.ts', 'deploy.js',
   '.gitignore', '.env', '.env.local', '.env.production', '.htaccess',
+  '6e3c1440e2bd49e6a8394ebd8eb8a89c.txt', 'ping-indexnow.mjs',
 ]);
 
 function copyRecursive(src, dest) {

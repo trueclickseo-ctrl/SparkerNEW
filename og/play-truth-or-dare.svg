@@ -1,0 +1,24 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#c084fc;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#purpleGrad)" />
+    <!-- Outer Border -->
+    <rect x="25" y="25" width="1150" height="580" rx="30" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="6" />
+    
+    <!-- Accent Sparkles -->
+    <path d="M150 150 L160 170 L180 180 L160 190 L150 210 L140 190 L120 180 L140 170 Z" fill="rgba(255,255,255,0.3)" />
+    <path d="M1000 450 L1008 466 L1024 474 L1008 482 L1000 498 L992 482 L976 474 L992 466 Z" fill="rgba(255,255,255,0.3)" />
+    
+    <!-- Text Elements -->
+    <text x="100" y="150" font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="28" fill="#ffffff" letter-spacing="4">SPARKERS GAMES</text>
+    <text x="100" y="320" font-family="'Outfit', 'Inter', sans-serif" font-weight="800" font-size="64" fill="#ffffff">Truth or Dare Classic</text>
+    <text x="100" y="420" font-family="'Inter', sans-serif" font-weight="400" font-size="24" fill="#f3e8ff">320 real truths and dares across 8 categories — party, deep, flirty, Gen Z, f...</text>
+    
+    <!-- Footer Branding -->
+    <rect x="100" y="490" width="240" height="46" rx="23" fill="rgba(255,255,255,0.15)" />
+    <text x="130" y="521" font-family="'Inter', sans-serif" font-weight="700" font-size="16" fill="#ffffff">⚡ sparkersgames.com</text>
+  </svg>

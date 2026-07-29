@@ -1,26 +1,25 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /search/
+Disallow: /*?*
+Disallow: /*&*
+Disallow: /*.json$
 
 # Allow major AI crawlers explicitly for GEO (Generative Engine Optimization)
 User-agent: GPTBot
 Allow: /
+Disallow: /api/
+Disallow: /search/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /api/
 
 User-agent: ClaudeBot
-Allow: /
-
-User-agent: anthropic-ai
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /images/
-
-Sitemap: https://sparkersgames.com/sitemap.xml
+Sitemap: https://sparkersgames.com/sitemap-index.xml

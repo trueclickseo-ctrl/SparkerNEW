@@ -8,11 +8,32 @@ import { ENCYCLOPEDIA_ARTICLES } from '@/lib/data/encyclopedia-articles';
 import { getHowToSchema, getFAQSchema } from '@/lib/seo/jsonld';
 import { BookOpen, ShieldCheck, History, Brain, ExternalLink, Link2 } from 'lucide-react';
 
+import { constructMetadata } from '@/lib/seo/metadata';
+
 export async function generateStaticParams() {
   return ENCYCLOPEDIA_ARTICLES.map((article) => ({
     slug: article.slug,
   }));
 }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const resolvedParams = await params;
+  const article = ENCYCLOPEDIA_ARTICLES.find((a) => a.slug === resolvedParams.slug);
+  if (!article) return {};
+  return constructMetadata({
+    title: article.title,
+    description: article.aeoDefinition,
+    path: `/encyclopedia/${article.slug}/`,
+    locale: resolvedParams.locale,
+    ogImageSlug: `encyclopedia-${article.slug}`,
+    keywords: ['game rules', 'parlor games', 'party games', article.title.toLowerCase()],
+  });
+}
+
 
 export default async function EncyclopediaDetailPage({
   params,

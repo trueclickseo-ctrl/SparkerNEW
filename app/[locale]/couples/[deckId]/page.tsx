@@ -7,11 +7,32 @@ import { COUPLES_DECKS } from '@/lib/data/couples-games';
 import { getGameSchema } from '@/lib/seo/jsonld';
 import { Heart, Sparkles } from 'lucide-react';
 
+import { constructMetadata } from '@/lib/seo/metadata';
+
 export async function generateStaticParams() {
   return COUPLES_DECKS.map((deck) => ({
     deckId: deck.id,
   }));
 }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; deckId: string }>;
+}) {
+  const resolvedParams = await params;
+  const deck = COUPLES_DECKS.find((d) => d.id === resolvedParams.deckId);
+  if (!deck) return {};
+  return constructMetadata({
+    title: deck.title,
+    description: deck.shortDescription,
+    path: `/couples/${deck.id}/`,
+    locale: resolvedParams.locale,
+    ogImageSlug: `couples-${deck.id}`,
+    keywords: [deck.category, 'couples games', 'relationship deck', deck.title.toLowerCase()],
+  });
+}
+
 
 export default async function CouplesDeckDetailPage({
   params,

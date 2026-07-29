@@ -1,6 +1,6 @@
 import { FAQItem, HowToStep } from '@/types/seo';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://sparkersgames.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://sparkers.games';
 
 export function getOrganizationSchema() {
   return {
@@ -112,3 +112,111 @@ export function getHowToSchema({
     })),
   };
 }
+
+export function getWebPageSchema({
+  name,
+  description,
+  url,
+}: {
+  name: string;
+  description: string;
+  url: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}#webpage`,
+    url: `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}`,
+    name,
+    description,
+    isPartOf: {
+      '@id': `${SITE_URL}/#website`,
+    },
+    breadcrumb: {
+      '@id': `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}#breadcrumb`,
+    },
+  };
+}
+
+export function getCollectionPageSchema({
+  name,
+  description,
+  url,
+  items,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  items: { name: string; url: string; description?: string }[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}#collectionpage`,
+    url: `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}`,
+    name,
+    description,
+    isPartOf: {
+      '@id': `${SITE_URL}/#website`,
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        url: `${SITE_URL}${item.url.startsWith('/') ? item.url : `/${item.url}`}`,
+        ...(item.description && { description: item.description }),
+      })),
+    },
+  };
+}
+
+export function getSearchActionSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${SITE_URL}/en/play/?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  };
+}
+
+export function getArticleSchema({
+  title,
+  description,
+  url,
+  publishedTime,
+  modifiedTime,
+}: {
+  title: string;
+  description: string;
+  url: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    url: `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}`,
+    },
+    author: {
+      '@type': 'Organization',
+      name: 'Sparkers Games',
+      '@id': `${SITE_URL}/#organization`,
+    },
+    publisher: {
+      '@id': `${SITE_URL}/#organization`,
+    },
+    ...(publishedTime && { datePublished: publishedTime }),
+    ...(modifiedTime && { dateModified: modifiedTime }),
+  };
+}
+

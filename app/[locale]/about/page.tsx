@@ -4,11 +4,26 @@ import { Badge } from '@/components/ui/badge';
 import { Sparkles, Heart, Shield, Target, Users, Mail } from 'lucide-react';
 import Link from 'next/link';
 
+import { constructMetadata } from '@/lib/seo/metadata';
+
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  const resolvedParams = await params;
+  return constructMetadata({
+    title: 'About Sparkers Games — Connection & Intimacy Card Games',
+    description: 'Learn about our mission to spark joy, laughter, and emotional connection through interactive party games, icebreaker questions, and couples conversation decks.',
+    path: '/about/',
+    locale: resolvedParams.locale,
+    ogImageSlug: 'about',
+  });
+}
+
 export default async function AboutPage({
   params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+}: PageProps) {
   const resolvedParams = await params;
   const locale = resolvedParams.locale;
 

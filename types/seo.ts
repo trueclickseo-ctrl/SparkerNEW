@@ -9,6 +9,10 @@ export interface BaseMetadataInput {
   authors?: string[];
   noIndex?: boolean;
   locale?: string;
+  author?: string;
+  publisher?: string;
+  themeColor?: string;
+  ogImageSlug?: string;
 }
 
 export interface TopicClusterInfo {
