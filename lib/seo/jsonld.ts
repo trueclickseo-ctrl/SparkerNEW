@@ -1,6 +1,6 @@
 import { FAQItem, HowToStep } from '@/types/seo';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://sparkers.games';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://sparkersgames.com';
 
 export function getOrganizationSchema() {
   return {
