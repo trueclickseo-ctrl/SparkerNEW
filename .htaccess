@@ -9,26 +9,41 @@ Options -Indexes +FollowSymLinks
   RewriteEngine On
   RewriteBase /
 
-  # 1. Serve _next/ static assets directly (CSS, JS, fonts, images)
+  # 1. Force HTTPS and WWW
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^sparkersgames\.com$ [NC]
+  RewriteRule ^(.*)$ https://www.sparkersgames.com/$1 [R=301,L]
+
+  # 2. Redirect /en/en/ duplicate path bug to /en/
+  RewriteRule ^en/en/(.*)$ /en/$1 [R=301,L]
+
+  # 3. Enforce trailing slash (excluding files and _next)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !^/_next
+  RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5})$
+  RewriteCond %{REQUEST_URI} !(.*)/$
+  RewriteRule ^(.*)$ /$1/ [R=301,L]
+
+  # 4. Serve _next/ static assets directly
   RewriteRule ^_next/ - [L]
 
-  # 2. Serve existing static files directly (favicon, svg, xml, txt, ico, etc.)
+  # 5. Serve existing static files directly (favicon, svg, xml, txt, etc.)
   RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule ^ - [L]
 
-  # 3. Serve existing directories with their index.html
+  # 6. Serve existing directories with their index.html
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteCond %{REQUEST_FILENAME}/index.html -f
   RewriteRule ^(.*)/?$ $1/index.html [L]
 
-  # 4. Redirect bare root to /en/
+  # 7. Redirect bare root to /en/
   RewriteRule ^$ /en/ [R=301,L]
 
-  # 5. Route clean URL paths to their pre-built index.html
+  # 8. Route clean URL paths to their pre-built index.html
   RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
   RewriteRule ^(.+)/?$ /$1/index.html [L]
 
-  # 6. Fallback: serve en/ homepage
+  # 9. Fallback: serve en/ homepage
   RewriteRule ^ /en/index.html [L]
 </IfModule>
 

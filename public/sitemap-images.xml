@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://sparkersgames.com/en/</loc>
+    <loc>https://www.sparkersgames.com/en/</loc>
     <image:image>
-      <image:loc>https://sparkersgames.com/favicon.ico</image:loc>
+      <image:loc>https://www.sparkersgames.com/favicon.ico</image:loc>
       <image:title>Sparkers Games Icon</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://sparkersgames.com/en/</loc>
+    <loc>https://www.sparkersgames.com/en/</loc>
     <image:image>
-      <image:loc>https://sparkersgames.com/icon.png</image:loc>
+      <image:loc>https://www.sparkersgames.com/icon.png</image:loc>
       <image:title>Sparkers Games Logo</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://sparkersgames.com/en/</loc>
+    <loc>https://www.sparkersgames.com/en/</loc>
     <image:image>
-      <image:loc>https://sparkersgames.com/apple-touch-icon.png</image:loc>
+      <image:loc>https://www.sparkersgames.com/apple-touch-icon.png</image:loc>
       <image:title>Sparkers Games Apple Icon</image:title>
     </image:image>
   </url>

@@ -2,6 +2,9 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /search/
+Disallow: /rss.xml
+Disallow: /design-system/
+Disallow: /en/design-system/
 Disallow: /*?*
 Disallow: /*&*
 Disallow: /*.json$
@@ -11,15 +14,19 @@ User-agent: GPTBot
 Allow: /
 Disallow: /api/
 Disallow: /search/
+Disallow: /rss.xml
 
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /api/
+Disallow: /rss.xml
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /rss.xml
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /rss.xml
 
-Sitemap: https://sparkersgames.com/sitemap-index.xml
+Sitemap: https://www.sparkersgames.com/sitemap-index.xml

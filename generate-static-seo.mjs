@@ -57,7 +57,7 @@ const PROGRAMMATIC_SEO_GAMES = loadTsDataFile('lib/data/programmatic-seo-games.t
   CHARADES_CLUSTER_GAMES,
 });
 
-const BASE_URL = 'https://sparkersgames.com';
+const BASE_URL = 'https://www.sparkersgames.com';
 const LOCALE = 'en';
 
 // Helper to escape XML special chars
@@ -79,6 +79,9 @@ const robotsTxt = `User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /search/
+Disallow: /rss.xml
+Disallow: /design-system/
+Disallow: /en/design-system/
 Disallow: /*?*
 Disallow: /*&*
 Disallow: /*.json$
@@ -88,16 +91,20 @@ User-agent: GPTBot
 Allow: /
 Disallow: /api/
 Disallow: /search/
+Disallow: /rss.xml
 
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /api/
+Disallow: /rss.xml
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /rss.xml
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /rss.xml
 
 Sitemap: ${BASE_URL}/sitemap-index.xml
 `;
@@ -172,7 +179,7 @@ const nowStr = new Date().toISOString();
 
 // A. Sitemap Pages
 const staticPages = [
-  '',
+  '/',
   '/play/',
   '/couples/',
   '/quizzes/',
@@ -193,8 +200,8 @@ for (const p of staticPages) {
   <url>
     <loc>${BASE_URL}/${LOCALE}${p}</loc>
     <lastmod>${nowStr}</lastmod>
-    <changefreq>${p === '' || p === '/play/' ? 'daily' : 'weekly'}</changefreq>
-    <priority>${p === '' ? '1.0' : '0.8'}</priority>
+    <changefreq>${p === '/' || p === '/play/' ? 'daily' : 'weekly'}</changefreq>
+    <priority>${p === '/' ? '1.0' : '0.8'}</priority>
   </url>`;
 }
 sitemapPagesXml += '\n</urlset>';

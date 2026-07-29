@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { BaseMetadataInput } from '@/types/seo';
 
 const SITE_NAME = 'Sparkers Games';
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://sparkersgames.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sparkersgames.com';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.jpg`;
 const TWITTER_HANDLE = '@SparkersGames';
 
@@ -22,7 +22,24 @@ export function constructMetadata({
   themeColor = '#7c3aed',
   ogImageSlug,
 }: BaseMetadataInput): Metadata {
-  const url = `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
+  // Strip any leading locale prefix if present (e.g. /en/about/ -> /about/)
+  let cleanPath = path || '';
+  const knownLocales = ['en', 'es', 'fr', 'de', 'ar'];
+  for (const loc of knownLocales) {
+    if (cleanPath.startsWith(`/${loc}/`)) {
+      cleanPath = cleanPath.substring(loc.length + 1);
+      break;
+    } else if (cleanPath === `/${loc}`) {
+      cleanPath = '/';
+      break;
+    }
+  }
+
+  // Ensure path starts and ends with a slash consistently
+  if (!cleanPath.startsWith('/')) cleanPath = '/' + cleanPath;
+  if (!cleanPath.endsWith('/')) cleanPath = cleanPath + '/';
+
+  const canonicalUrl = `${SITE_URL}/${locale}${cleanPath}`;
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   
   // Use pre-built static SVG or fallback to default
@@ -47,16 +64,16 @@ export function constructMetadata({
       apple: '/apple-touch-icon.png',
     },
     alternates: {
-      canonical: url,
+      canonical: canonicalUrl,
       languages: {
-        'en-US': `${SITE_URL}/en${path}`,
-        'x-default': `${SITE_URL}/en${path}`,
+        'en-US': `${SITE_URL}/en${cleanPath}`,
+        'x-default': `${SITE_URL}/en${cleanPath}`,
       },
     },
     openGraph: {
       title: fullTitle,
       description,
-      url,
+      url: canonicalUrl,
       siteName: SITE_NAME,
       images: [
         {
