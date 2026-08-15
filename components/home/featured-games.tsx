@@ -3,10 +3,23 @@ import Image from 'next/image';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Gamepad2, Heart, Sparkles, Flame } from 'lucide-react';
+import { Gamepad2, Heart, Sparkles, Flame, Zap } from 'lucide-react';
 
 export function FeaturedGames({ locale }: { locale: string }) {
   const games = [
+    {
+      id: 'speed-tap',
+      title: 'Party Speed Tap',
+      description: 'A lightning-fast tap challenge to warm up any group before the real games begin.',
+      category: 'Party Games',
+      audience: 'Friends & Party',
+      variant: 'play' as const,
+      icon: <Zap className="w-5 h-5 text-emerald-500" />,
+      href: `/${locale}/play/speed-tap`,
+      badge: 'New',
+      image: '/images/hero-party-group.jpg',
+      imageAlt: 'Party Speed Tap fast tap challenge',
+    },
     {
       id: 'truth-or-dare',
       title: 'Truth or Dare Classic',

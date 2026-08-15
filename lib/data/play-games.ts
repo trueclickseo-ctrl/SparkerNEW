@@ -15,6 +15,24 @@ export interface PartyGame {
 
 export const PLAY_GAMES: PartyGame[] = [
   {
+    id: 'speed-tap',
+    title: 'Party Speed Tap',
+    shortDescription: 'A lightning-fast tap challenge to warm up any group before the real games begin.',
+    fullDescription: 'Tap as fast as you can before time runs out! A quick, hilarious party warm-up game for friends, teams, and group hangouts. Pass the phone, compare scores, crown a champion.',
+    audience: ['party', 'teens', 'small-groups', 'large-groups'],
+    category: 'Party Warm-Up',
+    numberOfPlayers: '1-10+',
+    duration: '10-30 secs',
+    difficulty: 'Easy',
+    cardCount: 1,
+    badge: 'New',
+    rules: [
+      'Pick your round length (10s, 15s, or 30s).',
+      'Tap the target as fast as possible when the timer starts.',
+      'Compare your score tier and pass the phone to the next player!',
+    ],
+  },
+  {
     id: 'truth-or-dare',
     title: 'Truth or Dare Classic',
     shortDescription: '320 real truths and dares across 8 categories — party, deep, flirty, Gen Z, funny & more.',

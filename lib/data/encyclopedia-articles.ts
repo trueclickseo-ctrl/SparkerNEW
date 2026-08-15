@@ -200,32 +200,4 @@ export const ENCYCLOPEDIA_ARTICLES: EncyclopediaArticle[] = [
       { title: 'Love Language Quiz', url: '/quizzes/love-language' },
     ],
   },
-  {
-    slug: 'icebreakers-for-work',
-    title: 'Office Team Icebreakers & Professional Meeting Warmups',
-    aeoDefinition: 'Office icebreakers are professional, work-appropriate conversation prompts used at the start of meetings or workshops to build rapport and team engagement.',
-    definition: 'Quick 5-10 minute group exercises designed to increase participation, psychological safety, and energy in remote or hybrid teams.',
-    history: 'Adopted widely during the rise of agile framework daily standups and remote video meeting culture.',
-    rules: [
-      'The meeting facilitator displays an icebreaker card at the start of the call.',
-      'Each team member takes 30 seconds to answer before passing to a colleague.',
-      'Keep answers lighthearted and focused on positive team building.',
-    ],
-    variations: [
-      { name: 'Remote Video Warmups', description: 'Quick chat-box or verbal responses suitable for Zoom/Teams calls.' },
-      { name: 'Team Strategy Warmups', description: 'Creative thinking prompts before brainstorming sessions.' },
-    ],
-    psychology: 'Establishes psychological safety, reduces cognitive friction, and encourages quieter team members to voice ideas early in meetings.',
-    safety: 'Avoid topics related to politics, religion, or personal finances in workplace settings.',
-    faqs: [
-      { question: 'How long should an office icebreaker take?', answer: 'Ideal meeting icebreakers take 3 to 10 minutes total so they do not eat into work agenda time.' },
-    ],
-    sources: [
-      { title: 'Harvard Business Review on Team Dynamics', url: 'https://sparkersgames.com/sources/hbr' },
-    ],
-    relatedGames: [
-      { title: 'Office Icebreakers Deck', url: '/play/office-icebreakers' },
-      { title: 'Classroom Icebreakers', url: '/educational/classroom-icebreakers' },
-    ],
-  },
 ];

@@ -9,6 +9,9 @@ Options -Indexes +FollowSymLinks
   RewriteEngine On
   RewriteBase /
 
+  # 301 Redirect old thin encyclopedia page to new pillar blog post
+  RewriteRule ^en/encyclopedia/icebreakers-for-work/?$ https://www.sparkersgames.com/en/blog/icebreakers-for-work/ [R=301,L]
+
   # 1. Collapse /en/en/ duplicate prefix and redirect to canonical host with trailing slash in 1 hop
   RewriteCond %{HTTP_HOST} ^(www\.)?sparkersgames\.com$ [NC]
   RewriteRule ^en/en/(.*)/?$ https://www.sparkersgames.com/en/$1/ [R=301,L]
