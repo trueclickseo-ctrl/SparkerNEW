@@ -3,6 +3,9 @@ import sys
 import ftplib
 import time
 
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
 FTP_HOST = "195.35.39.151"
 FTP_USER = "u104700239.sparkersgames.com"
 FTP_PASS = r"@W2wCQ;>]/vUcw/f"
@@ -59,7 +62,7 @@ def upload_file_with_retry(get_ftp_func, local_file_path, rel_path, current_ftp)
             except Exception:
                 pass
             ftp = get_ftp_func()
-    print(f"❌ Failed to upload {rel_path} after {max_tries} attempts.")
+    print(f"[FAILED] Could not upload {rel_path} after {max_tries} attempts.")
     return ftp
 
 def deploy():
@@ -89,7 +92,7 @@ def deploy():
         ftp = upload_file_with_retry(connect_ftp, local_path, rel_path, ftp)
 
     elapsed = time.time() - start_time
-    print(f"🎉 Deployment completed successfully! Uploaded {total} files in {elapsed:.1f}s.")
+    print(f"[SUCCESS] Deployment completed! Uploaded {total} files in {elapsed:.1f}s.")
     try:
         ftp.quit()
     except Exception:
@@ -97,3 +100,4 @@ def deploy():
 
 if __name__ == "__main__":
     deploy()
+

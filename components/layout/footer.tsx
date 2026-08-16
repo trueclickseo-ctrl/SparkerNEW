@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Sparkles, Gamepad2, Shield, Mail, Building, Scale, Lock, Users } from 'lucide-react';
+import { Sparkles, Gamepad2, Shield, Mail, Building, Scale, Lock, Users, FileText } from 'lucide-react';
 import { Locale } from '@/lib/i18n/config';
 
 export function Footer({ locale }: { locale: Locale }) {
@@ -67,12 +67,22 @@ export function Footer({ locale }: { locale: Locale }) {
           </ul>
         </div>
 
-        {/* Silo Column 3: Company & Legal (Matches Screenshot exactly) */}
+        {/* Silo Column 3: Company & Resources */}
         <div className="space-y-3.5">
           <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
-            <Building className="w-4 h-4 text-amber-400" /> Company
+            <Building className="w-4 h-4 text-amber-400" /> Company &amp; Resources
           </h4>
           <ul className="space-y-2.5 text-xs font-medium text-slate-300">
+            <li>
+              <Link href={`/${locale}/blog`} className="hover:text-emerald-400 transition-colors flex items-center gap-1.5 font-bold text-white">
+                <FileText className="w-3.5 h-3.5 text-emerald-400" /> Sparkers Blog
+              </Link>
+            </li>
+            <li>
+              <Link href={`/${locale}/blog/icebreakers-for-work`} className="hover:text-emerald-400 text-slate-400 text-[11px] transition-colors flex items-center gap-1">
+                💼 Icebreakers for Work Guide
+              </Link>
+            </li>
             <li>
               <Link href={`/${locale}/about`} className="hover:text-white transition-colors flex items-center gap-1.5">
                 About Us
@@ -91,15 +101,11 @@ export function Footer({ locale }: { locale: Locale }) {
             <li>
               <Link href={`/${locale}/terms`} className="hover:text-white transition-colors flex items-center gap-1.5">
                 <Scale className="w-3.5 h-3.5 text-slate-400" /> Terms of Service
-              </Link></li>
+              </Link>
+            </li>
             <li className="pt-1 border-t border-slate-800">
               <Link href={`/${locale}/encyclopedia`} className="hover:text-emerald-400 text-slate-400 text-[11px] transition-colors">
                 Game Encyclopedia
-              </Link>
-            </li>
-            <li>
-              <Link href={`/${locale}/blog`} className="hover:text-emerald-400 text-slate-400 text-[11px] transition-colors">
-                Sparkers Blog
               </Link>
             </li>
           </ul>

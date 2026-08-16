@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { X, Search, Gamepad2, Heart, Sparkles, BookOpen } from 'lucide-react';
+import { X, Search, Gamepad2, Heart, Sparkles, BookOpen, FileText } from 'lucide-react';
 import { LocaleSwitcher } from '@/components/locale-switcher';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Locale } from '@/lib/i18n/config';
@@ -77,6 +77,13 @@ export function MobileNav({
               className="flex items-center gap-3 p-3 rounded-xl hover:bg-emerald-50 dark:hover:bg-emerald-950/40 text-slate-800 dark:text-slate-200 font-medium text-sm"
             >
               <BookOpen className="w-5 h-5 text-emerald-600" /> Encyclopedia & Guides
+            </Link>
+            <Link
+              href={`/${locale}/blog`}
+              onClick={onClose}
+              className="flex items-center gap-3 p-3 rounded-xl hover:bg-purple-50 dark:hover:bg-purple-950/40 text-slate-800 dark:text-slate-200 font-medium text-sm"
+            >
+              <FileText className="w-5 h-5 text-purple-600" /> Blog & Articles
             </Link>
           </nav>
         </div>

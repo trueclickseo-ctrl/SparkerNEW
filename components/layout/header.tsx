@@ -75,6 +75,9 @@ export function Header({ locale }: { locale: Locale }) {
           <Link href={`/${locale}/encyclopedia`} onClick={() => setIsMegaOpen(false)} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors whitespace-nowrap">
             Encyclopedia
           </Link>
+          <Link href={`/${locale}/blog`} onClick={() => setIsMegaOpen(false)} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors whitespace-nowrap font-bold text-emerald-700 dark:text-emerald-300">
+            Blog
+          </Link>
         </nav>
 
         {/* Desktop Controls (Search) */}
