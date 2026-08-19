@@ -56,6 +56,7 @@ export default function SeoGameTemplate({
     url: `/${locale}${path}`,
     numberOfPlayers: players,
     genre: category,
+    locale,
   });
 
   const howToSchema = getHowToSchema({
@@ -65,6 +66,7 @@ export default function SeoGameTemplate({
       name: `Step ${idx + 1}`,
       text: r,
     })),
+    locale,
   });
 
   const faqSchema = getFAQSchema(faqs);
@@ -94,7 +96,7 @@ export default function SeoGameTemplate({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <Breadcrumbs items={breadcrumbs} />
+      <Breadcrumbs items={breadcrumbs} locale={locale} />
 
       <div className="space-y-8">
         {/* Header Metadata */}

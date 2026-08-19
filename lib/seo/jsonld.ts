@@ -1,6 +1,45 @@
 import { FAQItem, HowToStep } from '@/types/seo';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://sparkersgames.com';
+const RAW_SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sparkersgames.com';
+export const SITE_URL = RAW_SITE_URL.replace(/^https?:\/\/(?!www\.)/, 'https://www.').replace(/\/$/, '');
+
+export function formatCanonicalUrl(path: string, locale: string = 'en'): string {
+  if (!path) return `${SITE_URL}/${locale}/`;
+  
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    let fullUrl = path.replace(/^https?:\/\/(?!www\.)sparkersgames\.com/, 'https://www.sparkersgames.com');
+    if (!fullUrl.endsWith('/') && !fullUrl.includes('?') && !fullUrl.includes('#') && !fullUrl.split('/').pop()?.includes('.')) {
+      fullUrl += '/';
+    }
+    return fullUrl;
+  }
+
+  let cleanPath = path;
+  const knownLocales = ['en', 'es', 'fr', 'de', 'ar'];
+  for (const loc of knownLocales) {
+    if (cleanPath.startsWith(`/${loc}/`)) {
+      cleanPath = cleanPath.substring(loc.length + 1);
+      break;
+    } else if (cleanPath === `/${loc}` || cleanPath === `/${loc}/`) {
+      cleanPath = '/';
+      break;
+    }
+  }
+
+  if (!cleanPath.startsWith('/')) {
+    cleanPath = '/' + cleanPath;
+  }
+
+  if (cleanPath !== '/' && !cleanPath.endsWith('/') && !cleanPath.includes('.')) {
+    cleanPath = cleanPath + '/';
+  }
+
+  if (cleanPath === '/') {
+    return `${SITE_URL}/${locale}/`;
+  }
+
+  return `${SITE_URL}/${locale}${cleanPath}`;
+}
 
 export function getOrganizationSchema() {
   return {
@@ -33,15 +72,32 @@ export function getWebSiteSchema() {
   };
 }
 
-export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
+export function getBreadcrumbSchema(
+  items: { name: string; url: string }[],
+  currentUrl?: string,
+  locale: string = 'en'
+) {
+  if (!items || items.length === 0) {
+    return null;
+  }
+
+  const validItems = items.filter((item) => item && item.name && item.url);
+  if (validItems.length === 0) {
+    return null;
+  }
+
+  const targetCurrentUrl = currentUrl || validItems[validItems.length - 1].url;
+  const canonicalPageUrl = formatCanonicalUrl(targetCurrentUrl, locale);
+
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, index) => ({
+    '@id': `${canonicalPageUrl}#breadcrumb`,
+    itemListElement: validItems.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `${SITE_URL}${item.url.startsWith('/') ? item.url : `/${item.url}`}`,
+      item: formatCanonicalUrl(item.url, locale),
     })),
   };
 }
@@ -67,19 +123,22 @@ export function getGameSchema({
   url,
   numberOfPlayers,
   genre,
+  locale = 'en',
 }: {
   name: string;
   description: string;
   url: string;
   numberOfPlayers?: string;
   genre?: string;
+  locale?: string;
 }) {
+  const canonicalUrl = formatCanonicalUrl(url, locale);
   return {
     '@context': 'https://schema.org',
     '@type': 'Game',
     name,
     description,
-    url: `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}`,
+    url: canonicalUrl,
     numberOfPlayers: numberOfPlayers || '2+',
     genre: genre || 'Party / Card Game',
     author: {
@@ -92,10 +151,12 @@ export function getHowToSchema({
   name,
   description,
   steps,
+  locale = 'en',
 }: {
   name: string;
   description: string;
   steps: HowToStep[];
+  locale?: string;
 }) {
   return {
     '@context': 'https://schema.org',
@@ -107,7 +168,7 @@ export function getHowToSchema({
       position: idx + 1,
       name: s.name,
       text: s.text,
-      ...(s.url && { url: `${SITE_URL}${s.url.startsWith('/') ? s.url : `/${s.url}`}` }),
+      ...(s.url && { url: formatCanonicalUrl(s.url, locale) }),
       ...(s.image && { image: s.image }),
     })),
   };
@@ -117,23 +178,26 @@ export function getWebPageSchema({
   name,
   description,
   url,
+  locale = 'en',
 }: {
   name: string;
   description: string;
   url: string;
+  locale?: string;
 }) {
+  const canonicalUrl = formatCanonicalUrl(url, locale);
   return {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    '@id': `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}#webpage`,
-    url: `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}`,
+    '@id': `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
     name,
     description,
     isPartOf: {
       '@id': `${SITE_URL}/#website`,
     },
     breadcrumb: {
-      '@id': `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}#breadcrumb`,
+      '@id': `${canonicalUrl}#breadcrumb`,
     },
   };
 }
@@ -143,17 +207,20 @@ export function getCollectionPageSchema({
   description,
   url,
   items,
+  locale = 'en',
 }: {
   name: string;
   description: string;
   url: string;
   items: { name: string; url: string; description?: string }[];
+  locale?: string;
 }) {
+  const canonicalUrl = formatCanonicalUrl(url, locale);
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    '@id': `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}#collectionpage`,
-    url: `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}`,
+    '@id': `${canonicalUrl}#collectionpage`,
+    url: canonicalUrl,
     name,
     description,
     isPartOf: {
@@ -165,7 +232,7 @@ export function getCollectionPageSchema({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
-        url: `${SITE_URL}${item.url.startsWith('/') ? item.url : `/${item.url}`}`,
+        url: formatCanonicalUrl(item.url, locale),
         ...(item.description && { description: item.description }),
       })),
     },
@@ -190,22 +257,25 @@ export function getArticleSchema({
   url,
   publishedTime,
   modifiedTime,
+  locale = 'en',
 }: {
   title: string;
   description: string;
   url: string;
   publishedTime?: string;
   modifiedTime?: string;
+  locale?: string;
 }) {
+  const canonicalUrl = formatCanonicalUrl(url, locale);
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: title,
     description,
-    url: `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}`,
+    url: canonicalUrl,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${SITE_URL}${url.startsWith('/') ? url : `/${url}`}`,
+      '@id': canonicalUrl,
     },
     author: {
       '@type': 'Organization',
@@ -219,4 +289,3 @@ export function getArticleSchema({
     ...(modifiedTime && { dateModified: modifiedTime }),
   };
 }
-

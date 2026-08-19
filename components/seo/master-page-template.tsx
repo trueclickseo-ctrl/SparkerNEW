@@ -8,7 +8,7 @@ import PrintableBlock from './printable-block';
 import FaqBlock from './faq-block';
 import LinkingBlock from './linking-block';
 import AuthorBlock from './author-block';
-import { getFAQSchema, getGameSchema, getHowToSchema, getWebPageSchema, getBreadcrumbSchema } from '@/lib/seo/jsonld';
+import { getFAQSchema, getGameSchema, getHowToSchema, getWebPageSchema } from '@/lib/seo/jsonld';
 import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 
 interface MasterPageTemplateProps {
@@ -36,6 +36,7 @@ export default function MasterPageTemplate({
     url: data.path,
     numberOfPlayers: data.playerCount || '2+',
     genre: data.game,
+    locale,
   });
 
   const howToSchema = getHowToSchema({
@@ -45,6 +46,7 @@ export default function MasterPageTemplate({
       name: `Step ${idx + 1}`,
       text: r,
     })),
+    locale,
   });
 
   const faqSchema = getFAQSchema(data.faqs);
@@ -53,6 +55,7 @@ export default function MasterPageTemplate({
     name: data.title,
     description: data.introduction.slice(0, 150) + '...',
     url: data.path,
+    locale,
   });
 
   const breadcrumbsList = [
@@ -63,8 +66,6 @@ export default function MasterPageTemplate({
     breadcrumbsList.push({ name: parentLink.title, url: parentLink.url });
   }
   breadcrumbsList.push({ name: data.title, url: `/${locale}${data.path}` });
-
-  const breadcrumbSchema = getBreadcrumbSchema(breadcrumbsList);
 
   return (
     <>
@@ -85,12 +86,8 @@ export default function MasterPageTemplate({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
 
-      <Breadcrumbs items={breadcrumbsList} />
+      <Breadcrumbs items={breadcrumbsList} locale={locale} />
 
       <div className="space-y-12">
         {/* Intro Section */}

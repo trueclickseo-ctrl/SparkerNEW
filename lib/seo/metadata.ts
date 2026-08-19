@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import { BaseMetadataInput } from '@/types/seo';
 
 const SITE_NAME = 'Sparkers Games';
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sparkersgames.com';
+const RAW_SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sparkersgames.com';
+const SITE_URL = RAW_SITE_URL.replace(/^https?:\/\/(?!www\.)/, 'https://www.').replace(/\/$/, '');
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.jpg`;
 const TWITTER_HANDLE = '@SparkersGames';
 
