@@ -1,13 +1,23 @@
 import { Gamepad2, Users, Sparkles } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
-export function PlayHero({ gameCount }: { gameCount: number }) {
+export function PlayHero({
+  gameCount,
+  title,
+  description,
+  badgeText,
+}: {
+  gameCount: number;
+  title?: string;
+  description?: string;
+  badgeText?: string;
+}) {
   return (
     <section className="bg-gradient-to-b from-indigo-100/60 via-indigo-50/20 to-transparent py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto text-center space-y-6">
         <div className="flex items-center justify-center gap-2">
           <Badge variant="play" className="px-3 py-1 text-xs">
-            <Gamepad2 className="w-3.5 h-3.5" /> Play Platform Hub
+            <Gamepad2 className="w-3.5 h-3.5" /> {badgeText || 'Play Platform Hub'}
           </Badge>
         </div>
 
@@ -17,12 +27,16 @@ export function PlayHero({ gameCount }: { gameCount: number }) {
             Play Platform Direct Overview
           </span>
           <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
-            The <strong>Sparkers Play Platform</strong> hosts instant digital card decks for group parties, teens, office icebreakers, classroom activities, and drinking games. Filter by group size or difficulty to launch free web-native party sessions.
+            {description || (
+              <>
+                The <strong>Sparkers Play Platform</strong> hosts instant digital card decks for group parties, teens, office icebreakers, classroom activities, and drinking games. Filter by group size or difficulty to launch free web-native party sessions.
+              </>
+            )}
           </p>
         </div>
 
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-slate-900 dark:text-white tracking-tight">
-          Instant Digital Party Card Decks
+          {title || 'Instant Digital Party Card Decks'}
         </h1>
 
         <div className="flex justify-center items-center gap-6 text-xs font-medium text-slate-600 dark:text-slate-400 pt-2">

@@ -1,28 +1,32 @@
 'use client';
 
+import Link from 'next/link';
 import { Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Locale } from '@/lib/i18n/config';
 
 export function PlayFilters({
   activeAudience,
   searchQuery,
+  locale = 'en',
   onAudienceChange,
   onSearchChange,
 }: {
   activeAudience: string;
   searchQuery: string;
-  onAudienceChange: (aud: string) => void;
+  locale?: Locale;
+  onAudienceChange?: (aud: string) => void;
   onSearchChange: (q: string) => void;
 }) {
   const audiences = [
-    { id: 'all', label: 'All Games' },
-    { id: 'party', label: 'Party & Friends' },
-    { id: 'teens', label: 'Teens' },
-    { id: 'kids', label: 'Kids & Family' },
-    { id: 'office', label: 'Office Teams' },
-    { id: 'drinking', label: 'Drinking (21+)' },
-    { id: 'large-groups', label: 'Large Groups (8+)' },
-    { id: 'small-groups', label: 'Small Groups (2-4)' },
+    { id: 'all', label: 'All Games', url: `/${locale}/play/` },
+    { id: 'party', label: 'Party & Friends', url: `/${locale}/play/party/` },
+    { id: 'teens', label: 'Teens', url: `/${locale}/play/teens/` },
+    { id: 'kids', label: 'Kids & Family', url: `/${locale}/play/kids/` },
+    { id: 'office', label: 'Office Teams', url: `/${locale}/play/office/` },
+    { id: 'drinking', label: 'Drinking (21+)', url: `/${locale}/play/drinking/` },
+    { id: 'large-groups', label: 'Large Groups (8+)', url: `/${locale}/play/large-groups/` },
+    { id: 'small-groups', label: 'Small Groups (2-4)', url: `/${locale}/play/small-groups/` },
   ];
 
   return (
@@ -44,18 +48,19 @@ export function PlayFilters({
         {audiences.map((aud) => {
           const isActive = activeAudience === aud.id;
           return (
-            <button
+            <Link
               key={aud.id}
-              onClick={() => onAudienceChange(aud.id)}
+              href={aud.url}
+              onClick={() => onAudienceChange && onAudienceChange(aud.id)}
               className={cn(
-                'px-3 py-1.5 text-xs font-medium rounded-full transition-all cursor-pointer',
+                'px-3 py-1.5 text-xs font-medium rounded-full transition-all cursor-pointer inline-block',
                 isActive
                   ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/20'
                   : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800'
               )}
             >
               {aud.label}
-            </button>
+            </Link>
           );
         })}
       </div>

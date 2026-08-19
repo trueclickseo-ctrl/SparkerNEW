@@ -177,6 +177,13 @@ fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap-pages.xml'), sitemapPagesXml);
 
 // B. Sitemap Games
 const audienceSlugs = [
+  'office',
+  'kids',
+  'teens',
+  'party',
+  'drinking',
+  'large-groups',
+  'small-groups',
   'games-for-couples',
   'games-for-friends',
   'games-for-teens',

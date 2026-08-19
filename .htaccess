@@ -15,6 +15,10 @@ Options -Indexes +FollowSymLinks
   # Explicit 404 for removed RSS feed
   RewriteRule ^rss\.xml$ - [R=404,L]
 
+  # 301 Redirect query-parameter audience views (e.g. /en/play?aud=office) to clean URLs (/en/play/office/)
+  RewriteCond %{QUERY_STRING} ^aud=([a-z0-9-]+)$ [NC]
+  RewriteRule ^en/play/?$ https://www.sparkersgames.com/en/play/%1/? [R=301,L]
+
   # 1. Collapse /en/en/ duplicate prefix and redirect to canonical host with trailing slash in 1 hop
   RewriteCond %{HTTP_HOST} ^(www\.)?sparkersgames\.com$ [NC]
   RewriteRule ^en/en/(.*)/?$ https://www.sparkersgames.com/en/$1/ [R=301,L]

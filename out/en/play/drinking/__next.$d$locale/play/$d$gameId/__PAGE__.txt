@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[74046,["/_next/static/chunks/2laygd3gpno9d.js","/_next/static/chunks/14mrh2-p_w84d.js","/_next/static/chunks/0iqg-_snuq3tm.js","/_next/static/chunks/0wwt5o04i4zwh.js","/_next/static/chunks/1ab1c0l1m1g61.js"],"default"]
+3:I[97367,["/_next/static/chunks/2laygd3gpno9d.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"locale":"en","initialAudience":"drinking","customTitle":"21+ Adult Drinking Party Card Games","customDescription":"Spicy adult party games, Never Have I Ever, and drinking card decks for game nights (21+).","badgeText":"Drinking (21+) Decks","breadcrumbLabel":"Drinking (21+)"}],[["$","script","script-0",{"src":"/_next/static/chunks/1ab1c0l1m1g61.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"bdOnOBOk6vgYmtIHW3rIN"}
+5:null

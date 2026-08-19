@@ -6,15 +6,29 @@ import { CardDeckPlayer } from '@/components/engine/card-deck-player';
 import { PLAY_GAMES } from '@/lib/data/play-games';
 import { TRUTH_OR_DARE_MASTER_555 } from '@/lib/data/truth-or-dare-master-555';
 import { QUESTION_DATABASE } from '@/lib/data/question-database';
+import { AUDIENCE_CATEGORIES, findAudienceCategory } from '@/lib/data/play-audiences';
 import { getGameSchema, getHowToSchema } from '@/lib/seo/jsonld';
 import { Users, Clock, Flame } from 'lucide-react';
-
 import { constructMetadata } from '@/lib/seo/metadata';
+import { Locale } from '@/lib/i18n/config';
+import PlayClientPage from '../play-client';
 
 export async function generateStaticParams() {
-  return PLAY_GAMES.map((game) => ({
+  const gameParams = PLAY_GAMES.map((game) => ({
     gameId: game.id,
   }));
+
+  const audienceParams: { gameId: string }[] = [];
+  for (const aud of AUDIENCE_CATEGORIES) {
+    audienceParams.push({ gameId: aud.id });
+    if (aud.aliases) {
+      for (const alias of aud.aliases) {
+        audienceParams.push({ gameId: alias });
+      }
+    }
+  }
+
+  return [...gameParams, ...audienceParams];
 }
 
 export async function generateMetadata({
@@ -24,23 +38,36 @@ export async function generateMetadata({
 }) {
   const resolvedParams = await params;
   const game = PLAY_GAMES.find((g) => g.id === resolvedParams.gameId);
-  if (!game) return {};
-  return constructMetadata({
-    title: game.title,
-    description: game.shortDescription,
-    path: `/play/${game.id}/`,
-    locale: resolvedParams.locale,
-    ogImageSlug: `play-${game.id}`,
-    keywords: [game.category, 'party game', 'group game', game.title.toLowerCase()],
-  });
-}
+  if (game) {
+    return constructMetadata({
+      title: game.title,
+      description: game.shortDescription,
+      path: `/play/${game.id}/`,
+      locale: resolvedParams.locale,
+      ogImageSlug: `play-${game.id}`,
+      keywords: [game.category, 'party game', 'group game', game.title.toLowerCase()],
+    });
+  }
 
+  const audience = findAudienceCategory(resolvedParams.gameId);
+  if (audience) {
+    return constructMetadata({
+      title: audience.title,
+      description: audience.description,
+      path: `/play/${audience.id}/`,
+      locale: resolvedParams.locale,
+      ogImageSlug: `play-${audience.id}`,
+      keywords: audience.keywords,
+    });
+  }
+
+  return {};
+}
 
 /** Build a real, game-specific prompt list from the master data files */
 function getPromptsForGame(gameId: string): string[] {
   switch (gameId) {
     case 'truth-or-dare': {
-      // Load ALL 8 categories → 8 × (20 truths + 20 dares) = 320 real prompts
       return TRUTH_OR_DARE_MASTER_555.flatMap((cat) => [
         ...cat.truths,
         ...cat.dares,
@@ -93,7 +120,22 @@ export default async function GameDetailPage({
   const resolvedParams = await params;
   const game = PLAY_GAMES.find((g) => g.id === resolvedParams.gameId);
 
-  if (!game) notFound();
+  if (!game) {
+    const audience = findAudienceCategory(resolvedParams.gameId);
+    if (audience) {
+      return (
+        <PlayClientPage
+          locale={resolvedParams.locale as Locale}
+          initialAudience={audience.filterAudience}
+          customTitle={audience.title.split('|')[0].trim()}
+          customDescription={audience.description}
+          badgeText={`${audience.label} Decks`}
+          breadcrumbLabel={audience.label}
+        />
+      );
+    }
+    notFound();
+  }
 
   const promptList = getPromptsForGame(resolvedParams.gameId);
 
@@ -103,6 +145,7 @@ export default async function GameDetailPage({
     url: `/${resolvedParams.locale}/play/${game.id}`,
     numberOfPlayers: game.numberOfPlayers,
     genre: game.category,
+    locale: resolvedParams.locale,
   });
 
   const howToSchema = getHowToSchema({
@@ -112,6 +155,7 @@ export default async function GameDetailPage({
       name: `Step ${idx + 1}`,
       text: r,
     })),
+    locale: resolvedParams.locale,
   });
 
   return (
@@ -131,9 +175,10 @@ export default async function GameDetailPage({
           { name: 'Play Platform', url: `/${resolvedParams.locale}/play` },
           { name: game.title, url: `/${resolvedParams.locale}/play/${game.id}` },
         ]}
+        locale={resolvedParams.locale}
       />
 
-      
+      <div className="space-y-8">
         {/* Header Metadata */}
         <div className="space-y-4 text-center">
           <div className="flex items-center justify-center gap-2">
@@ -191,7 +236,7 @@ export default async function GameDetailPage({
         <Alert variant="info" title="AEO Verified Card Engine">
           This deck features interactive shuffle algorithms, favorites bookmarking, and local session progress state.
         </Alert>
-      
+      </div>
     </>
   );
 }
