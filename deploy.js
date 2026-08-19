@@ -31,6 +31,16 @@ function copyRecursive(src, dest) {
 
 console.log('📦 Deploying static export to repo root for Hostinger...');
 
+// Clean up removed legacy files from root
+const DELETED_LEGACY_FILES = ['rss.xml'];
+for (const file of DELETED_LEGACY_FILES) {
+  const target = path.join(rootDir, file);
+  if (fs.existsSync(target)) {
+    fs.unlinkSync(target);
+    console.log(`  🗑️  Removed deleted legacy file: ${file}`);
+  }
+}
+
 for (const item of fs.readdirSync(outDir)) {
   if (PROTECTED.has(item)) {
     console.log(`  ⏭️  Skipping protected: ${item}`);

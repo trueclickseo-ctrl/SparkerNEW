@@ -79,7 +79,6 @@ const robotsTxt = `User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /search/
-Disallow: /rss.xml
 Disallow: /design-system/
 Disallow: /en/design-system/
 Disallow: /*?*
@@ -91,20 +90,16 @@ User-agent: GPTBot
 Allow: /
 Disallow: /api/
 Disallow: /search/
-Disallow: /rss.xml
 
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /api/
-Disallow: /rss.xml
 
 User-agent: ClaudeBot
 Allow: /
-Disallow: /rss.xml
 
 User-agent: PerplexityBot
 Allow: /
-Disallow: /rss.xml
 
 Sitemap: ${BASE_URL}/sitemap-index.xml
 `;
@@ -146,33 +141,6 @@ const manifest = {
 };
 fs.writeFileSync(path.join(PUBLIC_DIR, 'manifest.json'), JSON.stringify(manifest, null, 2));
 console.log('✅ Generated public/manifest.json');
-
-// ─── 3. GENERATE RSS FEED ─────────────────────────────────────────────
-let rssItems = '';
-for (const post of BLOG_POSTS) {
-  const pubDate = new Date(post.publishedAt || Date.now()).toUTCString();
-  rssItems += `    <item>
-      <title>${escapeXml(post.title)}</title>
-      <link>${BASE_URL}/${LOCALE}/blog/${post.slug}/</link>
-      <guid>${BASE_URL}/${LOCALE}/blog/${post.slug}/</guid>
-      <pubDate>${pubDate}</pubDate>
-      <description>${escapeXml(post.excerpt || post.title)}</description>
-      <author>hello@sparkersgames.com (Sparkers Games)</author>
-    </item>\n`;
-}
-const rssXml = `<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-  <title>Sparkers Games Blog</title>
-  <link>${BASE_URL}/${LOCALE}/blog/</link>
-  <description>The latest news, guides, strategy, and game variations for ultimate group and couples party games.</description>
-  <language>en-us</language>
-  <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-  <atom:link href="${BASE_URL}/rss.xml" rel="self" type="application/rss+xml" />
-${rssItems}</channel>
-</rss>`;
-fs.writeFileSync(path.join(PUBLIC_DIR, 'rss.xml'), rssXml);
-console.log('✅ Generated public/rss.xml');
 
 // ─── 4. SITEMAP GENERATORS ────────────────────────────────────────────
 const nowStr = new Date().toISOString();

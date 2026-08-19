@@ -10,7 +10,6 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
     pathname === '/sitemap.xml' ||
-    pathname === '/rss.xml' ||
     pathname === '/robots.txt' ||
     pathname === '/llms.txt' ||
     pathname.includes('.')
