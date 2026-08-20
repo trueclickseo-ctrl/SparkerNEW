@@ -19,9 +19,9 @@ Options -Indexes +FollowSymLinks
   RewriteCond %{QUERY_STRING} ^aud=([a-z0-9-]+)$ [NC]
   RewriteRule ^en/play/?$ https://www.sparkersgames.com/en/play/%1/? [R=301,L]
 
-  # 1. Collapse /en/en/ duplicate prefix and redirect to canonical host with trailing slash in 1 hop
+  # 1. Collapse /en/en/ duplicate prefix and redirect to canonical host in 1 hop
   RewriteCond %{HTTP_HOST} ^(www\.)?sparkersgames\.com$ [NC]
-  RewriteRule ^en/en/(.*)/?$ https://www.sparkersgames.com/en/$1/ [R=301,L]
+  RewriteRule ^en/en/?(.*)$ https://www.sparkersgames.com/en/$1 [R=301,L]
 
   # 2. Redirect http and/or non-www requests to https://www. and enforce trailing slash in 1 hop
   RewriteCond %{HTTPS} off [OR]

@@ -17,6 +17,16 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Safeguard: Collapse duplicate locale prefixes (e.g. /en/en/ -> /en/)
+  for (const loc of LOCALES) {
+    if (pathname.startsWith(`/${loc}/${loc}/`) || pathname === `/${loc}/${loc}`) {
+      const cleanPathname = pathname.replace(new RegExp(`^/${loc}/${loc}`), `/${loc}`);
+      const url = request.nextUrl.clone();
+      url.pathname = cleanPathname;
+      return NextResponse.redirect(url, 301);
+    }
+  }
+
   const pathnameHasLocale = LOCALES.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
@@ -26,7 +36,7 @@ export function middleware(request: NextRequest) {
   // Redirect to default locale if missing
   const locale = DEFAULT_LOCALE;
   request.nextUrl.pathname = `/${locale}${pathname}`;
-  return NextResponse.redirect(request.nextUrl);
+  return NextResponse.redirect(request.nextUrl, 301);
 }
 
 export const config = {

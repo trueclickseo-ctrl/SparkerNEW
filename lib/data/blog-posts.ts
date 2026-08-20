@@ -284,7 +284,7 @@ They build the relational trust that makes collaboration faster — teams that k
 
 ### Ready-Made Icebreaker Decks for Your Next Meeting
 
-Skip writing your own prompts. [Sparkers Games' Office Teams collection](https://sparkersgames.com/en/play/?aud=office) has ready-to-play digital decks built specifically for meetings, remote standups, and offsites — no prep, no printing, just open and play.`,
+Skip writing your own prompts. [Sparkers Games' Office Teams collection](https://www.sparkersgames.com/en/play/office/) has ready-to-play digital decks built specifically for meetings, remote standups, and offsites — no prep, no printing, just open and play.`,
     category: 'Icebreakers & Social',
     author: {
       name: 'David Ross',
@@ -398,7 +398,7 @@ Set an explicit time cap out loud before starting ("30 seconds each"), and pick 
 
 ### Ready-Made Icebreaker Decks for Your Next Meeting
 
-Looking for a longer list, including team building and group activities for full offsites? See the complete guide to [icebreakers for work](https://sparkersgames.com/en/blog/icebreakers-for-work/), or grab a ready-made deck from [Sparkers' Office Teams collection](https://sparkersgames.com/en/play/?aud=office) — no prep required.`,
+Looking for a longer list, including team building and group activities for full offsites? See the complete guide to [icebreakers for work](https://www.sparkersgames.com/en/blog/icebreakers-for-work/), or grab a ready-made deck from [Sparkers' Office Teams collection](https://www.sparkersgames.com/en/play/office/) — no prep required.`,
     category: 'Icebreakers & Social',
     author: {
       name: 'David Ross',
@@ -498,7 +498,7 @@ Games that don't require pairing everyone up individually work best for large or
 
 ### Ready-Made Icebreaker Decks for Staff Syncs
 
-Looking for options beyond staff meetings — team building, remote teams, or larger group sessions? See the full guide to [icebreakers for work](https://sparkersgames.com/en/blog/icebreakers-for-work/) or the fast-format list of [meeting ice breaker games](https://sparkersgames.com/en/blog/meeting-ice-breaker-games/). For ready-made prompts you don't have to write yourself, try [Sparkers' Office Teams decks](https://sparkersgames.com/en/play/?aud=office).`,
+Looking for options beyond staff meetings — team building, remote teams, or larger group sessions? See the full guide to [icebreakers for work](https://www.sparkersgames.com/en/blog/icebreakers-for-work/) or the fast-format list of [meeting ice breaker games](https://www.sparkersgames.com/en/blog/meeting-ice-breaker-games/). For ready-made prompts you don't have to write yourself, try [Sparkers' Office Teams decks](https://www.sparkersgames.com/en/play/office/).`,
     category: 'Icebreakers & Social',
     author: {
       name: 'David Ross',
@@ -615,7 +615,7 @@ Yes — adult versions generally lean on genuine questions and light self-disclo
 
 ### Ready-Made Adult Group Decks
 
-For work-specific formats — meetings, staff gatherings, and team building — see the full guide to [icebreakers for work](https://sparkersgames.com/en/blog/icebreakers-for-work/). For party and social settings specifically, browse [Sparkers' full party games library](https://sparkersgames.com/en/play/).`,
+For work-specific formats — meetings, staff gatherings, and team building — see the full guide to [icebreakers for work](https://www.sparkersgames.com/en/blog/icebreakers-for-work/). For party and social settings specifically, browse [Sparkers' full party games library](https://www.sparkersgames.com/en/play/).`,
     category: 'Icebreakers & Social',
     author: {
       name: 'David Ross',
@@ -706,7 +706,7 @@ Quick teamwork icebreakers run 5–10 minutes; deeper team building challenges b
 
 ### Ready-Made Team Building Prompts
 
-For quick meeting-only formats, see [meeting ice breaker games](https://sparkersgames.com/en/blog/meeting-ice-breaker-games/). For the complete list across every work setting, see the full guide to [icebreakers for work](https://sparkersgames.com/en/blog/icebreakers-for-work/), or grab a ready-made deck from [Sparkers' Office Teams collection](https://sparkersgames.com/en/play/?aud=office).`,
+For quick meeting-only formats, see [meeting ice breaker games](https://www.sparkersgames.com/en/blog/meeting-ice-breaker-games/). For the complete list across every work setting, see the full guide to [icebreakers for work](https://www.sparkersgames.com/en/blog/icebreakers-for-work/), or grab a ready-made deck from [Sparkers' Office Teams collection](https://www.sparkersgames.com/en/play/office/).`,
     category: 'Icebreakers & Social',
     author: {
       name: 'David Ross',
@@ -794,7 +794,7 @@ Most run 5–10 minutes; deeper ones like Desert Island Priorities or a Build Ch
 
 ### Ready-Made Strategy Session Starters
 
-For a broader set of options across every work setting, see the complete guide to [icebreakers for work](https://sparkersgames.com/en/blog/icebreakers-for-work/), or explore [team building icebreakers](https://sparkersgames.com/en/blog/team-building-icebreakers/) for longer collaborative formats. For ready-made prompts, try [Sparkers' Office Teams decks](https://sparkersgames.com/en/play/?aud=office).`,
+For a broader set of options across every work setting, see the complete guide to [icebreakers for work](https://www.sparkersgames.com/en/blog/icebreakers-for-work/), or explore [team building icebreakers](https://www.sparkersgames.com/en/blog/team-building-icebreakers/) for longer collaborative formats. For ready-made prompts, try [Sparkers' Office Teams decks](https://www.sparkersgames.com/en/play/office/).`,
     category: 'Icebreakers & Social',
     author: {
       name: 'David Ross',

@@ -37,8 +37,8 @@ export const ENCYCLOPEDIA_ARTICLES: EncyclopediaArticle[] = [
       { question: 'Can Truth or Dare be played online?', answer: 'Yes, online card generators allow remote friends and long-distance partners to play over video calls.' },
     ],
     sources: [
-      { title: 'Oxford Dictionary of World Folklore', url: 'https://sparkersgames.com/sources/folklore' },
-      { title: 'Journal of Social Psychology', url: 'https://sparkersgames.com/sources/psychology' },
+      { title: 'Oxford Dictionary of World Folklore', url: 'https://www.sparkersgames.com/sources/folklore' },
+      { title: 'Journal of Social Psychology', url: 'https://www.sparkersgames.com/sources/psychology' },
     ],
     relatedGames: [
       { title: 'Never Have I Ever', url: '/play/never-have-i-ever' },
@@ -70,7 +70,7 @@ export const ENCYCLOPEDIA_ARTICLES: EncyclopediaArticle[] = [
       { question: 'How many players are needed for Never Have I Ever?', answer: 'The game works best with 4 to 12+ players.' },
     ],
     sources: [
-      { title: 'Encyclopedia of Party Culture', url: 'https://sparkersgames.com/sources/party' },
+      { title: 'Encyclopedia of Party Culture', url: 'https://www.sparkersgames.com/sources/party' },
     ],
     relatedGames: [
       { title: 'Truth or Dare', url: '/play/truth-or-dare' },
@@ -103,7 +103,7 @@ export const ENCYCLOPEDIA_ARTICLES: EncyclopediaArticle[] = [
       { question: 'Is Would You Rather good for couples?', answer: 'Yes, it is one of the best conversational tools for discovering subtle preferences and sharing laughs.' },
     ],
     sources: [
-      { title: 'Journal of Behavioral Decision Making', url: 'https://sparkersgames.com/sources/decision' },
+      { title: 'Journal of Behavioral Decision Making', url: 'https://www.sparkersgames.com/sources/decision' },
     ],
     relatedGames: [
       { title: 'Truth or Dare', url: '/play/truth-or-dare' },
@@ -134,7 +134,7 @@ export const ENCYCLOPEDIA_ARTICLES: EncyclopediaArticle[] = [
       { question: 'Can you make sounds during Charades?', answer: 'No verbal sounds or words are allowed, though clapping or tapping objects is permitted in some house rules.' },
     ],
     sources: [
-      { title: 'History of European Parlor Games', url: 'https://sparkersgames.com/sources/history' },
+      { title: 'History of European Parlor Games', url: 'https://www.sparkersgames.com/sources/history' },
     ],
     relatedGames: [
       { title: 'Mafia / Werewolf', url: '/play/mafia' },
@@ -163,7 +163,7 @@ export const ENCYCLOPEDIA_ARTICLES: EncyclopediaArticle[] = [
       { question: 'How many people do you need to play Mafia?', answer: 'Mafia requires a minimum of 7 players (1 Moderator, 2 Mafia, 4 Citizens).' },
     ],
     sources: [
-      { title: 'Moscow State University Game Theory Archives', url: 'https://sparkersgames.com/sources/game-theory' },
+      { title: 'Moscow State University Game Theory Archives', url: 'https://www.sparkersgames.com/sources/game-theory' },
     ],
     relatedGames: [
       { title: 'Speed Charades', url: '/play/charades' },
@@ -192,7 +192,7 @@ export const ENCYCLOPEDIA_ARTICLES: EncyclopediaArticle[] = [
       { question: 'How often should couples use intimacy conversation cards?', answer: '1-2 times per week during date nights or relaxed evenings is recommended for consistent connection.' },
     ],
     sources: [
-      { title: 'Journal of Marriage and Family Psychology', url: 'https://sparkersgames.com/sources/marriage' },
+      { title: 'Journal of Marriage and Family Psychology', url: 'https://www.sparkersgames.com/sources/marriage' },
     ],
     relatedGames: [
       { title: '89 Intimacy Deck', url: '/couples/deep-intimacy' },
