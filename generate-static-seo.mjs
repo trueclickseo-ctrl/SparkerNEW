@@ -350,7 +350,8 @@ const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
   </sitemap>
 </sitemapindex>`;
 fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap-index.xml'), sitemapIndexXml);
-console.log('✅ Generated sitemaps index & partition files.');
+fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemapIndexXml);
+console.log('✅ Generated public/sitemap.xml and sitemap-index.xml');
 
 // ─── 5. GENERATE DYNAMIC OG IMAGES (SVG FORMAT) ───────────────────────
 const allPages = [
